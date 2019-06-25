@@ -5,5 +5,11 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    title: `James Maclean`,
+    siteUrl: `https://www.jamesmaclean.co.uk`,
+    description: `Personal portfolio of James Maclean, showcasing frontend development, UX and UI work.`
+  },
+
   plugins: [`gatsby-plugin-react-helmet`]
 }
