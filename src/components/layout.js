@@ -21,7 +21,7 @@ export default ({ children }) =>
 <React.Fragment>
 
     <StaticQuery 
-            query= {query}
+        query= {query}
         render = {data => 
             <Helmet>
                 <title>{data.site.siteMetadata.title}</title>
