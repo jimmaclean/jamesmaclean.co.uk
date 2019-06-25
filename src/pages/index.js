@@ -1,4 +1,5 @@
 import React from "react"
+import {Link} from "gatsby"
 import Layout from "../components/layout"
 
 export default () =>
@@ -6,7 +7,7 @@ export default () =>
 
     <h2>James Maclean</h2>
     <h4 className="subtitle">BA Graphic Design, MA User Experience Design</h4>
-    <p>Experienced in a wide range of design disciplines and front end development. Currently working as an Interaction Designer at <a href="https://www.fidelity.co.uk/home" target="_blank"  rel="noopener noreferrer">Fidelity International</a>.</p>
+    <p>Freelance frontend developer with extensive UI/UX experience.</p>
     <ul>
         <li>
             <a href="https://www.linkedin.com/in/jamesmacleanjqim" target="_blank"  rel="noopener noreferrer">LinkedIn</a>
@@ -17,6 +18,7 @@ export default () =>
         <li>
             <a href="https://github.com/jimmaclean" target="_blank"  rel="noopener noreferrer">GitHub</a>
         </li>
-</ul>
+    </ul>
+    <Link to="/about">About me</Link>
 
 </Layout>
