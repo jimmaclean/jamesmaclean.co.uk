@@ -1,6 +1,6 @@
 import React from "react"
 import "./layout.css"
-import {Helmet} from 'react-helmet';
+import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 
 

@@ -1,11 +1,12 @@
 import React from "react"
 import {Link} from "gatsby"
 import Layout from "../components/layout"
+import Title from "../components/title"
 
 export default () =>
 <Layout>
+    <Title pageName="James Maclean"/>
 
-    <h2>James Maclean</h2>
     <h4 className="subtitle">BA Graphic Design, MA User Experience Design</h4>
     <p>Freelance frontend developer with extensive UI/UX experience.</p>
     <ul>
