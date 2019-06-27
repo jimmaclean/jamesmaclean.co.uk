@@ -19,18 +19,19 @@ query {
 }
 `;
 
-export default ({ children }) => 
+const Layout = ({ children }) => {
 
-<StaticQuery 
-    query= {query}
-    render = {data => 
-        <React.Fragment>
+    return  (
+        <StaticQuery 
+        query= {query}
+        render = {data => <React.Fragment>
             
             <Helmet>
                 <title>{data.site.siteMetadata.title}</title>
                 <meta name="description" content={data.site.siteMetadata.description}/>
                 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Oxygen|Radley" type="text/css" />
             </Helmet>
+            
             <nav className="wrap">
                 <ul>
                     {data.site.siteMetadata.menuLinks.map(link => (
@@ -47,8 +48,12 @@ export default ({ children }) =>
             <div className="wrap">
                 {children} 
             </div>
-        </React.Fragment>
 
-    }
-/> 
+        </React.Fragment> }/> 
 
+
+    )
+}
+
+
+export default Layout
