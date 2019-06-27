@@ -25,23 +25,30 @@ const Layout = ({ children }) => {
     return  (
         <StaticQuery 
         query= {query}
-        render = {data => <React.Fragment>
+        render = {data => {
+            const {title, description, menuLinks} = data.site.siteMetadata;
             
-            <Helmet>
-                <title>{data.site.siteMetadata.title}</title>
-                <meta name="description" content={data.site.siteMetadata.description}/>
-                <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Oxygen|Radley" type="text/css" />
-            </Helmet>
+            return (
+                <React.Fragment>
+            
+                    <Helmet>
+                        <title>{title}</title>
+                        <meta name="description" content={description}/>
+                        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Oxygen|Radley" type="text/css" />
+                    </Helmet>
 
-            <GlobalNav menuLinks={data.site.siteMetadata.menuLinks} />
+                    <GlobalNav menuLinks={menuLinks} />
 
-            <div className="wrap">
-                {children} 
-            </div>
+                    <div className="wrap">
+                        {children} 
+                    </div>
 
-        </React.Fragment> }/> 
-
+                </React.Fragment>
+                
+            )}
+        }/>
     )
+
 }
 
 
