@@ -1,7 +1,8 @@
 import React from "react"
 import "./layout.css"
 import Helmet from 'react-helmet';
-import { StaticQuery, graphql, Link } from 'gatsby';
+import { StaticQuery, graphql } from 'gatsby';
+import GlobalNav from "../components/navigation"
 
 
 const query = graphql`
@@ -31,26 +32,14 @@ const Layout = ({ children }) => {
                 <meta name="description" content={data.site.siteMetadata.description}/>
                 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Oxygen|Radley" type="text/css" />
             </Helmet>
-            
-            <nav className="wrap">
-                <ul>
-                    {data.site.siteMetadata.menuLinks.map(link => (
-                    <li>
-                        <Link to={link.link} activeClassName="active">
-                            {link.name}
-                        </Link>
-                    </li>
-                    ))}
-  
-                </ul>
-            </nav>
+
+            <GlobalNav menuLinks={data.site.siteMetadata.menuLinks} />
 
             <div className="wrap">
                 {children} 
             </div>
 
         </React.Fragment> }/> 
-
 
     )
 }
