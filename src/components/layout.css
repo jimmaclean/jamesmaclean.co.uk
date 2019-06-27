@@ -87,6 +87,9 @@ nav a {
   margin-right: 1.2em;
 }
 
-nav a[aria-current='page'] {
+nav a.active  {
   font-weight: bold;
+}
+nav a.active::before {
+  content: '> ';
 }

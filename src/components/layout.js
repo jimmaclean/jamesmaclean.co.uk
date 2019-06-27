@@ -35,7 +35,7 @@ export default ({ children }) =>
                 <ul>
                     {data.site.siteMetadata.menuLinks.map(link => (
                     <li>
-                        <Link to={link.link}>
+                        <Link to={link.link} activeClassName="active">
                             {link.name}
                         </Link>
                     </li>
