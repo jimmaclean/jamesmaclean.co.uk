@@ -1,11 +1,12 @@
 import React from "react"
 import Layout from "../components/layout"
 import Title from "../components/title"
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
+
 
 const Index = ({data}) => {
     const {edges} = data.allMdx;
-    console.log(edges);
+
     return (
     <Layout>
         <Title pageName="James Maclean"/>
@@ -23,6 +24,20 @@ const Index = ({data}) => {
                 <a href="https://github.com/jimmaclean" target="_blank"  rel="noopener noreferrer">GitHub</a>
             </li>
         </ul>
+        <h3>Latest blog posts</h3>
+        <ul>
+            {edges.map(
+                edge => {
+                    const {frontmatter} = edge.node
+                    return (
+                        <li key={frontmatter.path}>
+                            <Link to={frontmatter.path}>{frontmatter.title}</Link>
+                        </li>
+                    ) 
+                    
+                }
+            )}
+        </ul>
     
     </Layout>
     )
@@ -30,7 +45,7 @@ const Index = ({data}) => {
 
 export const query = graphql`
     query {
-        allMdx {
+        allMdx(sort: {order: ASC, fields: frontmatter___date}){
             edges {
             node {
                 frontmatter {
