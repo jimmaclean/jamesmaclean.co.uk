@@ -49,9 +49,9 @@ export const query = graphql`
             edges {
             node {
                 frontmatter {
-                date
-                path
-                title
+                    date
+                    path
+                    title
                 }
             }
             }
