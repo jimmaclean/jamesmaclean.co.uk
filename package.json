@@ -14,9 +14,14 @@
     "deploy": "gatsby build && gh-pages -d public --repo https://github.com/jimmaclean/jqim87.github.io"
   },
   "dependencies": {
+    "@mdx-js/mdx": "^1.0.21",
+    "@mdx-js/react": "^1.0.21",
+    "@mdx-js/tag": "^0.20.3",
     "gatsby": "^2.8.2",
+    "gatsby-mdx": "^0.6.3",
     "gatsby-plugin-react-helmet": "^3.1.0",
     "gatsby-plugin-sass": "^2.1.0",
+    "gatsby-source-filesystem": "^2.1.1",
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
