@@ -18,6 +18,10 @@ module.exports = {
         name: 'about',
         link: '/about',
       },
+      {
+        name: 'blog',
+        link: '/blog'
+      }
     ],
   },
 

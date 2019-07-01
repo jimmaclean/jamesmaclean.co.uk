@@ -33,11 +33,12 @@ exports.createPages = (({graphql, actions}) => {
   
             result.data.allMdx.edges.forEach(({node}) => {
                 const path = node.frontmatter.path
+                const id = node.id
                 createPage({
                     path,
                     component: blogPostTemplate,
                     context: {
-                    pathSlug: path
+                    id: id
                     }
             })
   

@@ -1,9 +1,31 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Layout from '../components/layout'
+import Title from '../components/title'
+import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
-const Template = (props) => {
+const Template = ({data:{ mdx }}) => {
     return (
-        <div>MDX template</div>
+        <Layout>
+            <div>MDX template</div>
+            <Title pageName={mdx.frontmatter.title}/>
+            <MDXRenderer>{mdx.code.body}</MDXRenderer>
+        </Layout>
     )
 }
+
+export const blogPageQuery = graphql`
+    query BlogPostQuery($id: String!) {
+        mdx(id: {eq: $id}) {
+        code {
+            body
+        }
+        frontmatter {
+            title
+        }
+        id
+        }
+    }
+`
 export default Template
+
