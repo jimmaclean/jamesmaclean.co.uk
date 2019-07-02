@@ -5,7 +5,7 @@ const SideScroller = ({children}) => {
         display: 'block',
         width: '100%',
         whiteSpace: 'nowrap',
-        overflowX: 'scroll',
+        overflowX: 'auto',
     }
     return <div style={boxStyle}>{children}</div>
 }

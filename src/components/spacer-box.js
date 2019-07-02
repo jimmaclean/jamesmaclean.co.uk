@@ -2,15 +2,15 @@ import React from 'react'
 
 const Spacer = ({size}) => {
     const boxStyle = {
-        backgroundColor: 'pink',
-        color: 'red',
+        backgroundColor: '#FABCC7',
+        color: '#BC4A9E',
         height: size,
         width: size,
         marginRight: '16px',
         display: 'inline-flex',
         justifyContent: 'center',
         alignItems: 'center',
-        verticalAlign: 'middle',
+        verticalAlign: 'top',
     }
     
     const fontStyle = {
