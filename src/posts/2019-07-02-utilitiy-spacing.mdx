@@ -26,13 +26,121 @@ When a designer is working on a UI in something like Sketch they will get the sp
 
 ## Fist solution - Spacing SASS variables and a class for each
 
+```SCSS
+$space-1: 8px;
+$space-2: 16px;
+$space-3: 20px;
+$space-4: 24px;
+$space-5: 32px;
+$space-6: 40px;
+$space-7: 48px;
+$space-8: 56px;
+$space-9: 64px;
+$space-10: 72px;
+```
+
 ## Second solution - Responsive classes
+
+```SCSS
+$space-5: 32px;
+$space-shrink-factor-sm: 0.8;
+
+
+.margin-b-5 {
+    
+    margin-bottom: $space-5 * $space-shrink-factor-small;
+    
+    @media screen and ( min-width: 640px) {
+        margin-bottom: $space-5;
+    }
+
+}
+
+```
 
 ## Third solution - Fully responsive set of utilities
 
+### A sass map of your breakpoints
+```SCSS
+$breakpoints:(
+  md: 640px,
+  lg: 1024px,
+  xl: 1200px,
+  xxl: 1440px
+);
+```
+### A sass map of your spacing values
+```SCSS
+/* The variables can be used in component .classes */
+$space-1: 8px;
+$space-2: 16px;
+$space-3: 20px;
+...
+
+/* The map is for looping over */
+$space: (
+    1: $space-1,
+    2: $space-2,
+    3: $space-3,
+    ...
+);
+```
+### A breakpoint mixin to use in the loop
+```SCSS
+@mixin breakpointWrap($screenSize) {
+  
+  @media screen and ( min-width: map-get($breakpoints, $screenSize) ) {
+    @content;
+  }
+  
+};
+```
+
+### A loop function to build all the utilities
+
+```SCSS
+@each $bpKey, $bgVal in $breakpoints {
+
+  @include breakpointWrap($bpKey){
+
+    @each $sKey, $sVal in $space {
+      .#{$bpKey}--m-#{$sKey}{
+        margin: $sVal;
+      }
+        .#{$bpKey}--m-b-#{$sKey}{
+          margin-bottom: $sVal;
+        }
+        ...
+        /* + top, left and right */
+      
+      .#{$bpKey}--p-#{$sKey} {
+        padding: $sVal;
+      }
+        .#{$bpKey}--p-b-#{$sKey} {
+        padding-bottom: $sVal;
+        }
+        ...  
+        /* + top, left and right */
+    };
+    
+  };
+
+};
+```
+
+
 ### File size worries
+
+* 5 breakpoints (including base)
+* 10 spacing values
+* 10 classes
+
+500 css classes
+
+
 
 #### Calculator
 <Calculator/>
+
 
 ### Purge css 
