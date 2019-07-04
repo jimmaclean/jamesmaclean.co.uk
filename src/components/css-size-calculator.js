@@ -14,6 +14,13 @@ class Calculator extends React.Component {
         this.setState({
             [event.target.name]: parseInt(event.target.value)
         })
+    }
+    resetCalculator(){
+        this.setState({
+            breakpoints: 4,
+            values: 10,
+            classes: 10,    
+        })
     } 
     
     render() {
@@ -54,6 +61,7 @@ class Calculator extends React.Component {
                         />
                     </li>
                 </ol>
+                <button onClick={()=>this.resetCalculator()}>Reset</button>
                 <h4>Total CSS classes: {this.state.values*this.state.classes*this.state.breakpoints}</h4>
 
             </React.Fragment>
