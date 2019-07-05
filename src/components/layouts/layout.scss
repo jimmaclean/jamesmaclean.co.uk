@@ -155,6 +155,7 @@ $calculator-width: 300px;
     }
     input {
         flex: 1 1 50%;
+        min-width: $calculator-width/2 - $calculator-gaps*4;
 
     }
     button {
