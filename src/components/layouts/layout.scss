@@ -1,5 +1,15 @@
+
 $spacing: 32px;
 $breakpoint: 720px;
+@import "utility-spaces.scss";
+
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
 body {
     font-family: 'Oxygen', sans-serif;
     font-size: 18px;
@@ -7,7 +17,7 @@ body {
     color: #3b3a47;
     background: #f4eeec;
     margin: 0;
-    padding: 0 0  $spacing*4 0;
+    padding: 0 0  $space-10 0;
 }
 h1,h2,h3,h4,h5 {
     font-weight: normal;
@@ -27,6 +37,12 @@ h2 {
 h3 {
     font-size: 24px;
 }
+p {
+    margin-top: 0;
+}
+input {
+    font-size: 16px;
+}
 img {
     max-width: 100%;
     height: auto;
@@ -45,6 +61,8 @@ img {
     margin: 0;
     padding: 0.2em 0;
 }
+
+/* purgecss ignore */
 pre {
     width: 100%;
     overflow-x: auto;
@@ -106,4 +124,48 @@ nav a.active  {
   &::before {
     content: '> ';
   }
+}
+
+$calculator-gaps: $space-1;
+$calculator-width: 300px;
+
+.calculator {
+    display: inline-flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: $calculator-width;
+    border: 1px solid #3b3a47;
+    padding: $calculator-gaps*4;
+
+    ol {
+        padding-left: 0;
+        margin: 0;
+        
+    }
+    li {
+        display: flex;
+        margin-bottom: $calculator-gaps;
+
+    }
+    label {
+        flex: 1 1 50%;
+        text-align: right;
+        padding-right: $calculator-gaps;
+    }
+    input {
+        flex: 1 1 50%;
+
+    }
+    button {
+        padding: 0.4em 0.8em;
+        width: 50%;
+        align-self: flex-end;
+
+
+    }
+    h4 {
+        text-align: right;
+        margin-top: $calculator-gaps*4;
+        margin-bottom: 0;
+    }
 }

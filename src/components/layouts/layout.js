@@ -2,7 +2,7 @@ import React from "react"
 import "./layout.scss"
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
-import GlobalNav from "../components/navigation"
+import GlobalNav from "./navigation"
 
 
 const query = graphql`

@@ -25,7 +25,7 @@ class Calculator extends React.Component {
     
     render() {
         return (
-            <React.Fragment>
+            <div className={`calculator ${this.props.className}`}>
                 <ol>
                     <li>
                         <label htmlFor="breakpoints">Breakpoints:</label>
@@ -62,9 +62,9 @@ class Calculator extends React.Component {
                     </li>
                 </ol>
                 <button onClick={()=>this.resetCalculator()}>Reset</button>
-                <h4>Total CSS classes: {this.state.values*this.state.classes*this.state.breakpoints}</h4>
+                <h4>Total CSS classes: <strong>{this.state.values*this.state.classes*this.state.breakpoints}</strong></h4>
 
-            </React.Fragment>
+            </div>
             )
     }
 }

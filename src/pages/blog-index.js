@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../components/layout"
+import Layout from "../components/layouts/layout"
 import Title from "../components/title"
 import {graphql, Link} from "gatsby"
 
@@ -17,7 +17,7 @@ const BlogIndex = ({data}) => {
                     return (
                         <li key={frontmatter.path}>
                             <Link to={frontmatter.path}>
-                                <h4>{frontmatter.title}</h4>
+                                <h3 className="m-b-0">{frontmatter.title}</h3>
                                 <p>{frontmatter.excerpt}</p>
                             </Link>
                         </li>

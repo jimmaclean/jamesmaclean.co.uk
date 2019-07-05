@@ -1,13 +1,12 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../components/layout'
+import Layout from '../components/layouts/layout'
 import Title from '../components/title'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
 const Template = ({data:{ mdx }}) => {
     return (
         <Layout>
-            <div>MDX template</div>
             <Title pageName={mdx.frontmatter.title}/>
             <MDXRenderer>{mdx.code.body}</MDXRenderer>
         </Layout>
