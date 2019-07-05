@@ -4,7 +4,7 @@ class Calculator extends React.Component {
     constructor() {
         super();
         this.state = {
-            breakpoints: 4,
+            breakpoints: 5,
             values: 10,
             classes: 10,    
         };
@@ -17,7 +17,7 @@ class Calculator extends React.Component {
     }
     resetCalculator(){
         this.setState({
-            breakpoints: 4,
+            breakpoints: 5,
             values: 10,
             classes: 10,    
         })
