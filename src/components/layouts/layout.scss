@@ -18,6 +18,7 @@ body {
     background: #f4eeec;
     margin: 0;
     padding: 0 0  $space-10 0;
+    overflow-x: hidden;
 }
 h1,h2,h3,h4,h5 {
     font-weight: normal;
@@ -66,7 +67,21 @@ img {
 pre {
     width: 100%;
     overflow-x: auto;
-    
+    @media only screen and (min-width: $breakpoint) {
+        width: 100vw;
+        position: relative;
+        left: calc(-50vw + #{$breakpoint/2});
+        display: flex;
+        &::before {
+            content: '';
+            display: block;
+            width: 10px;
+            flex: 0 1 calc(50vw - #{$breakpoint/2});
+        }
+        code {
+            flex: 1 0 $breakpoint;
+        }        
+    }
 }
 /* purgecss end ignore */
 .wrap {
