@@ -1,3 +1,4 @@
+const path = require('path');
 /**
  * Configure your Gatsby site with this file.
  *
@@ -27,9 +28,14 @@ module.exports = {
 
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-purgecss`,
     `gatsby-mdx`,
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        content: [path.join(process.cwd(), 'src/**/!(*.d).{ts,js,jsx,tsx,mdx}')]
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

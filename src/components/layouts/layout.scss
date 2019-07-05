@@ -2,7 +2,7 @@
 $spacing: 32px;
 $breakpoint: 720px;
 @import "utility-spaces.scss";
-
+/* purgecss start ignore */
 html {
     box-sizing: border-box;
   }
@@ -23,6 +23,7 @@ h1,h2,h3,h4,h5 {
     font-weight: normal;
     line-height: 1.4;
 }
+
 h1, h2, h3 {
     font-family: 'Radley', serif;
 }
@@ -62,12 +63,12 @@ img {
     padding: 0.2em 0;
 }
 
-/* purgecss ignore */
 pre {
     width: 100%;
     overflow-x: auto;
     
 }
+/* purgecss end ignore */
 .wrap {
     padding: $spacing/2;
     max-width: $breakpoint;
