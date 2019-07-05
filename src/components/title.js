@@ -1,10 +1,11 @@
-import React from "react"
-import Helmet from 'react-helmet'
+import React from "react";
+import Helmet from "react-helmet";
 
-export default (props) =>
-<React.Fragment>
+export default props => (
+  <React.Fragment>
     <Helmet>
-        <title>{props.pageName}</title>
+      <title>{props.pageName}</title>
     </Helmet>
     <h1>{props.pageName}</h1>
-</React.Fragment>
+  </React.Fragment>
+);
