@@ -1,5 +1,5 @@
 
-$spacing: 32px;
+$wrap-spacing: 32px;
 $breakpoint: 720px;
 @import "utility-spaces.scss";
 /* purgecss start ignore */
@@ -63,20 +63,22 @@ img {
     margin: 0;
     padding: 0.2em 0;
 }
+$left-gutter-calc:$breakpoint/2 - $wrap-spacing;
 
 pre {
     width: 100%;
     overflow-x: auto;
-    @media only screen and (min-width: $breakpoint) {
+    @media only screen and (min-width: $breakpoint+$wrap-spacing*2) {
         width: 100vw;
         position: relative;
-        left: calc(-50vw + #{$breakpoint/2});
+        left: calc(-50vw + #{$left-gutter-calc});
         display: flex;
         &::before {
             content: '';
             display: block;
-            width: 10px;
-            flex: 0 1 calc(50vw - #{$breakpoint/2});
+            //width: 10px;
+            flex: 0 1 calc(50vw - #{$left-gutter-calc});
+            background-color: pink;
         }
         code {
             flex: 1 0 $breakpoint;
@@ -85,11 +87,11 @@ pre {
 }
 /* purgecss end ignore */
 .wrap {
-    padding: $spacing/2;
+    padding: $wrap-spacing/2;
     max-width: $breakpoint;
     margin: auto;
     @media only screen and (min-width: $breakpoint) {
-        padding: $spacing;
+        padding: $wrap-spacing;
     }
     &.wide {
         max-width: 100%;
@@ -98,8 +100,8 @@ pre {
 .flex-container {
     @media only screen and (min-width: $breakpoint) {
         display: flex;
-        margin-left: -#{$spacing/2};
-        margin-right: -#{$spacing/2};
+        margin-left: -#{$wrap-spacing/2};
+        margin-right: -#{$wrap-spacing/2};
 
     }
 
@@ -108,15 +110,15 @@ pre {
     max-width: 1200px;
 }
 .read-more-box {
-    margin-bottom: $spacing*2;
+    margin-bottom: $wrap-spacing*2;
     @media only screen and (min-width: $breakpoint) {
         flex: 1 1 33.33%;
-        padding: 0 $spacing/2;
+        padding: 0 $wrap-spacing/2;
     }
 
 }
 .back-link {
-    margin-top: $spacing*4;
+    margin-top: $wrap-spacing*4;
     border-top: 1px solid;
 }
 
@@ -151,7 +153,7 @@ $calculator-width: 300px;
     width: 100%;
     max-width: $calculator-width;
     border: 1px solid #3b3a47;
-    padding: $calculator-gaps*4;
+
 
     ol {
         padding-left: 0;
@@ -170,7 +172,7 @@ $calculator-width: 300px;
     }
     input {
         flex: 1 1 50%;
-        min-width: $calculator-width/2 - $calculator-gaps*4;
+        min-width: $space-10;
 
     }
     button {
@@ -180,7 +182,6 @@ $calculator-width: 300px;
     }
     h4 {
         text-align: right;
-        margin-top: $calculator-gaps*4;
-        margin-bottom: 0;
+
     }
 }
