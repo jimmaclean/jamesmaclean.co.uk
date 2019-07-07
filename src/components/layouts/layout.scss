@@ -63,9 +63,11 @@ img {
     margin: 0;
     padding: 0.2em 0;
 }
-$left-gutter-calc:$breakpoint/2 - $wrap-spacing;
 
-pre {
+$left-gutter-calc:$breakpoint/2 - $wrap-spacing +8px;
+
+pre,
+.side-scroller {
     width: 100%;
     overflow-x: auto;
     @media only screen and (min-width: $breakpoint+$wrap-spacing*2) {
@@ -76,11 +78,10 @@ pre {
         &::before {
             content: '';
             display: block;
-            //width: 10px;
             flex: 0 1 calc(50vw - #{$left-gutter-calc});
-            background-color: pink;
         }
-        code {
+        code,
+        .side-scroller-child {
             flex: 1 0 $breakpoint;
         }        
     }
@@ -96,6 +97,9 @@ pre {
     &.wide {
         max-width: 100%;
     }
+}
+.whitespace-nowrap {
+    white-space: nowrap;
 }
 .flex-container {
     @media only screen and (min-width: $breakpoint) {
