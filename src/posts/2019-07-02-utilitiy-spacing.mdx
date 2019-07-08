@@ -9,7 +9,6 @@ import Calculator from "../components/css-size-calculator"
 import Spacer from "../components/spacer-box"
 import SideScroller from "../components/containers/side-scroller"
 
-
 ## The problem
 When a designer is working on a UI in something like Sketch they will get the spacing to look how they want, normally based on a pre-defined spacing scale.
 
@@ -158,7 +157,7 @@ I opted to leave the base 'small' size out of the loops so didn't have to includ
 
 This can produce a surprizing amount of CSS even when you are sure you only included the useful stuff.
 
-<Calculator className="m-b-4" />
+<Calculator className="m-b-4" breakpoints="3" values="20" classes="12"/>
 
 500 css classes and weighted in at about 24kb, which seems like a lot for something so simple.
 
