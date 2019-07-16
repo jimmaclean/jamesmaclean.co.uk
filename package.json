@@ -29,6 +29,7 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "change-case": "^3.1.0",
     "gh-pages": "^2.0.1",
     "prettier": "^1.17.1"
   },
