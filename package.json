@@ -17,7 +17,7 @@
     "@mdx-js/mdx": "^1.0.27",
     "@mdx-js/react": "^1.0.27",
     "@mdx-js/tag": "^0.20.3",
-    "gatsby": "^2.13.23",
+    "gatsby": "^2.13.42",
     "gatsby-mdx": "^0.6.3",
     "gatsby-plugin-purgecss": "^4.0.0",
     "gatsby-plugin-react-helmet": "^3.1.2",

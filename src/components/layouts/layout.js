@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/main.scss";
+import "../main.scss";
 import Helmet from "react-helmet";
 import { StaticQuery, graphql } from "gatsby";
 import GlobalNav from "./navigation";

@@ -1,0 +1,25 @@
+$headings-map: (
+  sm: (
+    h1: 40px,
+    h2: 38px,
+    h3: 28px,
+    h4: 22px,
+    h5: 18px,
+    p: 16px
+  ),
+  md: (
+    h1: 40px,
+    h2: 38px,
+    h3: 28px,
+    h4: 22px,
+    h5: 18px,
+    p: 16px
+  )
+);
+
+@each $headingBPs, $headingBP in $headings-map {
+  .#{$headingBPs}-test {
+    background-color: pink;
+    padding-left: map-get($breakpoints, $headingBPs);
+  }
+}

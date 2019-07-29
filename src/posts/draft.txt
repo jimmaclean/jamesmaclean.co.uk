@@ -1,0 +1,4 @@
+Install NVM!!!!!
+
+Then 
+nvm install node

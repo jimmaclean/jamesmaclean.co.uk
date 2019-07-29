@@ -1,0 +1,102 @@
+$space-1: 8px;
+$space-2: 16px;
+$space-3: 20px;
+$space-4: 24px;
+$space-5: 32px;
+$space-6: 40px;
+$space-7: 48px;
+$space-8: 56px;
+$space-9: 64px;
+$space-10: 72px;
+
+$space: (
+  0: 0,
+  1: $space-1,
+  2: $space-2,
+  3: $space-3,
+  4: $space-4,
+  5: $space-5,
+  6: $space-6,
+  7: $space-7,
+  8: $space-8,
+  9: $space-9,
+  10: $space-10
+);
+
+@mixin breakpointWrap($screenSize) {
+  @media screen and (min-width: map-get($breakpoints, $screenSize)) {
+    @content;
+  }
+}
+
+@each $sKey, $sVal in $space {
+  .m-#{$sKey} {
+    margin: $sVal;
+  }
+  .m-b-#{$sKey} {
+    margin-bottom: $sVal;
+  }
+  .m-t-#{$sKey} {
+    margin-top: $sVal;
+  }
+  .m-l-#{$sKey} {
+    margin-left: $sVal;
+  }
+  .m-r-#{$sKey} {
+    margin-right: $sVal;
+  }
+
+  .p-#{$sKey} {
+    padding: $sVal;
+  }
+  .p-b-#{$sKey} {
+    padding-bottom: $sVal;
+  }
+  .p-t-#{$sKey} {
+    padding-top: $sVal;
+  }
+  .p-l-#{$sKey} {
+    padding-left: $sVal;
+  }
+  .p-r-#{$sKey} {
+    padding-right: $sVal;
+  }
+}
+
+@each $bpKey, $bgVal in $breakpoints {
+  @include breakpointWrap($bpKey) {
+    @each $sKey, $sVal in $space {
+      .#{$bpKey}--m-#{$sKey} {
+        margin: $sVal;
+      }
+      .#{$bpKey}--m-b-#{$sKey} {
+        margin-bottom: $sVal;
+      }
+      .#{$bpKey}--m-t-#{$sKey} {
+        margin-top: $sVal;
+      }
+      .#{$bpKey}--m-l-#{$sKey} {
+        margin-left: $sVal;
+      }
+      .#{$bpKey}--m-r-#{$sKey} {
+        margin-right: $sVal;
+      }
+
+      .#{$bpKey}--p-#{$sKey} {
+        padding: $sVal;
+      }
+      .#{$bpKey}--p-b-#{$sKey} {
+        padding-bottom: $sVal;
+      }
+      .#{$bpKey}--p-t-#{$sKey} {
+        padding-top: $sVal;
+      }
+      .#{$bpKey}--p-l-#{$sKey} {
+        padding-left: $sVal;
+      }
+      .#{$bpKey}--p-r-#{$sKey} {
+        padding-right: $sVal;
+      }
+    }
+  }
+}
