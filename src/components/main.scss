@@ -125,6 +125,9 @@ nav a.active {
     content: "> ";
   }
 }
+li > a {
+  display: block;
+}
 
 $calculator-gaps: $space-1;
 $calculator-width: 300px;
