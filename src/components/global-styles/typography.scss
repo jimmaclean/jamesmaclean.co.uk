@@ -1,6 +1,6 @@
 $headings-map: (
   sm: (
-    h1: 40px,
+    h1: 400px,
     h2: 38px,
     h3: 28px,
     h4: 22px,
@@ -17,9 +17,12 @@ $headings-map: (
   )
 );
 
-@each $headingBPs, $headingBP in $headings-map {
-  .#{$headingBPs}-test {
-    background-color: pink;
-    padding-left: map-get($breakpoints, $headingBPs);
+@each $headingBPkey, $headingBPVal in $headings-map {
+  @include breakpointWrap($headingBPkey) {
+    @each $headKey, $headVal in $headingBPVal {
+      #{$headKey} {
+        font-size: $headVal;
+      }
+    }
   }
 }

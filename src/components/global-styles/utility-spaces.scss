@@ -63,7 +63,7 @@ $space: (
   }
 }
 
-@each $bpKey, $bgVal in $breakpoints {
+@each $bpKey, $bpVal in $breakpoints {
   @include breakpointWrap($bpKey) {
     @each $sKey, $sVal in $space {
       .#{$bpKey}--m-#{$sKey} {

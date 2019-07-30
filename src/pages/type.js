@@ -19,6 +19,7 @@ const Typescale = ({ data }) => {
   return (
     <Layout>
       <Title pageName="James Maclean" />
+      <span className="test-test">test</span>
       {types}
     </Layout>
   );
