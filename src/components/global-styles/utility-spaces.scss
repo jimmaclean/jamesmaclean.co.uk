@@ -33,72 +33,43 @@ $space: (
   }
 }
 
-@each $sKey, $sVal in $space {
-  .m-#{$sKey} {
-    margin: $sVal;
-  }
-  .m-b-#{$sKey} {
-    margin-bottom: $sVal;
-  }
-  .m-t-#{$sKey} {
-    margin-top: $sVal;
-  }
-  .m-l-#{$sKey} {
-    margin-left: $sVal;
-  }
-  .m-r-#{$sKey} {
-    margin-right: $sVal;
-  }
-
-  .p-#{$sKey} {
-    padding: $sVal;
-  }
-  .p-b-#{$sKey} {
-    padding-bottom: $sVal;
-  }
-  .p-t-#{$sKey} {
-    padding-top: $sVal;
-  }
-  .p-l-#{$sKey} {
-    padding-left: $sVal;
-  }
-  .p-r-#{$sKey} {
-    padding-right: $sVal;
-  }
-}
-
 @each $bpKey, $bpVal in $breakpoints {
+  $prefix: "#{$bpKey}--";
+  @if $bpVal == 0 {
+    $prefix: null;
+  }
+
   @include breakpointWrap($bpKey) {
     @each $sKey, $sVal in $space {
-      .#{$bpKey}--m-#{$sKey} {
+      .#{$prefix}m-#{$sKey} {
         margin: $sVal;
       }
-      .#{$bpKey}--m-b-#{$sKey} {
+      .#{$prefix}m-b-#{$sKey} {
         margin-bottom: $sVal;
       }
-      .#{$bpKey}--m-t-#{$sKey} {
+      .#{$prefix}m-t-#{$sKey} {
         margin-top: $sVal;
       }
-      .#{$bpKey}--m-l-#{$sKey} {
+      .#{$prefix}m-l-#{$sKey} {
         margin-left: $sVal;
       }
-      .#{$bpKey}--m-r-#{$sKey} {
+      .#{$prefix}m-r-#{$sKey} {
         margin-right: $sVal;
       }
 
-      .#{$bpKey}--p-#{$sKey} {
+      .#{$prefix}p-#{$sKey} {
         padding: $sVal;
       }
-      .#{$bpKey}--p-b-#{$sKey} {
+      .#{$prefix}p-b-#{$sKey} {
         padding-bottom: $sVal;
       }
-      .#{$bpKey}--p-t-#{$sKey} {
+      .#{$prefix}p-t-#{$sKey} {
         padding-top: $sVal;
       }
-      .#{$bpKey}--p-l-#{$sKey} {
+      .#{$prefix}p-l-#{$sKey} {
         padding-left: $sVal;
       }
-      .#{$bpKey}--p-r-#{$sKey} {
+      .#{$prefix}p-r-#{$sKey} {
         padding-right: $sVal;
       }
     }
