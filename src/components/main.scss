@@ -10,9 +10,10 @@ $breakpoints: (
 );
 
 @import "global-styles/utility-spaces.scss";
-@import "global-styles/typography.scss";
 
 /* purgecss start ignore */
+@import "global-styles/typography.scss";
+
 html {
   box-sizing: border-box;
 }
@@ -32,37 +33,7 @@ body {
   padding: 0 0 $space-10 0;
   overflow-x: hidden;
 }
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-weight: normal;
-  line-height: 1.4;
-}
 
-h1,
-h2,
-h3 {
-  font-family: "Radley", serif;
-}
-h1 {
-  font-size: 48px;
-  line-height: 1.2;
-}
-h2 {
-  font-size: 34px;
-  margin-bottom: 0.4em;
-}
-h3 {
-  font-size: 24px;
-}
-p {
-  margin-top: 0;
-}
-input {
-  font-size: 16px;
-}
 img {
   max-width: 100%;
   height: auto;
@@ -72,13 +43,6 @@ img {
     width: auto;
     margin: 0;
   }
-}
-.subtitle {
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin: 0;
-  padding: 0.2em 0;
 }
 
 $left-gutter-calc: $breakpoint/2 - $wrap-spacing + 8px;

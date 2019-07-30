@@ -1,19 +1,20 @@
+/* prettier-ignore */
 $headings-map: (
   sm: (
-    h1: 400px,
-    h2: 38px,
-    h3: 28px,
-    h4: 22px,
-    h5: 18px,
-    p: 16px
+    h1: (fs: 40px, lh: 1.4),
+    h2: (fs: 38px, lh: 1.4),
+    h3: (fs: 28px, lh: 1.4),
+    h4: (fs: 22px, lh: 1.4),
+    h5: (fs: 18px, lh: 1.4),
+    p:  (fs: 16px, lh: 1.4)
   ),
   md: (
-    h1: 40px,
-    h2: 38px,
-    h3: 28px,
-    h4: 22px,
-    h5: 18px,
-    p: 16px
+    h1: (fs: 48px, lh: 1.2),
+    h2: (fs: 34px, lh: 1.4),
+    h3: (fs: 24px, lh: 1.4),
+    h4: (fs: 22px, lh: 1.4),
+    h5: (fs: 18px, lh: 1.4),
+    p:  (fs: 16px, lh: 1.4)
   )
 );
 
@@ -21,8 +22,40 @@ $headings-map: (
   @include breakpointWrap($headingBPkey) {
     @each $headKey, $headVal in $headingBPVal {
       #{$headKey} {
-        font-size: $headVal;
+        font-size: map-get($headVal, "fs");
+        line-height: map-get($headVal, "lh");
       }
     }
   }
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: normal;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Radley", serif;
+}
+
+h2 {
+  margin-bottom: 0.4em;
+}
+
+.subtitle {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0.2em 0;
+}
+p {
+  margin-top: 0;
+}
+input {
+  font-size: 16px;
 }

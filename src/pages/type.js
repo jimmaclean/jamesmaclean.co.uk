@@ -3,7 +3,7 @@ import Layout from "../components/layouts/layout";
 import Title from "../components/title";
 //import { graphql, Link } from "gatsby";
 
-const Typescale = ({ data }) => {
+const Typescale = () => {
   var types = [];
   const Heading = props => {
     return React.createElement(`h${props.level}`, props, props.children);
@@ -19,7 +19,6 @@ const Typescale = ({ data }) => {
   return (
     <Layout>
       <Title pageName="James Maclean" />
-      <span className="test-test">test</span>
       {types}
     </Layout>
   );
