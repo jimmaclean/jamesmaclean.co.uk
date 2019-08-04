@@ -11,7 +11,8 @@ const Typescale = () => {
   for (var i = 1; i <= 6; i++) {
     types.push(
       <Heading level={i} key={i}>
-        Heading {i}
+        Pellentesque habitant morbi tristique senectus et netus et malesuada
+        fames ac turpis egestas. {i}
       </Heading>
     );
   }
@@ -20,6 +21,29 @@ const Typescale = () => {
     <Layout>
       <Title pageName="James Maclean" />
       {types}
+      <p>
+        Pellentesque habitant morbi tristique senectus et netus et malesuada
+        fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
+        ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
+        egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
+        leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum
+        erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean
+        fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci,
+        sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar
+        facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor
+        neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat
+        volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
+        luctus, metus
+      </p>
+      <p className="small">
+        Pellentesque habitant morbi tristique senectus et netus et malesuada
+        fames ac turpis egestas.
+      </p>
+      <ul>
+        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+        <li>Aliquam tincidunt mauris eu risus.</li>
+        <li>Vestibulum auctor dapibus neque.</li>
+      </ul>
     </Layout>
   );
 };
