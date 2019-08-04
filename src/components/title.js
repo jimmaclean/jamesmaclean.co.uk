@@ -6,6 +6,6 @@ export default props => (
     <Helmet>
       <title>{props.pageName}</title>
     </Helmet>
-    <h1>{props.pageName}</h1>
+    <h1 className={props.customClass}>{props.pageName}</h1>
   </React.Fragment>
 );

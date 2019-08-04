@@ -8,7 +8,7 @@ const Index = ({ data }) => {
 
   return (
     <Layout>
-      <Title pageName="James Maclean" />
+      <Title pageName="James Maclean" customClass="m-b-0" />
 
       <h4 className="subtitle">BA Graphic Design, MA User Experience Design</h4>
       <p>Freelance frontend developer with extensive UI/UX experience.</p>

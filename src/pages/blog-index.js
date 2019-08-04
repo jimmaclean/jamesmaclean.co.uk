@@ -14,7 +14,7 @@ const BlogIndex = ({ data }) => {
           return (
             <li key={frontmatter.path}>
               <Link to={frontmatter.path}>
-                <h3 className="m-b-0">{frontmatter.title}</h3>
+                <h3 className="m-0">{frontmatter.title}</h3>
                 <p>{frontmatter.excerpt}</p>
               </Link>
             </li>
