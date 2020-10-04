@@ -1,9 +1,9 @@
 $sm-lh: 26px;
 $md-lh: 28px;
 /* prettier-ignore */
-$headings-map: (
+$typography-map: (
   sm: (
-    h1:    (fs: 40px, lh: $sm-lh*2,   mt: 0,   mb: $sm-lh*2,  ),
+    h1:    (fs: 40px, lh: $sm-lh*2,   mt: 0,          mb: $sm-lh*2,  ),
     h2:    (fs: 32px, lh: $sm-lh*1.5, mt: $sm-lh*3,   mb: $sm-lh*1.5,),
     h3:    (fs: 28px, lh: $sm-lh*1.5, mt: $sm-lh*3,   mb: $sm-lh*1.5,),
     h4:    (fs: 24px, lh: $sm-lh*1.5, mt: $sm-lh*3,   mb: $sm-lh*1.5,),
@@ -13,7 +13,7 @@ $headings-map: (
     small: (fs: 13px, lh: 20px,       mt: 20px,       mb: 20px,      ),
   ),
   md: (
-    h1:    (fs: 48px, lh: $md-lh*2,   mt: 0,   mb: $md-lh*2,  ),
+    h1:    (fs: 48px, lh: $md-lh*2,   mt: 0,          mb: $md-lh*2,  ),
     h2:    (fs: 38px, lh: $md-lh*1.5, mt: $md-lh*3,   mb: $md-lh*1.5,),
     h3:    (fs: 32px, lh: $md-lh*1.5, mt: $md-lh*3,   mb: $md-lh*1.5,),
     h4:    (fs: 26px, lh: $md-lh*1.5, mt: $md-lh*3,   mb: $md-lh*1.5,),
@@ -24,19 +24,20 @@ $headings-map: (
   )
 );
 
-@each $headingBPkey, $headingBPVal in $headings-map {
-  @include breakpointWrap($headingBPkey) {
-    @each $headKey, $headVal in $headingBPVal {
-      #{$headKey},
-      .#{$headKey} {
-        font-size: map-get($headVal, fs);
-        line-height: map-get($headVal, lh);
-        margin-top: map-get($headVal, mt);
-        margin-bottom: map-get($headVal, mb);
+@each $breakpointKey, $breakpointValue in $typography-map {
+  @include breakpointWrap($breakpointKey) {
+    @each $elementKey, $elementValue in $breakpointValue {
+      #{$elementKey},
+      .#{$elementKey} {
+        font-size: map-get($elementValue, fs);
+        line-height: map-get($elementValue, lh);
+        margin-top: map-get($elementValue, mt);
+        margin-bottom: map-get($elementValue, mb);
       }
     }
   }
 }
+
 h1,
 h2,
 h3,
@@ -53,14 +54,14 @@ h3 {
 
 .subtitle {
   font-size: 12px;
+  line-height: 1.3;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin: 0;
-  padding: 0.2em 0;
+  margin: 1em 0;
 }
-p {
-  margin-top: 0;
-}
-input {
-  font-size: 16px;
+
+code {
+  font-size: 18px;
+  line-height: 1.6;
+  font-family: monospace;
 }
