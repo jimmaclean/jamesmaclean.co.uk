@@ -12,10 +12,11 @@ const BlogIndex = ({ data }) => {
         {edges.map(edge => {
           const { frontmatter } = edge.node;
           return (
-            <li key={frontmatter.path}>
+            <li key={frontmatter.path} className="m-b-3">
               <Link to={frontmatter.path}>
                 <h3 className="m-0">{frontmatter.title}</h3>
-                <p>{frontmatter.excerpt}</p>
+                <p className="m-0">{frontmatter.excerpt}</p>
+                <p className="m-0">Tags: {frontmatter.tags.map(tag => `[${tag}] `)}</p>
               </Link>
             </li>
           );
@@ -34,6 +35,7 @@ export const query = graphql`
             path
             title
             excerpt
+            tags
           }
         }
       }
