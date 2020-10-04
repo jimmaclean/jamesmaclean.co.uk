@@ -8,8 +8,7 @@ exports.createPages = (({graphql, actions}) => {
       const blogPostTemplate = path.resolve('src/templates/blog-post.js') 
   
       resolve(
-        graphql(
-          `
+        graphql(`
           query {
             allMdx {
               edges {
@@ -22,7 +21,6 @@ exports.createPages = (({graphql, actions}) => {
               }
             }
           }
-          
           `
         ).then(result => {
 
