@@ -24,6 +24,10 @@ module.exports = {
         name: "blog index",
         link: "/blog-index",
       },
+      {
+        name: "writing practice",
+        link: "/writing-practice",
+      },
     ],
   },
 

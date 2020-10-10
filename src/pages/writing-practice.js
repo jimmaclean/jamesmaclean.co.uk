@@ -7,11 +7,11 @@ const BlogIndex = ({ data }) => {
   const { edges } = data.allMdx;
   return (
     <Layout>
-      <Title pageName="Blog" />
+      <Title pageName="Writing practice" />
       <ul>
         {edges.map((edge) => {
           const { frontmatter } = edge.node;
-          return frontmatter.tags.includes("Writing practice") ? null : (
+          return frontmatter.tags.includes("Writing practice") ? (
             <li key={frontmatter.path} className="m-b-3">
               <Link to={frontmatter.path}>
                 <h3 className="m-0">{frontmatter.title}</h3>
@@ -21,7 +21,7 @@ const BlogIndex = ({ data }) => {
                 </p>
               </Link>
             </li>
-          );
+          ) : null;
         })}
       </ul>
     </Layout>

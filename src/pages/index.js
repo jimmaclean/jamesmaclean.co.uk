@@ -43,9 +43,9 @@ const Index = ({ data }) => {
       </ul>
       <h3>Latest blog posts</h3>
       <ul>
-        {edges.map(edge => {
+        {edges.map((edge) => {
           const { frontmatter } = edge.node;
-          return (
+          return frontmatter.tags.includes("Writing practice") ? null : (
             <li key={frontmatter.path}>
               <Link to={frontmatter.path}>{frontmatter.title}</Link>
             </li>
@@ -62,8 +62,9 @@ export const query = graphql`
       edges {
         node {
           frontmatter {
-            date
             path
+            date
+            tags
             title
           }
         }
