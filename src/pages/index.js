@@ -40,6 +40,15 @@ const Index = ({ data }) => {
             GitHub
           </a>
         </li>
+        <li>
+          <a
+            href="http://portfolioux.s3-website.eu-west-2.amazonaws.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            UX portfolio
+          </a>
+        </li>
       </ul>
       <h3>Latest blog posts</h3>
       <ul>
