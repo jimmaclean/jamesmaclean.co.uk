@@ -8,12 +8,13 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
+    "start": "eleventy --serve",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "deploy": "gatsby build && gh-pages -d public --repo https://github.com/jimmaclean/jqim87.github.io"
   },
   "dependencies": {
+    "@11ty/eleventy": "^0.11.0",
     "@mdx-js/mdx": "^1.0.27",
     "@mdx-js/react": "^1.0.27",
     "@mdx-js/tag": "^0.20.3",
