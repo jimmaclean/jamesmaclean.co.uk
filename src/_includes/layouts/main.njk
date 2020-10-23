@@ -21,10 +21,18 @@ title: James Maclean
   <!-- Place favicon.ico in the root directory -->
 
   {# <meta name="theme-color" content="#fafafa"> #}
+  <style>
+    {% include "css/main.css" ignore missing %}
+  </style>
+     <link
+                rel="stylesheet"
+                href="//fonts.googleapis.com/css?family=Oxygen|Radley"
+                type="text/css"
+              />
 </head>
 
     <body>
-        <div className="wrap">{{ content | safe }}</div>
+        <div class="wrap m-t-10">{{ content | safe }}</div>
     </body>
 
 </html>

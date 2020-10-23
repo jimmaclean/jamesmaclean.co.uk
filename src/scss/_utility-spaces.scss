@@ -1,0 +1,42 @@
+@each $bpKey, $bpVal in $breakpoints {
+  $prefix: "#{$bpKey}--";
+  @if $bpVal == 0 {
+    $prefix: null;
+  }
+
+  @include breakpointWrap($bpKey) {
+    @each $sKey, $sVal in $space {
+      .#{$prefix}m-#{$sKey} {
+        margin: $sVal;
+      }
+      .#{$prefix}m-b-#{$sKey} {
+        margin-bottom: $sVal;
+      }
+      .#{$prefix}m-t-#{$sKey} {
+        margin-top: $sVal;
+      }
+      .#{$prefix}m-l-#{$sKey} {
+        margin-left: $sVal;
+      }
+      .#{$prefix}m-r-#{$sKey} {
+        margin-right: $sVal;
+      }
+
+      .#{$prefix}p-#{$sKey} {
+        padding: $sVal;
+      }
+      .#{$prefix}p-b-#{$sKey} {
+        padding-bottom: $sVal;
+      }
+      .#{$prefix}p-t-#{$sKey} {
+        padding-top: $sVal;
+      }
+      .#{$prefix}p-l-#{$sKey} {
+        padding-left: $sVal;
+      }
+      .#{$prefix}p-r-#{$sKey} {
+        padding-right: $sVal;
+      }
+    }
+  }
+}
