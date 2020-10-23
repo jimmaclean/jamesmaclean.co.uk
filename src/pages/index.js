@@ -52,7 +52,7 @@ const Index = ({ data }) => {
       </ul>
       <h3>Latest blog posts</h3>
       <ul>
-        {edges.map((edge) => {
+        {edges.map(edge => {
           const { frontmatter } = edge.node;
           return frontmatter.tags.includes("Writing practice") ? null : (
             <li key={frontmatter.path}>

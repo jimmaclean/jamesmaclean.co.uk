@@ -3,13 +3,13 @@ import React from "react";
 class Calculator extends React.Component {
   constructor(props) {
     super(props);
-    const {breakpoints, values, classes} = this.props;
+    const { breakpoints, values, classes } = this.props;
     this.state = {
       breakpoints: breakpoints,
       values: values,
       classes: classes
     };
-    this.savedState = {...this.state};
+    this.savedState = { ...this.state };
     this.handleChange = this.handleChange.bind(this);
   }
   handleChange(event) {
@@ -59,14 +59,16 @@ class Calculator extends React.Component {
             />
           </li>
         </ol>
-        
+
         <h4 className="m-t-2 md--m-t-4 m-b-2 md--m-b-4">
           Total CSS classes:
           <strong>
             {this.state.values * this.state.classes * this.state.breakpoints}
           </strong>
         </h4>
-        <button className="m-b-0" onClick={() => this.resetCalculator()}>Reset</button>
+        <button className="m-b-0" onClick={() => this.resetCalculator()}>
+          Reset
+        </button>
       </div>
     );
   }

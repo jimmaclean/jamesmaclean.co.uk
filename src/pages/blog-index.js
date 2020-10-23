@@ -9,7 +9,7 @@ const BlogIndex = ({ data }) => {
     <Layout>
       <Title pageName="Blog" />
       <ul>
-        {edges.map((edge) => {
+        {edges.map(edge => {
           const { frontmatter } = edge.node;
           return frontmatter.tags.includes("Writing practice") ? null : (
             <li key={frontmatter.path} className="m-b-3">
@@ -17,7 +17,7 @@ const BlogIndex = ({ data }) => {
                 <h3 className="m-0">{frontmatter.title}</h3>
                 <p className="m-0">{frontmatter.excerpt}</p>
                 <p className="m-0">
-                  Tags: {frontmatter.tags.map((tag) => `[${tag}] `)}
+                  Tags: {frontmatter.tags.map(tag => `[${tag}] `)}
                 </p>
               </Link>
             </li>
