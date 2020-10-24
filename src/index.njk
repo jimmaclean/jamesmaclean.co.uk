@@ -1,6 +1,11 @@
 ---
 layout: layouts/main.njk
 title: James Maclean
+pagination:
+  data: collections.post
+  size: 10
+  reverse: true
+  alias: posts
 ---
 
 <h1 class="m-b-0">{{ title }}</h1>
@@ -45,3 +50,14 @@ title: James Maclean
     </a>
 </li>
 </ul>
+
+<h3>Latest blog posts</h3>
+
+{% for post in posts %}
+    <ul>
+        <li>
+            <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+            <span>{{ post.date.toLocaleDateString('en-GB') }}</span>
+        </li>
+    </ul>
+{% endfor %}

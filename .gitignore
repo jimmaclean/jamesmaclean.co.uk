@@ -1,6 +1,6 @@
 /public
 /_site
-/src/_includes/css
+/src/css
 .vscode
 
 # Created by https://www.gitignore.io/api/node,macos,windows
