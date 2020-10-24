@@ -1,10 +1,13 @@
 ---
+layout: layouts/main.njk
 path: "/no-one-cares"
 date: "2020-10-10"
 title: "No one cares about CSS"
 tags: ['post', 'Writing practice']
 excerpt: "After ending 10 years writing CSS, I can tell you, no one cares"
 ---
+
+# {{ title }}
 
 ## Define 'cares'
 
