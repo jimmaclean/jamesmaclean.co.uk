@@ -5,39 +5,52 @@ title: James Maclean
 <!doctype html>
 <html lang="EN">
 
-<head>
-  <meta charset="utf-8">
-  <title>{{ title }}</title>
-  {# <meta name="description" content=""> #}
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="utf-8">
+        <title>{{ title }}</title>
+        {# <meta name="description" content=""> #}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  {# <meta property="og:title" content="">
+        {# <meta property="og:title" content="">
   <meta property="og:type" content="">
   <meta property="og:url" content="">
   <meta property="og:image" content=""> #}
 
-  {# <link rel="manifest" href="site.webmanifest">
+        {# <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png"> #}
-  <!-- Place favicon.ico in the root directory -->
+        <!-- Place favicon.ico in the root directory -->
 
-  {# <meta name="theme-color" content="#fafafa"> #}
-  <style>
-    {% include "css/main.css" ignore missing %}
-  </style>
-       <link
+        {# <meta name="theme-color" content="#fafafa"> #}
+        <style>
+            {% include "css/main.css" ignore missing %}
+        </style>
+        <link
         rel="stylesheet"
         href="/css/main.css"
         type="text/css"
-      />
-     <link
+/>
+        <link
         rel="stylesheet"
         href="//fonts.googleapis.com/css?family=Oxygen|Radley"
         type="text/css"
-      />
-</head>
+/>
+    </head>
 
     <body>
-        <div class="wrap m-t-10">{{ content | safe }}</div>
+
+        {% set navPages = collections.all | eleventyNavigation %}
+        <nav class="wrap">
+            <ul>
+                {%- for entry in navPages %}
+                    <li>
+                        <a href="{{ entry.url | url }}" {% if entry.url == page.url %} class="active"{% endif %}>{{ entry.title }}</a>
+                    </li>
+                {%- endfor %}
+            </ul>
+        </nav>
+
+        <div class="wrap">{{ content | safe }}</div>
+
     </body>
 
 </html>
