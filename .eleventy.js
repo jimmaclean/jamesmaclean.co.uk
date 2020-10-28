@@ -3,6 +3,7 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPassthroughCopy("src/css");
+
   return {
     // templateFormats: [
     //   "md",
@@ -20,7 +21,7 @@ module.exports = function(eleventyConfig) {
 
     // You can also pass this in on the command line using `--pathprefix`
     // pathPrefix: "/",
-
+    markdownTemplateEngine: "njk",
     // These are all optional, defaults are shown:
     dir: {
       input: "src",

@@ -1,0 +1,5 @@
+{% macro spacer(size) %}
+<div class="spacer{% if size <= 20 %} spacer--small{% endif %}" style="height: {{size}}px; width: {{size}}px;">
+  <span>{{size}}</span>
+</div>
+{% endmacro %}

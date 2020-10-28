@@ -1,31 +1,35 @@
 ---
+layout: layouts/main.njk
 path: "/utility-spacing"
 date: "2019-07-02"
 title: "Responsive utility CSS spacing"
-tags: ['CSS','SASS', 'Webpack', 'Tailwind']
+tags: ['post','CSS','SASS', 'Webpack', 'Tailwind']
 excerpt: "Making a set of Tailwind inspired responsive spacing utility classes with SASS"
 ---
-import Calculator from "../components/css-size-calculator"
-import Spacer from "../components/spacer-box"
-import SideScroller from "../components/containers/side-scroller"
+
+{% from 'spacer.njk' import spacer %}
+
+# {{ title }}
 
 ## The problem
 When a designer is working on a UI in something like Sketch they will get the spacing to look how they want, normally based on a pre-defined spacing scale.
 
-<SideScroller blockClassName="whitespace-nowrap">
-    <Spacer size={16}/>
-    <Spacer size={20}/>
-    <Spacer size={24}/>
-    <Spacer size={32}/>
-    <Spacer size={40}/>
-    <Spacer size={48}/>
-    <Spacer size={56}/>
-    <Spacer size={64}/>
-    <Spacer size={72}/>
-    <Spacer size={80}/>
-    <Spacer size={96}/>
-    <Spacer size={128}/>
-</SideScroller>
+<div class="side-scroller">
+<div class="side-scroller-child whitespace-nowrap">
+    {{ spacer('16') }}
+    {{ spacer('20') }}
+    {{ spacer('24') }}
+    {{ spacer('32') }}
+    {{ spacer('40') }}
+    {{ spacer('48') }}
+    {{ spacer('56') }}
+    {{ spacer('64') }}
+    {{ spacer('72') }}
+    {{ spacer('80') }}
+    {{ spacer('96') }}
+    {{ spacer('128') }}
+</div>
+</div>
 
 ## Fist solution - Spacing SASS variables and a class for each
 
@@ -157,7 +161,7 @@ I opted to leave the base 'small' size out of the loops so didn't have to includ
 
 This can produce a surprizing amount of CSS even when you are sure you only included the useful stuff.
 
-<Calculator className="m-b-4" breakpoints="3" values="20" classes="12"/>
+<!-- <Calculator className="m-b-4" breakpoints="3" values="20" classes="12"/> -->
 
 500 css classes and weighted in at about 24kb, which seems like a lot for something so simple.
 
