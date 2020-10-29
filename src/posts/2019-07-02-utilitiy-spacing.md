@@ -161,7 +161,7 @@ I opted to leave the base 'small' size out of the loops so didn't have to includ
 
 This can produce a surprizing amount of CSS even when you are sure you only included the useful stuff.
 
-<!-- <Calculator className="m-b-4" breakpoints="3" values="20" classes="12"/> -->
+{% include 'css-size-calculator.njk' %}
 
 500 css classes and weighted in at about 24kb, which seems like a lot for something so simple.
 

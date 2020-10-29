@@ -1,0 +1,93 @@
+<div class="calculator p-2 md--p-4">
+    <ol>
+        <li>
+            <label for="breakpoints">Breakpoints:</label>
+            <input
+                name="breakpoints"
+                type="number"
+                min="1"
+                max="10"
+                id="js-breakpoints-input"
+            />
+        </li>
+        <li>
+            <label for="values">Values:</label>
+            <input
+                name="values"
+                type="number"
+                min="1"
+                max="20"
+                id="js-values-input"
+            />
+        </li>
+            <li>
+            <label for="classes">Classes:</label>
+            <input
+                name="classes"
+                type="number"
+                min="1"
+                max="20"
+                id="js-classes-input"
+            />
+        </li>
+    </ol>
+    <h4 class="m-t-2 md--m-t-4 m-b-2 md--m-b-4">
+        Total CSS classes:
+        <strong id="js-total-output"></strong>
+    </h4>
+    <button class="m-b-0" id="js-reset-button">
+        Reset
+    </button>
+</div>
+
+<script>
+
+(function(){
+    const breakpoints = document.getElementById('js-breakpoints-input');
+    const values = document.getElementById('js-values-input');
+    const classes = document.getElementById('js-classes-input');
+    const total = document.getElementById('js-total-output');
+    const reset = document.getElementById('js-reset-button');
+
+    const inputs = [breakpoints, values, classes];
+
+    const calculator = {
+        INITIAL_VALUES: {
+            breakpoints: 3,
+            values: 20,
+            classes: 12,
+        },
+        inputValues: {},
+
+        getTotal: function(){
+            return this.inputValues.breakpoints * this.inputValues.values * this.inputValues.classes
+        },
+        reset: function() {
+            this.inputValues = {...this.INITIAL_VALUES}
+        }
+    }
+
+    const render = () => {
+        inputs.forEach(input => {
+            input.value = calculator.inputValues[input.name];
+        })
+        total.innerHTML = calculator.getTotal();
+    }
+    
+    calculator.reset();
+    render();
+
+    inputs.forEach(input => {
+        input.addEventListener('change', e => {
+            calculator.inputValues[event.target.name] = event.target.value
+            render();
+        })
+    })
+    reset.addEventListener('click', e => {
+        calculator.reset();
+        render();
+    })
+
+})()
+
+</script>
