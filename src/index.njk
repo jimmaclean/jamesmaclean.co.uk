@@ -56,10 +56,12 @@ pagination:
 <h3>Latest blog posts</h3>
 
 {% for post in posts %}
-    <ul>
-        <li>
-            <a href="{{ post.url | url }}">{{ post.data.title }}</a>
-            <span>{{ post.date.toLocaleDateString('en-GB') }}</span>
-        </li>
-    </ul>
+    {% if 'Writing practice' not in post.data.tags %}
+        <ul>
+            <li>
+                <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+                <span>{{ post.date.toLocaleDateString('en-GB') }}</span>
+            </li>
+        </ul>
+    {% endif %}
 {% endfor %}
