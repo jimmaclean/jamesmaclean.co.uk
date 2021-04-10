@@ -1,0 +1,41 @@
+---
+layout: layouts/main.njk
+title: Fund name generator
+eleventyNavigation:
+  key: Fund name
+pagination:
+  data: collections.post
+  size: 10
+  reverse: true
+  alias: posts
+---
+
+<h1 class="m-b-6">{{ title }}</h1>
+<button id="js-generate-button">Generate</button>
+<p id="js-generate-output"></p>
+
+<script>
+
+    (function () {
+        const output = document.getElementById('js-generate-output');
+        const button = document.getElementById('js-generate-button');
+
+        function render(message) {
+            output.innerHTML = message;
+        };
+
+        function handelClick() {
+            fetch('https://ppdeta9gib.execute-api.us-east-1.amazonaws.com/fund')
+                .then(response => response.json())
+                .then(data => {
+                    render(data.message);
+                })
+        };
+
+        button.addEventListener('click', function (event) {
+            event.preventDefault();
+            handelClick();
+        });
+
+    })()
+</script>
