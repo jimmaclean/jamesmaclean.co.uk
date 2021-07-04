@@ -1,75 +1,29 @@
-<!doctype html>
-	<!--[if lt IE 7]><html class="no-js ie6 oldie" lang="en"><![endif]-->
-	<!--[if IE 7]><html class="no-js ie7 oldie" lang="en"><![endif]-->
-	<!--[if IE 8]><html class="no-js ie8 oldie" lang="en"><![endif]-->
-	<!--[if IE 9]><html class="no-js ie9 oldie" lang="en"><![endif]-->
-	<!--[if IE 10]><html class="no-js ie10 oldie" lang="en"><![endif]-->
-	<!--[if gt IE 10]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-	<meta charset="utf-8" />
-	<title>Portfolio</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
-	<!-- Styles -->
-	<link href="http://fonts.googleapis.com/css?family=Oxygen|Radley" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" href="../main.css" >
+---
+layout: layouts/main.njk
+title: Client search
+---
 
 
-	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-	<!--[if lt IE 9]>
-	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-</head>
+<h1>Client search</h1>
+<h3>User Needs</h3>
+<p>To find the client (who may be on the end of the phone) as quickly as possible</p>
 
-<html>
-<body>
-	
-<nav class="wrap">
-	<a href="../">Home</a>
-</nav>
+<h3>Technical requirements</h3>
+<p>Most banks have a two tiered data structure to store client data. e.g. Firms and people at a firm. Some banks are not as concerned with finding the people as the deal is technically done with the Firm. (This is something that will be tolerated less with rising regulatory requirements)</p>
 
+<h3>Design</h3>
+<p>After researching traditional search UI patterns and some modern examples I drew an interaction model for using a keyboard and/or a mouse to navigate through two levels of search in one UI space.</p>
 
+<img src="/assets/01-02-01-user-flow-searching-clients-and-users.png" alt="">
 
+<p>The trader types in a term and can select a result if it appears with keyboard or mouse.
+If not then they can add more characters or focus a Firm (tier 1) and press 'Tab' to apply a filter to further search terms down to that Firm.</p>
 
-<div class="wrap">
-    <h1>Client search</h1>
-    <h3>User Needs</h3>
-    <p>To find the client (who may be on the end of the phone) as quickly as possible</p>
+<img src="/assets/01-02-02-searching-users-ixd.gif" alt="">
+<img src="/assets/01-02-03-st-searching.jpg" alt="">
 
-    <h3>Technical requirements</h3>
-    <p>Most banks have a two tiered data structure to store client data. e.g. Firms and people at a firm. Some banks are not as concerned with finding the people as the deal is technically done with the Firm. (This is something that will be tolerated less with rising regulatory requirements)</p>
-
-    <h3>Design</h3>
-    <p>After researching traditional search UI patterns and some modern examples I drew an interaction model for using a keyboard and/or a mouse to navigate through two levels of search in one UI space.</p>
-
+<p>After the trader has the client the are looking for they use the sales ticket to enter the trade details.</p>
+<a href="/ux/caplin/sales-ticket">Read more -></a>
+<div class="back-link">
+    <p><a href="./"><- Go back to the overview of this project</a></p>
 </div>
-<div class="wrap wide">
-    <img src="/assets/01-02-01-user-flow-searching-clients-and-users.png" alt="">
-</div>
-<div class="wrap">
-    <p>The trader types in a term and can select a result if it appears with keyboard or mouse.
-    If not then they can add more characters or focus a Firm (tier 1) and press 'Tab' to apply a filter to further search terms down to that Firm.</p>
-
-
-</div>
-<div class="wrap wide">
-    <img src="/assets/01-02-02-searching-users-ixd.gif" alt="">
-    <hr>
-    <img src="/assets/01-02-03-st-searching.jpg" alt="">
-
-</div>
-<div class="wrap">
-    <p>After the trader has the client the are looking for they use the sales ticket to enter the trade details.</p>
-    <a href="/ux/caplin/sales-ticket">Read more -></a>
-    <div class="back-link">
-        <p><a href="./"><- Go back to the overview of this project</a></p>
-    </div>
-
-</div>
-
-
-
-
-
-
-</body>
-</html>
