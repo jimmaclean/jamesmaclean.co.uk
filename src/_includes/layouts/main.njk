@@ -26,13 +26,12 @@ title: James Maclean
             {% include "css/main.css" ignore missing %}
         </style>
         <link rel="stylesheet" href="/css/main.css" type="text/css"/>
-        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Oxygen|Radley" type="text/css"/>
     </head>
 
     <body>
 
         {% set navPages = collections.all | eleventyNavigation %}
-        <nav class="wrap">
+        <nav>
             <ul>
                 {%- for entry in navPages %}
                     <li>
@@ -42,7 +41,7 @@ title: James Maclean
             </ul>
         </nav>
 
-        <div class="wrap">{{ content | safe }}</div>
+        <div>{{ content | safe }}</div>
 
     </body>
 
