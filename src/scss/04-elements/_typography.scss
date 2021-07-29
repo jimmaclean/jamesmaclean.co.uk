@@ -1,0 +1,15 @@
+
+
+@each $breakpointKey, $breakpointValue in $typography-map {
+  @include breakpointWrap($breakpointKey) {
+    @each $elementKey, $elementValue in $breakpointValue {
+      #{$elementKey},
+      .#{$elementKey} {
+        font-size: map-get($elementValue, fs);
+        line-height: map-get($elementValue, lh);
+        margin-top: map-get($elementValue, mt);
+        margin-bottom: map-get($elementValue, mb);
+      }
+    }
+  }
+}

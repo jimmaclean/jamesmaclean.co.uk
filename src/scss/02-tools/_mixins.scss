@@ -1,0 +1,9 @@
+@mixin breakpointWrap($screenSize) {
+    @if map-get($breakpoints, $screenSize) == 0 {
+      @content;
+    } @else {
+      @media screen and (min-width: map-get($breakpoints, $screenSize)) {
+        @content;
+      }
+    }
+  }

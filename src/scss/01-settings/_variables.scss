@@ -1,3 +1,37 @@
+$breakpoints: (
+  sm: 0px,
+  md: 640px,
+  lg: 1024px,
+  xl: 1200px,
+  xxl: 1440px
+);
+
+$space-1: 8px;
+$space-2: 16px;
+$space-3: 20px;
+$space-4: 24px;
+$space-5: 32px;
+$space-6: 40px;
+$space-7: 48px;
+$space-8: 56px;
+$space-9: 64px;
+$space-10: 72px;
+
+$space: (
+  0: 0,
+  1: $space-1,
+  2: $space-2,
+  3: $space-3,
+  4: $space-4,
+  5: $space-5,
+  6: $space-6,
+  7: $space-7,
+  8: $space-8,
+  9: $space-9,
+  10: $space-10
+);
+
+
 $sm-lh: 26px;
 $md-lh: 28px;
 /* prettier-ignore */
@@ -23,45 +57,3 @@ $typography-map: (
     small: (fs: 15px, lh: 22px,       mt: 22px,       mb: 22px,      ),
   )
 );
-
-@each $breakpointKey, $breakpointValue in $typography-map {
-  @include breakpointWrap($breakpointKey) {
-    @each $elementKey, $elementValue in $breakpointValue {
-      #{$elementKey},
-      .#{$elementKey} {
-        font-size: map-get($elementValue, fs);
-        line-height: map-get($elementValue, lh);
-        margin-top: map-get($elementValue, mt);
-        margin-bottom: map-get($elementValue, mb);
-      }
-    }
-  }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-weight: normal;
-}
-
-h1,
-h2,
-h3 {
-  font-family: "Radley", serif;
-}
-
-.subtitle {
-  font-size: 12px;
-  line-height: 1.3;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin: 1em 0;
-}
-
-code {
-  font-size: 18px;
-  line-height: 1.6;
-  font-family: monospace;
-}
