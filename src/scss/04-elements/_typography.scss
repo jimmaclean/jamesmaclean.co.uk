@@ -7,8 +7,9 @@
 
       #{$elementKey},
       .#{$elementKey} {
-        font-size: px-to-rem($font-size);
+        font-size: $font-size;
         line-height: line-height-calc($font-size, map-get($elementValue, lh));
+        letter-spacing: px-to-em($font-size, map-get($elementValue, ls));
         margin-top: 0;
         margin-bottom: px-to-em($font-size, map-get($elementValue, mb));
       }

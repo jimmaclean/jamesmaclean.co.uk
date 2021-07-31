@@ -1,16 +1,17 @@
 @function px-to-rem($value) {
+    @if $value == 0 {
+        @return $value;
+    }
     @return $value / $rem-base * 1rem;
 }
 
 @function px-to-em($font-size, $value) {
-    @return strip-unit($value / $font-size) * 1em;
+    @if $value == 0 {
+        @return $value;
+    }
+    @return $value / $font-size * 1em;
 }
 
 @function line-height-calc($font-size, $line-height) {
     @return $line-height / $font-size;
-}
-
-@function strip-unit($num) {
-    @return $num;
-    @return $num / ($num * 0 + 1);
 }
