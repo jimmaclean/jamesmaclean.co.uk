@@ -1,4 +1,6 @@
-
+body {
+  font-family: 'barlow', sans-serif;
+}
 
 @each $breakpointKey, $breakpointValue in $typography-map {
   @include breakpointWrap($breakpointKey) {
