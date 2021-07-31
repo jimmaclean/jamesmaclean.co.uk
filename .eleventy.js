@@ -5,6 +5,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy({"static": "/"});
 
+  eleventyConfig.addWatchTarget("./src/scss/");
+
   return {
     // templateFormats: [
     //   "md",

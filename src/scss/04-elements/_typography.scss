@@ -3,12 +3,14 @@
 @each $breakpointKey, $breakpointValue in $typography-map {
   @include breakpointWrap($breakpointKey) {
     @each $elementKey, $elementValue in $breakpointValue {
+      $font-size: map-get($elementValue, fs);
+
       #{$elementKey},
       .#{$elementKey} {
-        font-size: map-get($elementValue, fs);
-        line-height: map-get($elementValue, lh);
-        margin-top: map-get($elementValue, mt);
-        margin-bottom: map-get($elementValue, mb);
+        font-size: px-to-rem($font-size);
+        line-height: line-height-calc($font-size, map-get($elementValue, lh));
+        margin-top: 0;
+        margin-bottom: px-to-em($font-size, map-get($elementValue, mb));
       }
     }
   }
