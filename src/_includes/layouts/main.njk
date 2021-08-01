@@ -22,10 +22,10 @@ title: James Maclean
         <link rel="manifest" href="/site.webmanifest">
         <meta name="theme-color" content="#f4eeec">
         
-        <style>
+        {# <style>
             {% include "css/main.css" ignore missing %}
-        </style>
-        <link rel="stylesheet" href="{{ 'css/main.css' }}" type="text/css"/>
+        </style> #}
+        <link rel="stylesheet" href="{{ '/css/main.css' | url }}" type="text/css"/>
     </head>
 
     <body>
