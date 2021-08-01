@@ -1,5 +1,39 @@
+:root[data-font-size="smaller"] {
+  font-size: 0.8rem;
+}
+:root[data-font-size="larger"] {
+  font-size: 1.4rem;
+}
 body {
   font-family: 'barlow', sans-serif;
+}
+
+ol,
+ul {
+  @include styleLike("p");
+  li {
+      margin-bottom: 0.5em;
+  }
+}
+
+dl {
+  @include styleLike("p");
+  dt {
+      font-weight: bold;
+  }
+  dd {
+      margin-left: 0;
+  }
+}
+
+td {
+  @include styleLike("p");
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #333333;
 }
 
 @each $breakpointKey, $breakpointValue in $typography-map {
@@ -13,8 +47,7 @@ body {
         line-height: line-height-calc($font-size, map-get($elementValue, lh));
         letter-spacing: px-to-em($font-size, map-get($elementValue, ls));
         margin-top: 0;
-        margin-bottom: 0;
-        // margin-bottom: px-to-em($font-size, map-get($elementValue, mb));
+        margin-bottom: map-get($elementValue, mb);
       }
     }
   }

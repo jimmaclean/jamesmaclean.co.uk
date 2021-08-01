@@ -7,3 +7,17 @@
     }
   }
 }
+
+@mixin styleLike($element) {
+  @each $breakpoint-key, $breakpoint-val in $typography-map {
+    @include breakpointWrap($breakpoint-key) {
+      $type-val: map-get($breakpoint-val, $element);
+
+      font-size: map-get($type-val, fs);
+      line-height: map-get($type-val, lh);
+      letter-spacing: map-get($type-val, ls);
+      margin-top: 0;
+      margin-bottom: map-get($type-val, mb);
+    }
+  }
+}
