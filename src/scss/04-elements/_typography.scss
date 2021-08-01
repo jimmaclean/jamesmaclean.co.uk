@@ -13,8 +13,13 @@ body {
         line-height: line-height-calc($font-size, map-get($elementValue, lh));
         letter-spacing: px-to-em($font-size, map-get($elementValue, ls));
         margin-top: 0;
-        margin-bottom: px-to-em($font-size, map-get($elementValue, mb));
+        margin-bottom: 0;
+        // margin-bottom: px-to-em($font-size, map-get($elementValue, mb));
       }
     }
   }
+}
+
+h6, .h6 {
+  text-transform: uppercase;
 }
