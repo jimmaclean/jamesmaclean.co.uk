@@ -1,0 +1,68 @@
+@keyframes slidein {
+    from {
+      opacity: 0.2;
+      transform: translateX(50%);
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    to {
+      transform: translateX(0%);
+    }
+  }
+  .overlay-wrap {
+    display: inline-block;
+    position: relative;
+    button {
+      z-index: 2;
+      position: relative;
+    }
+  }
+  
+  .overlay-panel {
+    z-index: 2;
+    min-width: 200px;
+    padding: 1em;
+    background-color: var(--bg-color);
+    position: absolute;
+    left: 0;
+    opacity: 1;
+    transform: translateX(0%);
+    transition: opacity 300ms, transform 400ms;
+    animation-direction: reverse;
+    &[aria-hidden="true"] {
+      transform: translateX(100%);
+      opacity: 0;
+      pointer-events: none;
+      &.invisible {
+        visibility: hidden;
+      }
+    }
+  }
+  .overlay-screen {
+    z-index: 1;
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.5;
+    transition: opacity 200ms ease;
+    &[aria-hidden="true"] {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  .visible-tab-only {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    &:focus {
+      opacity: 1;
+      background: var(--bg-color);
+    }
+  }

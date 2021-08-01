@@ -6,12 +6,13 @@
 
 @import "03-generic/reset";
 
-@import "04-elements/color";
+@import "04-elements/document";
 @import "04-elements/typography";
 /* purgecss end ignore */
 
 @import "06-components/calculator";
 @import "06-components/navigation";
 @import "06-components/spacer";
+@import "06-components/accessibility-controls";
 
 @import "07-utilities/space";

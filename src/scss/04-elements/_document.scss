@@ -44,3 +44,15 @@ body {
 a {
   color: var(--link-color);
 }
+
+*:focus {
+  outline: none;
+}
+body {
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  &[data-keyboard-mode="true"] *:focus {
+    outline: 3px dotted var(--text-color);
+    outline-offset: 3px;
+  }
+}

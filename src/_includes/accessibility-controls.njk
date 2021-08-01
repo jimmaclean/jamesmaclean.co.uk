@@ -1,0 +1,228 @@
+<div class="overlay-wrap">
+  <button type="button" data-overlay-button="text">Change text size</button>
+  <div class="overlay-panel" aria-hidden="true" data-overlay-panel="text">
+    <button type="button" data-overlay-close-button="text">Close</button>
+    <fieldset>
+      <legend>Text size</legend>
+      <div>
+        <input type="radio" id="font-size-smaller" name="font-size" value="smaller">
+        <label for="font-size-smaller">Smaller</label>
+      </div>
+      <div>
+        <input type="radio" id="font-size-auto" name="font-size" value="auto" checked>
+        <label for="font-size-auto">Auto</label>
+      </div>
+      <div>
+        <input type="radio" id="font-size-larger" name="font-size" value="larger">
+        <label for="font-size-larger">Larger</label>
+      </div>
+    </fieldset>
+    <p tabindex=0 class="visible-tab-only">end of dialouge</p>
+  </div>
+  <div aria-hidden="true" class="overlay-screen" data-overlay-dimmer="text"></div>
+</div>
+<div class="overlay-wrap">
+  <button type="button" data-overlay-button="color">Change colour scheme</button>
+  <div class="overlay-panel" aria-hidden="true" data-overlay-panel="color">
+    <button type="button" data-overlay-close-button="color">Close</button>
+    <fieldset>
+      <legend>Color scheme</legend>
+      <div>
+        <input type="radio" id="color-scheme-light" name="color-scheme" value="light">
+        <label for="color-scheme-light">Light</label>
+      </div>
+      <div>
+        <input type="radio" id="color-scheme-auto" name="color-scheme" value="auto" checked>
+        <label for="color-scheme-auto">Auto</label>
+      </div>
+      <div>
+        <input type="radio" id="color-scheme-dark" name="color-scheme" value="dark">
+        <label for="color-scheme-dark">Dark</label>
+      </div>
+    </fieldset>
+    <p tabindex=0 class="visible-tab-only">end of dialouge</p>
+  </div>
+  <div aria-hidden="true" class="overlay-screen" data-overlay-dimmer="color"></div>
+</div>
+
+<script>
+function getKeyboardFocusableElements(element = document) {
+  return [
+    ...element.querySelectorAll(
+      'a, button, input, textarea, select, details,[tabindex]:not([tabindex="-1"])'
+    )
+  ].filter((el) => !el.hasAttribute("disabled"));
+}
+
+// https://uxdesign.cc/how-to-trap-focus-inside-modal-to-make-it-ada-compliant-6a50f9a70700
+function moveFocusWithin(event, firstElement, lastElement) {
+  if (event.shiftKey) {
+    if (document.activeElement === firstElement) {
+      lastElement.focus();
+      event.preventDefault();
+    }
+  } else {
+    if (document.activeElement === lastElement) {
+      firstElement.focus();
+      event.preventDefault();
+    }
+  }
+}
+function isTabEvent(event) {
+  return event.key === "Tab" || event.keyCode === 9;
+}
+function isEscapeEvent(event) {
+  return event.key === "Escape" || event.keyCode == 27;
+}
+
+const htmlElement = document.documentElement;
+const fontSizeRadioInputs = Array.from(
+  document.querySelectorAll('[name="font-size"]')
+);
+const colorSchemeRadioInputs = Array.from(
+  document.querySelectorAll('[name="color-scheme"]')
+);
+
+fontSizeRadioInputs.map((input) => {
+  input.addEventListener("click", (e) => {
+    setFontSizeTo(e.target.value);
+  });
+});
+
+colorSchemeRadioInputs.map((input) => {
+  input.addEventListener("click", (e) => {
+    setColorSchemeTo(e.target.value);
+  });
+});
+
+function setFontSizeTo(size) {
+  htmlElement.setAttribute("data-font-size", size);
+}
+
+function setColorSchemeTo(colorScheme) {
+  htmlElement.setAttribute("data-color-scheme", colorScheme);
+}
+
+const allOverlays = [];
+class Overlay {
+  constructor(id) {
+    this.id = id;
+    this.isOpen = false;
+    const panel = document.querySelector(`[data-overlay-panel="${id}"]`);
+    const focusableElements = getKeyboardFocusableElements(panel);
+    this.elements = {
+      button: document.querySelector(`[data-overlay-button="${id}"]`),
+      closeButton: document.querySelector(
+        `[data-overlay-close-button="${id}"]`
+      ),
+      panel: panel,
+      firstElement: focusableElements[0],
+      lastElement: focusableElements[focusableElements.length - 1],
+      dimmer: document.querySelector(`[data-overlay-dimmer="${id}"]`)
+    };
+
+    this.elements.panel.classList.add("invisible");
+    this.elements.panel.addEventListener(
+      "transitionend",
+      this.toggleInvisibleClass
+    );
+
+    this.elements.button.addEventListener("click", () => {
+      this.isOpen === true ? this.handelClose() : this.handelOpen();
+    });
+    this.elements.dimmer.addEventListener("click", () => this.handelClose());
+    this.elements.closeButton &&
+      this.elements.closeButton.addEventListener("click", () =>
+        this.handelClose()
+      );
+
+    allOverlays.push(this);
+  }
+
+  open() {
+    this.elements.panel.setAttribute("aria-hidden", false);
+    this.elements.dimmer.setAttribute("aria-hidden", false);
+    this.trapFocus();
+    this.isOpen = true;
+  }
+
+  close() {
+    this.elements.panel.setAttribute("aria-hidden", true);
+    this.elements.dimmer.setAttribute("aria-hidden", true);
+    this.releaseFocus();
+    this.isOpen = false;
+  }
+
+  handelClose() {
+    this.close();
+    this.elements.button.focus();
+  }
+
+  handelOpen() {
+    allOverlays.map((overlay) => {
+      overlay.id === this.id ? overlay.open() : overlay.close();
+    });
+  }
+
+  trapFocus() {
+    this.elements.firstElement.focus();
+    document.addEventListener("keydown", this.handelKeydown);
+  }
+
+  releaseFocus() {
+    document.removeEventListener("keydown", this.handelKeydown);
+  }
+
+  handelKeydown = (event) => {
+    isTabEvent(event) &&
+      moveFocusWithin(
+        event,
+        this.elements.firstElement,
+        this.elements.lastElement
+      );
+    isEscapeEvent(event) && this.handelClose();
+  };
+
+  toggleInvisibleClass(event) {
+    if (event.propertyName === "opacity") return;
+
+    let el = event.target;
+    switch (el.getAttribute("aria-hidden")) {
+      case "true":
+        el.classList.add("invisible");
+        break;
+      case "false":
+        el.classList.remove("invisible");
+        break;
+    }
+  }
+}
+
+const overlayButtons = Array.from(
+  document.querySelectorAll("[data-overlay-button]")
+);
+
+overlayButtons.map((button) => {
+  new Overlay(button.dataset.overlayButton);
+});
+
+document.addEventListener("keydown", (event) => {
+  (isTabEvent(event) || isEscapeEvent(event)) && setKeyboardModeOn();
+});
+document.addEventListener(
+  "click",
+  (event) => {
+    event.detail !== 0 && setKeyboardModeOff();
+  },
+  true
+);
+
+function setKeyboardModeOn() {
+  document.body.setAttribute("data-keyboard-mode", true);
+}
+function setKeyboardModeOff() {
+  document.body.setAttribute("data-keyboard-mode", false);
+}
+setKeyboardModeOff();
+
+</script>

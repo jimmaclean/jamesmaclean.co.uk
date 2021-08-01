@@ -43,7 +43,7 @@ hr {
 
       #{$elementKey},
       .#{$elementKey} {
-        font-size: $font-size;
+        font-size: px-to-rem($font-size);
         line-height: line-height-calc($font-size, map-get($elementValue, lh));
         letter-spacing: px-to-em($font-size, map-get($elementValue, ls));
         margin-top: 0;
