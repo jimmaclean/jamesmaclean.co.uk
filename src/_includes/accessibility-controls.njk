@@ -83,13 +83,24 @@ const colorSchemeRadioInputs = Array.from(
   document.querySelectorAll('[name="color-scheme"]')
 );
 
+var currentFontSize = window.localStorage.getItem("fontSize");
+var currentColorScheme = window.localStorage.getItem("colorScheme");
+
 fontSizeRadioInputs.map((input) => {
+  if(currentFontSize && currentFontSize === input.value) {
+    setFontSizeTo(currentFontSize);
+    input.checked = true;
+  }
   input.addEventListener("click", (e) => {
     setFontSizeTo(e.target.value);
   });
 });
 
 colorSchemeRadioInputs.map((input) => {
+  if(currentColorScheme && currentColorScheme === input.value) {
+    setColorSchemeTo(currentColorScheme);
+    input.checked = true;
+  }
   input.addEventListener("click", (e) => {
     setColorSchemeTo(e.target.value);
   });
@@ -97,10 +108,12 @@ colorSchemeRadioInputs.map((input) => {
 
 function setFontSizeTo(size) {
   htmlElement.setAttribute("data-font-size", size);
+  window.localStorage.setItem("fontSize", size);
 }
 
 function setColorSchemeTo(colorScheme) {
   htmlElement.setAttribute("data-color-scheme", colorScheme);
+  window.localStorage.setItem("colorScheme", colorScheme);
 }
 
 const allOverlays = [];
