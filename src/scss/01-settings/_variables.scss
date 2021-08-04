@@ -35,7 +35,7 @@ $rem-base: 16px;
 /* prettier-ignore */
 $typography-map: (
   sm: (
-    h1:    (fs: 48px, lh: 46px, ls: -0.67px, mb: 0.5em, ),
+    h1:    (fs: 48px, lh: 46px, ls: -0.5px, mb: 0.5em, ),
     h2:    (fs: 32px, lh: 38px, ls: -0.25px, mb: 0.5em, ),
     h3:    (fs: 28px, lh: 34px, ls: -0.25px, mb: 0.5em, ),
     h4:    (fs: 24px, lh: 28px, ls: 0,       mb: 0.5em, ),
@@ -46,11 +46,11 @@ $typography-map: (
     small: (fs: 13px, lh: 21px, ls: 0.3px,   mb: 1em, ),
   ),
   md: (
-    h1:    (fs: 96px, lh: 92px, ls: -2px,    mb: null, ),
+    h1:    (fs: 96px, lh: 92px, ls: -3px,    mb: null, ),
     h2:    (fs: 62px, lh: 74px, ls: 0.5px,   mb: null, ),
-    h3:    (fs: 48px, lh: 58px, ls: -0.43px, mb: null, ),
+    h3:    (fs: 48px, lh: 58px, ls: -0.5px, mb: null, ),
     h4:    (fs: 32px, lh: 38px, ls: 0,       mb: null, ),
-    h5:    (fs: 22px, lh: 26px, ls: 0.6px,   mb: null, ),
+    h5:    (fs: 22px, lh: 26px, ls: 0.5px,   mb: null, ),
     h6:    (fs: 14px, lh: 17px, ls: 0.75px,  mb: null, ),
     large: (fs: 24px, lh: 34px, ls: 0,       mb: null, ),
     p:     (fs: 20px, lh: 30px, ls: 0,       mb: null, ),
