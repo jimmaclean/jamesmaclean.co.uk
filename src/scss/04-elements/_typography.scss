@@ -39,15 +39,9 @@ hr {
 @each $breakpointKey, $breakpointValue in $typography-map {
   @include breakpointWrap($breakpointKey) {
     @each $elementKey, $elementValue in $breakpointValue {
-      $font-size: map-get($elementValue, fs);
-
       #{$elementKey},
       .#{$elementKey} {
-        font-size: px-to-rem($font-size);
-        line-height: line-height-calc($font-size, map-get($elementValue, lh));
-        letter-spacing: px-to-em($font-size, map-get($elementValue, ls));
-        margin-top: 0;
-        margin-bottom: map-get($elementValue, mb);
+        @include styleLikeAtBreakpoint($elementKey, $breakpointKey);
       }
     }
   }
