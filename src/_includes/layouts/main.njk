@@ -31,11 +31,11 @@ title: James Maclean
 
     <body>
         {% set navPages = collections.all | eleventyNavigation %}
-        <nav>
-            <ul>
+        <nav class="navigation">
+            <ul class="navigation__list">
                 {%- for entry in navPages %}
-                    <li>
-                        <a href="{{ entry.url | url }}" {% if entry.url == page.url %} class="active"{% endif %}>{{ entry.title }}</a>
+                    <li class="navigation__item">
+                        <a href="{{ entry.url | url }}" class="navigation__link {% if entry.url == page.url %}navigation__link--active{% endif %}">{{ entry.title }}</a>
                     </li>
                 {%- endfor %}
             </ul>
