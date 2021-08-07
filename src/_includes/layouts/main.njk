@@ -31,7 +31,7 @@ title: James Maclean
 
     <body>
         {% set navPages = collections.all | eleventyNavigation %}
-        <nav class="navigation">
+        <nav class="navigation layout-wrap">
             <ul class="navigation__list">
                 {%- for entry in navPages %}
                     <li class="navigation__item">
@@ -42,7 +42,7 @@ title: James Maclean
             {% include 'accessibility-controls.njk' %}
         </nav>
 
-        <div>{{ content | safe }}</div>
+        <div class="layout-wrap">{{ content | safe }}</div>
 
     </body>
 
