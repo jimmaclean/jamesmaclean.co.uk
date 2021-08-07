@@ -1,6 +1,9 @@
-<div class="overlay-wrap">
-  <button type="button" data-overlay-button="text">Change text size</button>
-  <div class="overlay-panel" aria-hidden="true" data-overlay-panel="text">
+<div class="accessibility-control">
+  <button class="accessibility-control__button" type="button" data-overlay-button="text">
+    <span class="accessibility-control__button-icon h3">Aa</span>
+    <span class="accessibility-control__button-label">Change text size</span>
+  </button>
+  <div class="accessibility-control__panel" aria-hidden="true" data-overlay-panel="text">
     <button type="button" data-overlay-close-button="text">Close</button>
     <fieldset>
       <legend>Text size</legend>
@@ -21,9 +24,10 @@
   </div>
   <div aria-hidden="true" class="overlay-screen" data-overlay-dimmer="text"></div>
 </div>
-<div class="overlay-wrap">
-  <button type="button" data-overlay-button="color">Change colour scheme</button>
-  <div class="overlay-panel" aria-hidden="true" data-overlay-panel="color">
+
+<div class="accessibility-control">
+  <button class="accessibility-controls__button" type="button" data-overlay-button="color">Change colour scheme</button>
+  <div class="accessibility-control__panel" aria-hidden="true" data-overlay-panel="color">
     <button type="button" data-overlay-close-button="color">Close</button>
     <fieldset>
       <legend>Color scheme</legend>

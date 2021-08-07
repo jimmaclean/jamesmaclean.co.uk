@@ -23,6 +23,8 @@
   font-size: px-to-rem($font-size);
   line-height: line-height-calc($font-size, map-get($element-value, lh));
   letter-spacing: px-to-em($font-size, map-get($element-value, ls));
+  font-weight: map-get($element-value, fw);
   margin-top: 0;
   margin-bottom: map-get($element-value, mb);
+
 }
