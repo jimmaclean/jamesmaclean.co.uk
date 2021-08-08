@@ -1,7 +1,14 @@
 .navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: $space-2;
+  padding-bottom: $space-2;
   &__list {
+    flex: 1 1 auto;
     list-style: none;
     margin-left: 0;
+    margin-bottom: 0;
     padding-left: 0;
     display: flex;
     flex-flow: row wrap;
@@ -16,9 +23,9 @@
   }
   $active-indicator-width: $space-2;
   &__link {
-    padding: $space-3 0;
+    padding: $space-2 0;
     position: relative;
-    color: var(--link-color);
+    color: var(--text-color);
     text-decoration: none;
     &::after {
       content: '';
@@ -29,7 +36,7 @@
       margin-left: -$active-indicator-width/2;
       width: $active-indicator-width;
       height: $space-tiny/2;
-      background-color: var(--link-color);
+      background-color: var(--text-color);
       opacity: 0;
     }
     &--active::after {
