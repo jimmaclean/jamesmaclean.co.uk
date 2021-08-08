@@ -4,65 +4,55 @@ title: James Maclean
 eleventyNavigation:
   key: Work
   order: 1
-pagination:
-  data: collections.post
-  size: 10
-  reverse: true
-  alias: posts
 ---
 
-<h1 class="m-b-1">{{ title }}</h1>
+<h1 class="m-t-10 m-b-1">{{ title }}</h1>
+<p class="large m-b-10">Frontend Developer, UX/UI</p>
 
-<h6 class="m-b-3">BA Graphic Design, MA User Experience Design</h4>
-<p>Frontend developer with UI/UX experience.</p>
-<ul>
-<li>
-    <a
-    href="https://www.linkedin.com/in/jamesmacleanjqim"
-    target="_blank"
-    rel="noopener noreferrer"
-    >
-        LinkedIn
-    </a>
-</li>
-<li>
-    <a
-    href="https://codepen.io/jqim"
-    target="_blank"
-    rel="noopener noreferrer"
-    >
-    Codepen
-    </a>
-</li>
-<li>
-    <a
-    href="https://github.com/jimmaclean"
-    target="_blank"
-    rel="noopener noreferrer"
-    >
-    GitHub
-    </a>
-</li>
-<li>
-    <a
-    href="ux"
-    target="_blank"
-    rel="noopener noreferrer"
-    >
-    UX portfolio
-    </a>
-</li>
+<h3>Development</h3>
+<p class="large m-b-5">
+    I approach coding work with consideration and care for my colleagues. 
+    I believe the best code can be worked on by some one else at a moments notice.
+</p>
+<h5 class="m-b-1">Code</h5>
+<ul class="m-b-5">
+    <li>
+        <a href="https://github.com/jimmaclean/redux-dogs">Redux dogs</a>
+    </li>
+    <li>
+        <a href="https://codepen.io/jqim">Codepen</a>
+    </li>
+    <li>
+        <a href="https://mybuilder.com">MyBuilder.com</a>
+    </li>
+    <li>
+        <a href="https://bitbucket.org/jqim87/pebbles/src/master/">Pebbles design system for Rock Insurance</a>
+    </li>
+</ul>
+<h5 class="m-b-1">Speaking</h5>
+<ul class="m-b-5">
+    <li>
+        <a href="https://www.youtube.com/watch?v=uaa6xLWYfjc&t=1170s">Tailwind and Symfony</a>
+    </li>
 </ul>
 
-<h3>Latest blog posts</h3>
+<h3 class="m-t-7">Design</h3>
+<p class="large m-b-5">
+    I employ a pragmatic combination of design, technical and product mangement skills
+    to produce effective interface designs.
+</p>
 
-{% for post in posts %}
-    {% if 'Writing practice' not in post.data.tags %}
-        <ul>
-            <li>
-                <a href="{{ post.url | url }}">{{ post.data.title }}</a>
-                <span>{{ post.date.toLocaleDateString('en-GB') }}</span>
-            </li>
-        </ul>
-    {% endif %}
-{% endfor %}
+<h4>Fidelity International</h4>
+<p>2015 - 2019</p>
+<p>I was instrumental in the re-design of the FundsNetwork advisory investment platform which has gone on to win industry awards based on features and functionality available to financial advisors.</p>
+<a href="ux/fidelity" class="m-b-5 block">View work</a>
+
+<h4>CitiBank</h4>
+<p>2014 - 2015</p>
+<p>I conducted user research on the trading floor at CitiBank and designed features in collaboration with members of the trading floor to manage the risk of changing a UI responsible for moving billions of dollars per day.</p>
+<a href="ux/citi" class="m-b-5 block">View work</a>
+
+<h4>Caplin systems</h4>
+<p>2011 - 2014</p>
+<p>Whilst at Caplin I designed key product features for the ‘Sales Trader’ product that are still part of the key offering nearly 10 years later. I liaised with client representatives from DBS bank, Santander and Deutsche Bank to develop foreign exchange trading interfaces used to move millions of dollars per day. I also wrote production CSS to aid development teams.</p>
+<a href="ux/caplin" class="m-b-5 block">View work</a>
