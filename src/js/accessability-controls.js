@@ -111,7 +111,6 @@ function getKeyboardFocusableElements(element = document) {
       this.elements.button.setAttribute("data-active", true);
       this.elements.panel.setAttribute("aria-hidden", false);
       this.elements.dimmer.setAttribute("aria-hidden", false);
-      this.trapFocus();
       this.isOpen = true;
     }
   
@@ -119,7 +118,6 @@ function getKeyboardFocusableElements(element = document) {
       this.elements.button.setAttribute("data-active", false);
       this.elements.panel.setAttribute("aria-hidden", true);
       this.elements.dimmer.setAttribute("aria-hidden", true);
-      this.releaseFocus();
       this.isOpen = false;
     }
   
@@ -153,16 +151,18 @@ function getKeyboardFocusableElements(element = document) {
       isEscapeEvent(event) && this.handelClose();
     };
   
-    toggleInvisibleClass(event) {
+    toggleInvisibleClass = (event) => {
       if (event.propertyName === "opacity") return;
   
       let el = event.target;
       switch (el.getAttribute("aria-hidden")) {
         case "true":
           el.classList.add("invisible");
+          this.releaseFocus();
           break;
         case "false":
           el.classList.remove("invisible");
+          this.trapFocus();
           break;
       }
     }

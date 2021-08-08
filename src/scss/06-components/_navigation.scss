@@ -2,8 +2,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: $space-2;
-  padding-bottom: $space-2;
+  padding-top: $space-1;
+  padding-bottom: $space-1;
+  padding-right: $space-1;
+  @include breakpointWrap('md') {
+    padding-top: $space-2;
+    padding-bottom: $space-2;
+}
   &__list {
     flex: 1 1 auto;
     list-style: none;
