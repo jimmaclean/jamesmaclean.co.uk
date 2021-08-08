@@ -39,7 +39,9 @@ title: James Maclean
                     </li>
                 {%- endfor %}
             </ul>
-            {% include 'accessibility-controls.njk' %}
+            <div class="navigation__right">
+                {% include 'accessibility-controls.njk' %}
+            </div>
         </nav>
 
         <div class="layout-wrap">{{ content | safe }}</div>

@@ -22,11 +22,11 @@
     position: relative;
     background: none;
     appearance: none;
-    border: px-to-rem(2px) solid transparent;
+    border: 2px solid transparent;
     border-radius: 50%;
     padding: 0;
-    height: $space-7;
-    width: $space-7;
+    height: px-to-rem($space-7);
+    width: px-to-rem($space-7);
     display: flex;
     align-items: center;
     justify-content: center;
