@@ -108,6 +108,7 @@ function getKeyboardFocusableElements(element = document) {
     }
   
     open() {
+      this.elements.button.setAttribute("data-active", true);
       this.elements.panel.setAttribute("aria-hidden", false);
       this.elements.dimmer.setAttribute("aria-hidden", false);
       this.trapFocus();
@@ -115,6 +116,7 @@ function getKeyboardFocusableElements(element = document) {
     }
   
     close() {
+      this.elements.button.setAttribute("data-active", false);
       this.elements.panel.setAttribute("aria-hidden", true);
       this.elements.dimmer.setAttribute("aria-hidden", true);
       this.releaseFocus();

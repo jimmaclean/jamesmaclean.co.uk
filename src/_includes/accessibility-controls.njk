@@ -1,6 +1,6 @@
 <div class="accessibility-control">
   <button class="accessibility-control__button" type="button" data-overlay-button="text">
-    <span class="accessibility-control__button-icon h3">Aa</span>
+    <span class="accessibility-control__button-icon accessibility-control__button-icon--text">Aa</span>
     <span class="accessibility-control__button-label">Change text size</span>
   </button>
   <div class="accessibility-control__panel" aria-hidden="true" data-overlay-panel="text">
@@ -26,7 +26,12 @@
 </div>
 
 <div class="accessibility-control">
-  <button class="accessibility-controls__button" type="button" data-overlay-button="color">Change colour scheme</button>
+  <button class="accessibility-control__button" type="button" data-overlay-button="color">
+    <span class="accessibility-control__button-icon accessibility-control__button-icon--color">
+      {% include "icons/paint-drops-light.njk" %}
+    </span>
+    <span class="accessibility-control__button-label">Change colour scheme</span>
+  </button>
   <div class="accessibility-control__panel" aria-hidden="true" data-overlay-panel="color">
     <button type="button" data-overlay-close-button="color">Close</button>
     <fieldset>

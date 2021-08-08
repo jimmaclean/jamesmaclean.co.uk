@@ -21,7 +21,7 @@
     position: relative;
     background: none;
     appearance: none;
-    border: px-to-rem(2px) solid var(--text-color);
+    border: px-to-rem(2px) solid transparent;
     border-radius: 50%;
     padding: 0;
     height: $space-8;
@@ -29,10 +29,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: border-color 200ms ease;
+    &:hover {
+      border-color: var(--link-color);
+    }
+    &:active,
+    &[data-active="true"] {
+      border-color: var(--text-color);
+    }
 
     &-icon {
-      margin-top: -0.125em;
-      margin-bottom: 0;
+      &--text {
+        @include styleLikeAtBreakpoint('h3', 'sm');
+        margin-top: -0.125em;
+        margin-bottom: 0;
+      }
+
     }
     &-label {
       display: none;
