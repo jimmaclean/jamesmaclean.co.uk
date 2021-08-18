@@ -36,6 +36,12 @@ hr {
   background-color: #333333;
 }
 
+a {
+  @include styleLike('p');
+  color: var(--link-color);
+  text-decoration: none;
+}
+
 @each $breakpointKey, $breakpointValue in $typography-map {
   @include breakpointWrap($breakpointKey) {
     @each $elementKey, $elementValue in $breakpointValue {
