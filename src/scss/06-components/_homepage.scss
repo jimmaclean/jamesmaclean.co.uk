@@ -1,6 +1,6 @@
-$homepage-col-cutter: $space-5;
+$homepage-col-cutter: space(5);
 .homepage {
-    margin-bottom: px-to-rem($space-9);
+    margin-bottom: space(9);
     @include breakpointWrap('lg') {
          &--row {
             display: flex;
@@ -13,11 +13,10 @@ $homepage-col-cutter: $space-5;
         &--col2 {
             flex: 0 0 60%;
             padding-left: $homepage-col-cutter/2;
-            padding-top: $space-2;
+            padding-top: space(2);
         }
     }
 }
-    
 
 .logo-caplin {
     height: px-to-rem(16px);

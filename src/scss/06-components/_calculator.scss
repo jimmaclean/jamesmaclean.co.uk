@@ -1,4 +1,4 @@
-$calculator-gaps: $space-1;
+$calculator-gaps: $space-1-px;
 $calculator-width: 380px;
 
 .calculator {
@@ -23,7 +23,7 @@ $calculator-width: 380px;
     }
     input {
       flex: 1 1 50%;
-      min-width: $space-10;
+      min-width: $space-10-px;
     }
     button {
       padding: 0.4em 0.8em;

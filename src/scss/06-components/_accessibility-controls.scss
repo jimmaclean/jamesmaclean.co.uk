@@ -25,15 +25,15 @@
     border: 2px solid transparent;
     border-radius: 50%;
     padding: 0;
-    height: px-to-rem($space-7);
-    width: px-to-rem($space-7);
+    height: space(7);
+    width: space(7);
     display: flex;
     align-items: center;
     justify-content: center;
     transition: border-color 200ms ease;
     @include breakpointWrap('md') {
-      height: $space-8;
-      width: $space-8;
+      height: space(8);
+      width: space(8);
     }
     &:hover {
       border-color: var(--link-color);

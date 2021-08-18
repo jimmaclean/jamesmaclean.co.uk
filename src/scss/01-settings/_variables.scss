@@ -6,31 +6,31 @@ $breakpoints: (
   xxl: 1440px
 );
 
-$space-tiny: 4px;
-$space-1: 8px;
-$space-2: 16px;
-$space-3: 20px;
-$space-4: 24px;
-$space-5: 32px;
-$space-6: 40px;
-$space-7: 48px;
-$space-8: 56px;
-$space-9: 64px;
-$space-10: 72px;
+$space-tiny-px: 4px;
+$space-1-px: 8px;
+$space-2-px: 16px;
+$space-3-px: 20px;
+$space-4-px: 24px;
+$space-5-px: 32px;
+$space-6-px: 40px;
+$space-7-px: 48px;
+$space-8-px: 56px;
+$space-9-px: 64px;
+$space-10-px: 72px;
 
 $space: (
   0: 0,
-  tiny: $space-tiny,
-  1: $space-1,
-  2: $space-2,
-  3: $space-3,
-  4: $space-4,
-  5: $space-5,
-  6: $space-6,
-  7: $space-7,
-  8: $space-8,
-  9: $space-9,
-  10: $space-10
+  tiny: $space-tiny-px,
+  1: $space-1-px,
+  2: $space-2-px,
+  3: $space-3-px,
+  4: $space-4-px,
+  5: $space-5-px,
+  6: $space-6-px,
+  7: $space-7-px,
+  8: $space-8-px,
+  9: $space-9-px,
+  10: $space-10-px
 );
 
 $rem-base: 16px;

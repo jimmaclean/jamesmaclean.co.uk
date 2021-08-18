@@ -1,13 +1,16 @@
 .layout-wrap {
     margin: auto;
-    padding-left: $space-2;
-    padding-right: $space-2;
+    padding-left: $space-2-px;
+    padding-right: $space-2-px;
+    max-width: px-to-rem(480px);
     @include breakpointWrap('md') {
-        padding-left: $space-6;
-        padding-right: $space-6;
+        padding-left: $space-6-px;
+        padding-right: $space-6-px;
+        max-width: 1024px;
     }
     @include breakpointWrap('lg') {
-        padding-left: $space-7;
-        padding-right: $space-7;
+        padding-left: $space-7-px;
+        padding-right: $space-7-px;
+        max-width: 1200px;
     }
 }

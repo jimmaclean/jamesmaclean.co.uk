@@ -15,3 +15,7 @@
 @function line-height-calc($font-size, $line-height) {
     @return $line-height / $font-size;
 }
+
+@function space($key) {
+    @return px-to-rem(map-get($space, $key));
+}
