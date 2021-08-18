@@ -1,0 +1,9 @@
+.arrow-icon {
+    height: 0.6em;
+    margin-left: 0.25em;
+    display: inline-block;
+    stroke-width: px-to-rem(1px);
+    @include breakpointWrap('md') {
+        stroke-width: px-to-rem(1.5px);
+    }
+}
