@@ -38,6 +38,7 @@ hr {
 
 a {
   @include styleLike('p');
+  margin-bottom: 0;
   color: var(--link-color);
   text-decoration: none;
 }
