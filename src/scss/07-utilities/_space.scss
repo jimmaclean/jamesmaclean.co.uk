@@ -5,7 +5,8 @@
   }
 
   @include breakpointWrap($bpKey) {
-    @each $sKey, $sVal in $space {
+    @each $sKey, $val in $space {
+      $sVal: px-to-rem($val);
       .#{$prefix}m-#{$sKey} {
         margin: $sVal;
       }
