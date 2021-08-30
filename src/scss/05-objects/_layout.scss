@@ -14,3 +14,9 @@
         max-width: px-to-rem(map-get($breakpoints, 'xl'));
     }
 }
+
+.layout-full {
+    margin: auto;
+    padding-left: $space-2-px;
+    padding-right: $space-2-px;
+}
