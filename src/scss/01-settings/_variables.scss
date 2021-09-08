@@ -1,0 +1,69 @@
+$breakpoints: (
+  sm: 0px,
+  md: 640px,
+  lg: 1024px,
+  xl: 1200px,
+  // xxl: 1440px
+);
+
+$space-tiny-px: 4px;
+$space-1-px: 8px;
+$space-2-px: 16px;
+$space-3-px: 20px;
+$space-4-px: 24px;
+$space-5-px: 32px;
+$space-6-px: 40px;
+$space-7-px: 48px;
+$space-8-px: 56px;
+$space-9-px: 64px;
+$space-10-px: 72px;
+
+$space: (
+  0: 0,
+  tiny: $space-tiny-px,
+  1: $space-1-px,
+  2: $space-2-px,
+  3: $space-3-px,
+  4: $space-4-px,
+  5: $space-5-px,
+  6: $space-6-px,
+  7: $space-7-px,
+  8: $space-8-px,
+  9: $space-9-px,
+  10: $space-10-px
+);
+
+$rem-base: 16px;
+/* prettier-ignore */
+$typography-map: (
+  sm: (
+    h1:    (fs: 48px, lh: 46px, ls: -0.5px, mb: 0.5em, fw: bold, ),
+    h2:    (fs: 32px, lh: 38px, ls: -0.25px, mb: 0.5em, fw: bold,),
+    h3:    (fs: 28px, lh: 34px, ls: -0.25px, mb: 0.5em, fw: bold,),
+    h4:    (fs: 24px, lh: 28px, ls: 0,       mb: 0.5em, fw: bold,),
+    h5:    (fs: 18px, lh: 22px, ls: 0.5px,   mb: 1em, fw: bold,),
+    h6:    (fs: 12px, lh: 14px, ls: 1px,     mb: 0.25, fw: normal,),
+    large: (fs: 18px, lh: 28px, ls: 0,       mb: 1em, fw: normal,),
+    p:     (fs: 16px, lh: 26px, ls: 0,       mb: 1em, fw: normal,),
+    small: (fs: 13px, lh: 21px, ls: 0.3px,   mb: 1em, fw: normal,),
+  ),
+  md: (
+    h1:    (fs: 96px, lh: 92px, ls: -3px,    mb: null, fw: bold,),
+    h2:    (fs: 62px, lh: 74px, ls: 0.5px,   mb: null, fw: bold,),
+    h3:    (fs: 48px, lh: 58px, ls: -0.5px, mb: null, fw: bold,),
+    h4:    (fs: 32px, lh: 38px, ls: 0,       mb: null, fw: bold,),
+    h5:    (fs: 22px, lh: 26px, ls: 0.5px,   mb: null, fw: bold,),
+    h6:    (fs: 14px, lh: 17px, ls: 0.75px,  mb: null, fw: normal,),
+    large: (fs: 24px, lh: 34px, ls: 0,       mb: null, fw: normal,),
+    p:     (fs: 20px, lh: 30px, ls: 0,       mb: null, fw: normal,),
+    small: (fs: 15px, lh: 24px, ls: 0.15px,  mb: null, fw: normal,),
+  )
+);
+
+$purple-900: #21003C;
+$purple-500: #7200CA;
+$purple-400: #AA00FF;
+$purple-300: #E254FF;
+$purple-100: #F6CCFF;
+$purple-50: #FDF6FF;
+$white: #FFFFFF;

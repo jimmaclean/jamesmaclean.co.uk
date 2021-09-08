@@ -1,0 +1,21 @@
+@function px-to-rem($value) {
+    @if $value == 0 {
+        @return $value;
+    }
+    @return $value / $rem-base * 1rem;
+}
+
+@function px-to-em($font-size, $value) {
+    @if $value == 0 {
+        @return $value;
+    }
+    @return $value / $font-size * 1em;
+}
+
+@function line-height-calc($font-size, $line-height) {
+    @return $line-height / $font-size;
+}
+
+@function space($key) {
+    @return px-to-rem(map-get($space, $key));
+}

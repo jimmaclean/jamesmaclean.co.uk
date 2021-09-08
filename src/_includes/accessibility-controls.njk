@@ -1,0 +1,60 @@
+<div class="accessibility-control">
+  <button class="accessibility-control__button" type="button" data-overlay-button="text">
+    <span class="accessibility-control__button-icon accessibility-control__button-icon--text">Aa</span>
+    <span class="accessibility-control__button-label">Change text size</span>
+  </button>
+  <div class="accessibility-control__panel" aria-hidden="true" data-overlay-panel="text">
+    <button type="button" data-overlay-close-button="text">Close</button>
+    <fieldset>
+      <legend>Text size</legend>
+      <div>
+        <input type="radio" id="font-size-smaller" name="font-size" value="smaller">
+        <label for="font-size-smaller">Smaller</label>
+      </div>
+      <div>
+        <input type="radio" id="font-size-auto" name="font-size" value="auto" checked>
+        <label for="font-size-auto">Auto</label>
+      </div>
+      <div>
+        <input type="radio" id="font-size-larger" name="font-size" value="larger">
+        <label for="font-size-larger">Larger</label>
+      </div>
+    </fieldset>
+    <p tabindex=0 class="visible-tab-only">end of dialouge</p>
+  </div>
+  <div aria-hidden="true" class="overlay-screen" data-overlay-dimmer="text"></div>
+</div>
+
+<div class="accessibility-control">
+  <button class="accessibility-control__button" type="button" data-overlay-button="color">
+    <span class="accessibility-control__button-icon accessibility-control__button-icon--color">
+      {% include "icons/paint-drops-light.njk" %}
+    </span>
+    <span class="accessibility-control__button-label">Change colour scheme</span>
+  </button>
+  <div class="accessibility-control__panel" aria-hidden="true" data-overlay-panel="color">
+    <button type="button" data-overlay-close-button="color">Close</button>
+    <fieldset>
+      <legend>Color scheme</legend>
+      <div>
+        <input type="radio" id="color-scheme-light" name="color-scheme" value="light">
+        <label for="color-scheme-light">Light</label>
+      </div>
+      <div>
+        <input type="radio" id="color-scheme-auto" name="color-scheme" value="auto" checked>
+        <label for="color-scheme-auto">Auto</label>
+      </div>
+      <div>
+        <input type="radio" id="color-scheme-dark" name="color-scheme" value="dark">
+        <label for="color-scheme-dark">Dark</label>
+      </div>
+    </fieldset>
+    <p tabindex=0 class="visible-tab-only">end of dialouge</p>
+  </div>
+  <div aria-hidden="true" class="overlay-screen" data-overlay-dimmer="color"></div>
+</div>
+
+<script>
+
+
+</script>

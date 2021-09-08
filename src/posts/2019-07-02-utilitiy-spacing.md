@@ -15,7 +15,7 @@ excerpt: "Making a set of Tailwind inspired responsive spacing utility classes w
 When a designer is working on a UI in something like Sketch they will get the spacing to look how they want, normally based on a pre-defined spacing scale.
 
 <div class="side-scroller">
-<div class="side-scroller-child whitespace-nowrap">
+<div class="side-scroller-child">
     {{ spacer('16') }}
     {{ spacer('20') }}
     {{ spacer('24') }}

@@ -1,0 +1,59 @@
+:root[data-font-size="smaller"] {
+  font-size: 0.8rem;
+}
+:root[data-font-size="larger"] {
+  font-size: 1.4rem;
+}
+body {
+  font-family: 'barlow', sans-serif;
+}
+
+ol,
+ul {
+  @include styleLike("p");
+  li {
+      margin-bottom: 0.5em;
+  }
+}
+
+dl {
+  @include styleLike("p");
+  dt {
+      font-weight: bold;
+  }
+  dd {
+      margin-left: 0;
+  }
+}
+
+td {
+  @include styleLike("p");
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #333333;
+}
+
+a {
+  @include styleLike('p');
+  margin-bottom: 0;
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+@each $breakpointKey, $breakpointValue in $typography-map {
+  @include breakpointWrap($breakpointKey) {
+    @each $elementKey, $elementValue in $breakpointValue {
+      #{$elementKey},
+      .#{$elementKey} {
+        @include styleLikeAtBreakpoint($elementKey, $breakpointKey);
+      }
+    }
+  }
+}
+
+h6, .h6 {
+  text-transform: uppercase;
+}
