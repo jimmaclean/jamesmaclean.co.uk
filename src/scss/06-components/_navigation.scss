@@ -27,7 +27,7 @@
   &__item {
     margin-bottom: 0;
     & + & {
-      margin-left: space(2);
+      margin-left: space(1);
     }
   }
   $active-indicator-width: space(2);
