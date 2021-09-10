@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-flow: row wrap;
   padding-top: space(1);
   padding-bottom: space(1);
   padding-right: space(1);
@@ -22,12 +23,13 @@
   }
   &__right {
     flex: 0 1 auto;
-    margin-left: space(6);
+    padding-left: space(3);
+    margin-left: auto;
   }
   &__item {
     margin-bottom: 0;
     & + & {
-      margin-left: space(1);
+      margin-left: space(2);
     }
   }
   $active-indicator-width: space(2);
