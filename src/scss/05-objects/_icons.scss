@@ -7,3 +7,9 @@
         stroke-width: px-to-rem(1.5px);
     }
 }
+.cross-icon {
+    stroke-width: px-to-rem(1px);
+    @include breakpointWrap('md') {
+        stroke-width: px-to-rem(1.5px);
+    }
+}

@@ -1,6 +1,7 @@
 .block {
     display: block;
 }
+
 .sr-only {
     position:absolute;
     left:-10000px;
@@ -9,3 +10,13 @@
     height:1px;
     overflow:hidden;
 }
+
+.visible-tab-only {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    &:focus {
+      opacity: 1;
+      background: var(--bg-color);
+    }
+  }

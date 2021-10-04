@@ -51,4 +51,8 @@ body {
     outline: 3px dotted var(--text-color);
     outline-offset: 3px;
   }
+  &[data-keyboard-mode="true"] .invert-focus *:focus {
+    outline: 3px dotted var(--bg-color);
+    outline-offset: 3px;
+  }
 }

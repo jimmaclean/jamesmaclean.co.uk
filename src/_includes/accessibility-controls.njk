@@ -1,26 +1,51 @@
+{% set placeHolderText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut id cupiditate perspiciatis veritatis magnam, atque ipsam! Saepe ducimus quasi vitae maiores beatae praesentium ullam culpa labore, enim libero eos sed!" %}
+
 <div class="accessibility-control">
   <button class="accessibility-control__button" type="button" data-overlay-button="text">
     <span class="accessibility-control__button-icon accessibility-control__button-icon--text">Aa</span>
     <span class="accessibility-control__button-label">Change text size</span>
   </button>
-  <div class="accessibility-control__panel" aria-hidden="true" data-overlay-panel="text">
-    <button type="button" data-overlay-close-button="text">Close</button>
-    <fieldset>
-      <legend>Text size</legend>
-      <div>
-        <input type="radio" id="font-size-smaller" name="font-size" value="smaller">
-        <label for="font-size-smaller">Smaller</label>
-      </div>
-      <div>
-        <input type="radio" id="font-size-auto" name="font-size" value="auto" checked>
-        <label for="font-size-auto">Auto</label>
-      </div>
-      <div>
-        <input type="radio" id="font-size-larger" name="font-size" value="larger">
-        <label for="font-size-larger">Larger</label>
-      </div>
-    </fieldset>
-    <p tabindex=0 class="visible-tab-only">end of dialouge</p>
+  <div class="accessibility-control__panel invert-focus" aria-hidden="true" data-overlay-panel="text">
+    <div class="accessibility-control__modal">
+      <button type="button" class="accessibility-control__close-button" data-overlay-close-button="text">
+        {% include "icons/cross.njk" %}
+        <span class="sr-only">Close</span>
+      </button>
+      <fieldset class="accessibility-control__fieldset">
+        <legend class="accessibility-control__legend">Text size</legend>
+        <div class="accessibility-control__input-row">
+          <div class="accessibility-control__input-wrap">
+            <input class="accessibility-control__input" type="radio" id="font-size-smaller" name="font-size" value="smaller">
+            <label class="accessibility-control__label" for="font-size-smaller">
+              <div class="accessibility-control__fake-input">
+                <span class="accessibility-control__preview-text accessibility-control__preview-text--smaller">{{ placeHolderText }}</span>
+              </div>
+              <span class="accessibility-control__fake-label">Smaller</span>
+            </label>
+          </div>
+          <div class="accessibility-control__input-wrap">
+            <input class="accessibility-control__input" type="radio" id="font-size-auto" name="font-size" value="auto" checked>
+            <label class="accessibility-control__label" for="font-size-auto">
+              <div class="accessibility-control__fake-input">
+                <span class="accessibility-control__preview-text accessibility-control__preview-text--auto">{{ placeHolderText }}</span>
+              </div>
+              <span class="accessibility-control__fake-label">Auto</span>
+            </label>
+          </div>
+          <div class="accessibility-control__input-wrap">
+            <input class="accessibility-control__input" type="radio" id="font-size-larger" name="font-size" value="larger">
+            <label class="accessibility-control__label" for="font-size-larger">
+              <div class="accessibility-control__fake-input">
+                <span class="accessibility-control__preview-text accessibility-control__preview-text--larger">{{ placeHolderText }}</span>
+              </div>
+              <span class="accessibility-control__fake-label">Larger</span>
+            </label>
+          </div>
+        </div>
+
+      </fieldset>
+      <p tabindex=0 class="visible-tab-only">end of dialouge</p>
+    </div>
   </div>
   <div aria-hidden="true" class="overlay-screen" data-overlay-dimmer="text"></div>
 </div>
@@ -32,8 +57,11 @@
     </span>
     <span class="accessibility-control__button-label">Change colour scheme</span>
   </button>
-  <div class="accessibility-control__panel" aria-hidden="true" data-overlay-panel="color">
-    <button type="button" data-overlay-close-button="color">Close</button>
+  <div class="accessibility-control__panel invert-focus" aria-hidden="true" data-overlay-panel="color">
+    <button type="button" class="accessibility-control__close-button" data-overlay-close-button="color" >
+      {% include "icons/cross.njk" %}
+      <span class="sr-only">Close</span>
+    </button>
     <fieldset>
       <legend>Color scheme</legend>
       <div>

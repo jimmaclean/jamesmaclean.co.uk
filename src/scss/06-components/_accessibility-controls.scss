@@ -15,7 +15,9 @@
 
 .accessibility-control {
   display: inline-block;
-  position: relative;
+  @include breakpointWrap('md') {
+    position: relative;
+  }
 
   &__button {
     z-index: 2;
@@ -59,13 +61,13 @@
     z-index: 2;
     min-width: 200px;
     padding: 1em;
-    background-color: var(--bg-color);
     position: absolute;
     right: 0;
     will-change: opacity, transform;
     opacity: 1;
     transform: translateX(0%);
     transition: opacity 300ms, transform 400ms;
+
     &[aria-hidden="true"] {
       transform: translateX(100%);
       opacity: 0;
@@ -75,8 +77,107 @@
       }
     }
   }
+  &__modal {
+    border-radius: px-to-rem(12px);
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    padding: space(3);
+    position: relative;
+  }
+  &__close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    padding: space(2);
+  }
+  &__fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  &__legend {
+    @include styleLike('h5');
+  }
+  &__input-row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-right: space(2) * -1;
+  }
+  &__input-wrap {
+    margin-right: space(2);
+    margin-bottom: space(2);
+  }
+  &__input {
+    opacity: 0.2;
+    position: absolute;
+    &:checked + label .accessibility-control__fake-input {
+      border-color: var(--purple-400);
+      border-width: 2px;
+      position: relative;
+      &::after {
+        position: absolute;
+        content: '\2713';
+        top: 0;
+        right: 0;
+        height: space(2);
+        width: space(2);
+        background-color: var(--purple-400);
+        color: var(--white);
+        border-bottom-left-radius: px-to-rem(8px);
+      }
+    }
+  }
+  &__label {
+    display: block;
+    width: 100%;
+  }
+  &__fake-input {
+    height: px-to-rem(96px);
+    width: px-to-rem(96px);
+    border: 1px solid var(--purple-100);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow: hidden;
+    padding: space(2);
+    border-radius: px-to-rem(8px);
+  }
+  &__preview-text {
+    width: 10em;
+    display: block;
+    &--smaller {
+      @include styleLikeAtBreakpoint('p', 'sm');
+      font-size: map-get(map-get(map-get($typography-map, 'sm'), 'p'), 'fs') * $type-scale-factor-smaller;
+      @include breakpointWrap('md') {
+        @include styleLikeAtBreakpoint('p', 'md');
+        font-size: map-get(map-get(map-get($typography-map, 'md'), 'p'), 'fs') * $type-scale-factor-smaller;
+      }
+    }
+    &--auto {
+      @include styleLikeAtBreakpoint('p', 'sm');
+      font-size: map-get(map-get(map-get($typography-map, 'sm'), 'p'), 'fs') * $type-scale-factor-auto;
+      @include breakpointWrap('md') {
+        @include styleLikeAtBreakpoint('p', 'md');
+        font-size: map-get(map-get(map-get($typography-map, 'md'), 'p'), 'fs') * $type-scale-factor-auto;
+      }
+    }
+    &--larger {
+      @include styleLikeAtBreakpoint('p', 'sm');
+      font-size: map-get(map-get(map-get($typography-map, 'sm'), 'p'), 'fs') * $type-scale-factor-larger;
+      @include breakpointWrap('md') {
+        @include styleLikeAtBreakpoint('p', 'md');
+        font-size: map-get(map-get(map-get($typography-map, 'md'), 'p'), 'fs') * $type-scale-factor-larger;
+      }
+    }
+  }
+  &__fake-label {
+    text-align: center;
+    display: block;
+  }
 }
-
 
 .overlay-screen {
   z-index: 1;
@@ -91,15 +192,5 @@
   &[aria-hidden="true"] {
     opacity: 0;
     pointer-events: none;
-  }
-}
-
-.visible-tab-only {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-  &:focus {
-    opacity: 1;
-    background: var(--bg-color);
   }
 }
