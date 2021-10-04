@@ -5,7 +5,7 @@
   flex-flow: row wrap;
   padding-top: space(1);
   padding-bottom: space(1);
-  padding-right: space(1);
+  padding-right: 0;
   @include breakpointWrap('md') {
     padding-top: space(2);
     padding-bottom: space(2);
@@ -34,6 +34,7 @@
   }
   $active-indicator-width: space(2);
   &__link {
+    display: block;
     padding: space(2) 0;
     position: relative;
     color: var(--text-color);

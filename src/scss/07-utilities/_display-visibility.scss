@@ -15,8 +15,10 @@
     position: absolute;
     opacity: 0;
     pointer-events: none;
+    padding: 0.2em 0.6em;
     &:focus {
       opacity: 1;
       background: var(--bg-color);
+      color: var(--text-color);
     }
   }

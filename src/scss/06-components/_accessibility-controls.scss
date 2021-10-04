@@ -12,12 +12,12 @@
     transform: translateX(0%);
   }
 }
-
+.accessibility-control-group {
+  position: relative;
+  padding-right: space(1);
+}
 .accessibility-control {
   display: inline-block;
-  @include breakpointWrap('md') {
-    position: relative;
-  }
 
   &__button {
     z-index: 2;
@@ -59,13 +59,17 @@
   }
   &__panel {
     z-index: 2;
-    min-width: 200px;
-    position: absolute;
+    width: 100vw;
+    position: fixed;
     right: 0;
     will-change: opacity, transform;
     opacity: 1;
     transform: translateX(0%);
     transition: opacity 300ms, transform 400ms;
+    @include breakpointWrap('md') {
+      width: unset;
+      position: absolute;
+    }
 
     &[aria-hidden="true"] {
       transform: translateX(100%);
@@ -79,12 +83,17 @@
   &__modal {
     border-radius: px-to-rem(12px);
     background-color: var(--text-color);
+    box-shadow: 0 10px 30px -5px var(--purple-900);
     color: var(--bg-color);
     padding: space(3);
     position: relative;
     margin: space(2);
     @include breakpointWrap('md') {
-      margin: space(2) 0;
+      padding: space(4);
+    }
+    @include colourScheme('dark') {
+      background-color: var(--purple-50);
+      box-shadow: none;
     }
   }
   &__close-button {
@@ -108,15 +117,21 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    margin-right: space(2) * -1;
-    margin-bottom: space(2) * -1;
+    margin-right: $space-2-px * -1;
+    margin-bottom: $space-2-px * -1;
     @include breakpointWrap('md') {
       flex-wrap: nowrap;
+      margin-right: $space-3-px * -1;
+      margin-bottom: $space-3-px * -1;
     }
   }
   &__input-wrap {
-    margin-right: space(2);
-    margin-bottom: space(2);
+    margin-right: $space-2-px;
+    margin-bottom: $space-2-px;
+    @include breakpointWrap('md') {
+      margin-right: $space-3-px;
+      margin-bottom: $space-3-px;
+    }
   }
   &__input {
     opacity: 0.2;
@@ -130,6 +145,12 @@
         opacity: 1;
       }
     }
+    [data-keyboard-mode="true"] &:focus {
+      outline: none;
+      & + label {
+        outline: 3px dotted;
+      }
+    }
   }
   &__label {
     display: block;
@@ -137,14 +158,19 @@
   }
   &__fake-input {
     position: relative;
-    height: px-to-rem(96px);
-    width: px-to-rem(96px);
+    height: 80px;
+    width: 80px;
     border: 1px solid var(--purple-100);
     background-color: var(--bg-color);
     color: var(--text-color);
     overflow: hidden;
-    padding: space(2);
-    border-radius: px-to-rem(8px);
+    padding: $space-1-px;
+    border-radius: $space-1-px;
+    @include breakpointWrap('md') {
+      padding: $space-2-px;
+      height: 96px;
+      width: 96px;
+    }
   }
   &__preview-text {
     width: 10em;
