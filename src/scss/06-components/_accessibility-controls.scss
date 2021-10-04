@@ -95,6 +95,9 @@
       background-color: var(--purple-50);
       box-shadow: none;
     }
+    @include colourScheme('light') {
+      background-color: var(--text-color);
+    }
   }
   &__close-button {
     position: absolute;
