@@ -156,10 +156,12 @@
     display: block;
     width: 100%;
   }
+  $fake-input-size-small: 80px;
+  $fake-input-size-medium: 96px;
   &__fake-input {
     position: relative;
-    height: 80px;
-    width: 80px;
+    height: $fake-input-size-small;
+    width: $fake-input-size-small;
     border: 1px solid var(--purple-100);
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -168,8 +170,8 @@
     border-radius: $space-1-px;
     @include breakpointWrap('md') {
       padding: $space-2-px;
-      height: 96px;
-      width: 96px;
+      height: $fake-input-size-medium;
+      width: $fake-input-size-medium;
     }
   }
   &__preview-text {
