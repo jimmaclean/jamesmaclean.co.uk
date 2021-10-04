@@ -91,12 +91,13 @@
     @include breakpointWrap('md') {
       padding: space(4);
     }
+    @include colourScheme('light') {
+      background-color: var(--text-color);
+      box-shadow: 0 10px 30px -5px var(--purple-900);
+    }
     @include colourScheme('dark') {
       background-color: var(--purple-50);
       box-shadow: none;
-    }
-    @include colourScheme('light') {
-      background-color: var(--text-color);
     }
   }
   &__close-button {
