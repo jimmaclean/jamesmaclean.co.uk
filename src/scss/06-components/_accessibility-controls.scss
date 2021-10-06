@@ -59,16 +59,18 @@
   }
   &__panel {
     z-index: 2;
-    width: 100vw;
+    width: 100%;
     position: fixed;
     right: 0;
     will-change: opacity, transform;
     opacity: 1;
     transform: translateX(0%);
     transition: opacity 300ms, transform 400ms;
+    padding: space(2);
     @include breakpointWrap('md') {
       width: unset;
       position: absolute;
+      padding: space(2) space(1);
     }
 
     &[aria-hidden="true"] {
@@ -81,13 +83,14 @@
     }
   }
   &__modal {
+    max-width: $max-content-width-sm;
     border-radius: px-to-rem(12px);
     background-color: var(--text-color);
     box-shadow: 0 10px 30px -5px var(--purple-900);
     color: var(--bg-color);
     padding: space(3);
+    margin: auto;
     position: relative;
-    margin: space(2);
     @include breakpointWrap('md') {
       padding: space(4);
     }

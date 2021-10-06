@@ -2,11 +2,11 @@
     margin: auto;
     padding-left: $space-2-px;
     padding-right: $space-2-px;
-    max-width: 480px;
+    max-width: $max-content-width-sm;
     @include breakpointWrap('md') {
         padding-left: $space-6-px;
         padding-right: $space-6-px;
-        max-width: 720px;
+        max-width: $max-content-width-md;
     }
     @include breakpointWrap('lg') {
         padding-left: $space-7-px;
