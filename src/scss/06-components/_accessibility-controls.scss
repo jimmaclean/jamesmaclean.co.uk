@@ -171,17 +171,19 @@
     background-color: var(--bg-color);
     color: var(--text-color);
     overflow: hidden;
-    padding: $space-1-px;
     border-radius: $space-1-px;
     @include breakpointWrap('md') {
-      padding: $space-2-px;
       height: $fake-input-size-medium;
       width: $fake-input-size-medium;
     }
   }
   &__preview-text {
-    width: 10em;
+    width: 12em;
+    padding: $space-1-px;
     display: block;
+    @include breakpointWrap('md') {
+      padding: $space-2-px;
+    }
     &--smaller {
       @include styleLikeAtBreakpoint('p', 'sm');
       font-size: map-get(map-get(map-get($typography-map, 'sm'), 'p'), 'fs') * $type-scale-factor-smaller;
@@ -204,6 +206,70 @@
       @include breakpointWrap('md') {
         @include styleLikeAtBreakpoint('p', 'md');
         font-size: map-get(map-get(map-get($typography-map, 'md'), 'p'), 'fs') * $type-scale-factor-larger;
+      }
+    }
+  }
+  $color-circle-size: $space-4-px;
+  $color-circle-overlap: $space-1-px;
+  &__preview-color {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      height: $color-circle-size;
+      width: $color-circle-size;
+      border-radius: 50%;
+      border: 1px solid;
+    }
+    &::after {
+      margin-left: -$color-circle-overlap;
+    }
+    &--light,
+    &__auto {
+      background-color: var(--white);
+      color: var(--white);
+      &::before {
+        background-color: var(--purple-900);
+      }
+      &::after {
+        background-color: var(--purple-500);
+      }
+    }
+    &--auto {
+      @media (prefers-color-scheme: 'light') {
+        background-color: var(--white);
+        color: var(--white);
+        &::before {
+          background-color: var(--purple-900);
+        }
+        &::after {
+          background-color: var(--purple-500);
+        }
+      }
+      @media (prefers-color-scheme: 'dark') {
+        background-color: var(--purple-900);
+        color: var(--purple-900);
+        &::before {
+          background-color: var(--white);
+        }
+        &::after {
+          background-color: var(--purple-300);
+        }
+      }
+    }
+    &--dark {
+      background-color: var(--purple-900);
+      color: var(--purple-900);
+      &::before {
+        background-color: var(--white);
+      }
+      &::after {
+        background-color: var(--purple-300);
       }
     }
   }
