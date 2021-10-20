@@ -1,0 +1,17 @@
+.button {
+    border: none;
+    appearance: none;
+    display: inline-block;
+    text-align: center;
+    background-color: $purple-500;
+    background: 
+        linear-gradient(180deg, rgba($purple-400, 0.3) 0%, rgba(255,255,255,0.00) 100%),
+        radial-gradient(circle at 110% -100%, $purple-300 0%, $purple-500 80%);
+    color: $white;
+    border-radius: px-to-rem(3px);
+    min-width: px-to-rem(280px);
+    @include styleLikeAtBreakpoint('h5', 'md');
+    padding: 0.6em 1em;
+    margin-bottom: 0;
+    cursor: pointer;
+}
