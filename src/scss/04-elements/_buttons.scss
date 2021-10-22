@@ -3,15 +3,50 @@
     appearance: none;
     display: inline-block;
     text-align: center;
-    background-color: $purple-500;
-    background: 
-        linear-gradient(180deg, rgba($purple-400, 0.3) 0%, rgba(255,255,255,0.00) 100%),
-        radial-gradient(circle at 110% -100%, $purple-300 0%, $purple-500 80%);
+    background-color: transparent;
     color: $white;
+    transition: color 1000ms ease;
     border-radius: px-to-rem(3px);
+    overflow: hidden;
     min-width: px-to-rem(280px);
     @include styleLikeAtBreakpoint('h5', 'md');
     padding: 0.6em 1em;
     margin-bottom: 0;
     cursor: pointer;
+    position: relative;
+    z-index: 1;
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+    }
+    &::before {
+        z-index: -2;
+        width: 100%;
+        background: 
+            linear-gradient(180deg, rgba($purple-400, 0.3) 0%, rgba($purple-900, 0.0) 100%),
+            radial-gradient(circle at 110% -100%, $purple-300 0%, $purple-500 80%);
+    }
+    $hover-gradient-multiplier: 8;
+    &::after {
+        z-index: -1;
+        width: 100% * $hover-gradient-multiplier;
+        background: linear-gradient(
+            90deg,
+            rgba($purple-300, 0.0) 100% / $hover-gradient-multiplier,
+            rgba($purple-100, 0.8) 60%,
+            rgba($purple-300, 1.0) 90%
+            );
+        transition: transform 800ms ease;
+    }
+    &:hover {
+        color: $purple-900;
+    }
+    &:hover::after {
+        transform: translateX(-100% + (100% / $hover-gradient-multiplier));
+    }
 }
