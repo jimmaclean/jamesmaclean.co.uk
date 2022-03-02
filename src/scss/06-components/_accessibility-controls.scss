@@ -112,6 +112,10 @@
     border: none;
     background-color: transparent;
     padding: space(2);
+    cursor: pointer;
+    &:hover {
+      color: var(--link-color);
+    }
   }
   &__fieldset {
     border: none;
@@ -163,6 +167,14 @@
   &__label {
     display: block;
     width: 100%;
+    &:hover {
+      .accessibility-control__fake-input {
+        border-color: var(--link-color);
+      }
+      .accessibility-control__fake-label {
+        color: var(--link-color);
+      }
+    }
   }
   
   $fake-input-size-small: 80px;
@@ -176,6 +188,7 @@
     color: var(--text-color);
     overflow: hidden;
     border-radius: $space-1-px;
+    cursor: pointer;
     @include breakpointWrap('md') {
       height: $fake-input-size-medium;
       width: $fake-input-size-medium;
