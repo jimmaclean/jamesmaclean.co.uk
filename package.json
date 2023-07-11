@@ -15,7 +15,7 @@
         "deploy": "npm run build && gh-pages -d _site --repo https://github.com/jimmaclean/jqim87.github.io"
     },
     "dependencies": {
-        "@11ty/eleventy": "^0.11.0",
+        "@11ty/eleventy": "^2.0.1",
         "npm-run-all": "^4.1.5",
         "sass": "^1.63.6"
     },
