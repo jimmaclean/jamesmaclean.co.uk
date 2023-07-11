@@ -1,35 +1,35 @@
 {
-  "name": "gatsby-starter-hello-world",
-  "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
-  "version": "0.1.0",
-  "license": "MIT",
-  "scripts": {
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "watch:sass": "node-sass --watch --include-path scss src/scss/main.scss  src/css/main.css",
-    "build:sass": "node-sass --include-path scss src/scss/main.scss  src/css/main.css",
-    "watch:eleventy": "eleventy --serve",
-    "build:eleventy": "eleventy",
-    "start": "npm-run-all build:sass --parallel watch:*",
-    "build": "npm-run-all build:*",
-    "deploy": "npm run build && gh-pages -d _site --repo https://github.com/jimmaclean/jqim87.github.io"
-  },
-  "dependencies": {
-    "@11ty/eleventy": "^0.11.0",
-    "node-sass": "^4.12.0",
-    "npm-run-all": "^4.1.5"
-  },
-  "devDependencies": {
-    "@11ty/eleventy-navigation": "^0.1.6",
-    "change-case": "^3.1.0",
-    "gh-pages": "^2.0.1",
-    "prettier": "^1.17.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  }
+    "name": "gatsby-starter-hello-world",
+    "private": true,
+    "description": "A simplified bare-bones starter for Gatsby",
+    "version": "0.1.0",
+    "license": "MIT",
+    "scripts": {
+        "format": "prettier --write src/**/*.{js,jsx}",
+        "watch:sass": "sass --watch src/scss/main.scss  src/css/main.css",
+        "build:sass": "sass src/scss/main.scss  src/css/main.css",
+        "watch:eleventy": "eleventy --serve",
+        "build:eleventy": "eleventy",
+        "start": "npm-run-all build:sass --parallel watch:*",
+        "build": "npm-run-all build:*",
+        "deploy": "npm run build && gh-pages -d _site --repo https://github.com/jimmaclean/jqim87.github.io"
+    },
+    "dependencies": {
+        "@11ty/eleventy": "^0.11.0",
+        "npm-run-all": "^4.1.5",
+        "sass": "^1.63.6"
+    },
+    "devDependencies": {
+        "@11ty/eleventy-navigation": "^0.1.6",
+        "change-case": "^3.1.0",
+        "gh-pages": "^2.0.1",
+        "prettier": "^1.17.1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+    },
+    "bugs": {
+        "url": "https://github.com/gatsbyjs/gatsby/issues"
+    }
 }
