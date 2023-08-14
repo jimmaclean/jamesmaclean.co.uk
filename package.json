@@ -7,7 +7,7 @@
     "scripts": {
         "format": "prettier --write src/**/*.{js,jsx}",
         "watch:sass": "sass --watch src/scss/main.scss  src/css/main.css",
-        "build:sass": "sass src/scss/main.scss  src/css/main.css",
+        "build:sass": "sass --style=compressed src/scss/main.scss  src/css/main.css",
         "watch:eleventy": "eleventy --serve",
         "build:eleventy": "eleventy",
         "start": "npm-run-all build:sass --parallel watch:*",
