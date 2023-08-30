@@ -5,7 +5,7 @@
     "version": "0.1.0",
     "license": "MIT",
     "scripts": {
-        "format": "prettier --write src/**/*.{js,jsx}",
+        "format": "prettier --write src/*.{js,jsx,njk}",
         "watch:sass": "sass --watch src/scss/main.scss  src/css/main.css",
         "build:sass": "sass --style=compressed src/scss/main.scss  src/css/main.css",
         "watch:eleventy": "eleventy --serve",

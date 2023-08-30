@@ -5,93 +5,121 @@ eleventyNavigation:
   key: Work
   order: 1
 ---
+
 <div class="homepage--hero">
-    <h1 class="m-t-0 m-b-1">{{ title }}</h1>
-    <p class="large m-b-0">Frontend Developer, UX/UI</p>
+  <h1 class="m-t-0 m-b-1">{{ title }}</h1>
+  <p class="large m-b-0">Frontend Developer, UX/UI</p>
 </div>
 
 <div class="homepage--row">
-    <div class="homepage--col1">
-        <h3>Development</h3>
-        <p class="large m-b-5">
-            I approach coding work with consideration and care for my colleagues. 
-            I believe the best code can be worked on by some one else at a moments notice.
-        </p>
-    </div>
+  <div class="homepage--col1">
+    <h3>Development</h3>
+    <p class="large m-b-5">
+      I approach coding work with consideration and care for my colleagues. I
+      believe the best code can be worked on by some one else at a moments
+      notice.
+    </p>
+  </div>
 
-    {% import "logos.njk" as logos %}
-    <div class="homepage--col2">
-        <h5 class="m-b-1">Writing</h5>
-        <ul class="m-b-5">
-            <li>
-                <a href="https://tech.mybuilder.com/get-started-with-web-performance/">Get started with web performance</a>
-            </li>
-        </ul>
-        <h5 class="m-b-1">Code</h5>
-        <ul class="m-b-5">
-            <li>
-                <a href="/fund-name-generator/">Fund name generator</a>
-            </li>
-            <li>
-                <a href="https://mybuilder.com">MyBuilder.com</a>
-            </li>
-            <li>
-                <a href="https://mybuilder-plus.com/">MyBuilder Plus</a>
-            </li>
-            <li>
-                <a href="https://github.com/jimmaclean/redux-dogs">Redux dogs</a>
-            </li>
-            <li>
-                <a href="https://codepen.io/jqim">Codepen</a>
-            </li>
-            <li>
-                <a href="https://bitbucket.org/jqim87/pebbles/src/master/">Pebbles design system for Rock Insurance</a>
-            </li>
-        </ul>
-        <h5 class="m-b-1">Speaking</h5>
-        <ul class="m-b-5">
-            <li>
-                <a href="https://www.youtube.com/watch?v=uaa6xLWYfjc&t=1170s">Tailwind and Symfony</a>
-            </li>
-        </ul>
-    </div>
+  {% import "logos.njk" as logos %}
+  <div class="homepage--col2">
+    <h5 class="m-b-1">Writing</h5>
+    <ul class="m-b-5">
+      <li>
+        <a href="https://tech.mybuilder.com/get-started-with-web-performance/"
+          >Get started with web performance</a
+        >
+      </li>
+    </ul>
+    <h5 class="m-b-1">Code</h5>
+    <ul class="m-b-5">
+      <li>
+        <a href="/fund-name-generator/">Fund name generator</a>
+      </li>
+      <li>
+        <a href="https://mybuilder.com">MyBuilder.com</a>
+      </li>
+      <li>
+        <a href="https://mybuilder-plus.com/">MyBuilder Plus</a>
+      </li>
+      <li>
+        <a href="https://github.com/jimmaclean/redux-dogs">Redux dogs</a>
+      </li>
+      <li>
+        <a href="https://codepen.io/jqim">Codepen</a>
+      </li>
+      <li>
+        <a href="https://bitbucket.org/jqim87/pebbles/src/master/"
+          >Pebbles design system for Rock Insurance</a
+        >
+      </li>
+    </ul>
+    <h5 class="m-b-1">Speaking</h5>
+    <ul class="m-b-5">
+      <li>
+        <a href="https://www.youtube.com/watch?v=uaa6xLWYfjc&t=1170s"
+          >Tailwind and Symfony</a
+        >
+      </li>
+    </ul>
+  </div>
 </div>
 
 <div class="homepage--row">
-    <div class="homepage--col1">
-        <h3>Design</h3>
-        <p class="large m-b-7 md--m-b-9">
-            I employ a pragmatic combination of design, technical and product mangement skills
-            to produce effective interface designs.
-        </p>
+  <div class="homepage--col1">
+    <h3>Design</h3>
+    <p class="large m-b-7 md--m-b-9">
+      I employ a pragmatic combination of design, technical and product
+      mangement skills to produce effective interface designs.
+    </p>
+  </div>
+
+  {% import "logos.njk" as logos %}
+  <div class="homepage--col2">
+    <div class="layout-flex-row flex-between flex-baseline m-b-2 md--m-b-3">
+      {{ logos.fidelity() }}
+      <p class="m-b-0">2015 - 2019</p>
     </div>
+    <p class="m-b-1">
+      I was instrumental in the re-design of the FundsNetwork advisory
+      investment platform which has gone on to win industry awards based on
+      features and functionality available to financial advisors.
+    </p>
+    <a href="ux/fidelity" class="m-b-7 md--m-b-9 block"
+      >View work {% include 'icons/arrow.njk' %}</a
+    >
 
-    {% import "logos.njk" as logos %}
-    <div class="homepage--col2">
-        <div class="layout-flex-row flex-between flex-baseline m-b-2 md--m-b-3">
-            {{ logos.fidelity() }}
-            <p class="m-b-0">2015 - 2019</p>
-        </div>
-        <p class="m-b-1">I was instrumental in the re-design of the FundsNetwork advisory investment platform which has gone on to win industry awards based on features and functionality available to financial advisors.</p>
-        <a href="ux/fidelity" class="m-b-7 md--m-b-9 block">View work {% include 'icons/arrow.njk' %}</a>
-
-        <div class="layout-flex-row flex-between flex-baseline m-b-2 md--m-b-3">
-            {{ logos.citi() }}
-            <p class="m-b-0">2014 - 2015</p>
-        </div>
-        <p class="m-b-1">I conducted user research on the trading floor at CitiBank and designed features in collaboration with members of the trading floor to manage the risk of changing a UI responsible for moving billions of dollars per day.</p>
-        <a href="ux/citi" class="m-b-7 md--m-b-9 block">View work {% include 'icons/arrow.njk' %}</a>
-
-        <div class="layout-flex-row flex-between flex-baseline m-b-2 md--m-b-3">
-            {{ logos.caplin() }}
-            <p class="m-b-0">2011 - 2014</p>
-        </div>
-        <p class="m-b-1">Whilst at Caplin I designed key product features for the ‘Sales Trader’ product that are still part of the key offering nearly 10 years later. I liaised with client representatives from DBS bank, Santander and Deutsche Bank to develop foreign exchange trading interfaces used to move millions of dollars per day. I also wrote production CSS to aid development teams.</p>
-        <a href="ux/caplin" class="m-b-7 md--m-b-9 block">View work {% include 'icons/arrow.njk' %}</a>
+    <div class="layout-flex-row flex-between flex-baseline m-b-2 md--m-b-3">
+      {{ logos.citi() }}
+      <p class="m-b-0">2014 - 2015</p>
     </div>
+    <p class="m-b-1">
+      I conducted user research on the trading floor at CitiBank and designed
+      features in collaboration with members of the trading floor to manage the
+      risk of changing a UI responsible for moving billions of dollars per day.
+    </p>
+    <a href="ux/citi" class="m-b-7 md--m-b-9 block"
+      >View work {% include 'icons/arrow.njk' %}</a
+    >
+
+    <div class="layout-flex-row flex-between flex-baseline m-b-2 md--m-b-3">
+      {{ logos.caplin() }}
+      <p class="m-b-0">2011 - 2014</p>
+    </div>
+    <p class="m-b-1">
+      Whilst at Caplin I designed key product features for the ‘Sales Trader’
+      product that are still part of the key offering nearly 10 years later. I
+      liaised with client representatives from DBS bank, Santander and Deutsche
+      Bank to develop foreign exchange trading interfaces used to move millions
+      of dollars per day. I also wrote production CSS to aid development teams.
+    </p>
+    <a href="ux/caplin" class="m-b-7 md--m-b-9 block"
+      >View work {% include 'icons/arrow.njk' %}</a
+    >
+  </div>
 </div>
 
 <div class="talk-box invert-focus">
-    <h3 class="talk-box__heading">Want to talk?</h3>
-    <a class="talk-box__button button"  href="contact">Contact me</a>
+  <h3 class="talk-box__heading">Want to talk?</h3>
+  <a class="talk-box__button button" href="contact">Contact me</a>
 </div>

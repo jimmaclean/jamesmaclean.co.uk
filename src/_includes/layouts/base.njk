@@ -1,60 +1,69 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="EN">
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ title }}</title>
+    {#
+    <meta name="description" content="" />
+    #}
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <head>
-        <meta charset="utf-8">
-        <title>{{ title }}</title>
-        {# <meta name="description" content=""> #}
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    {#
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    #}
 
-        {# <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content=""> #}
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#f4eeec" />
 
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="manifest" href="/site.webmanifest">
-        <meta name="theme-color" content="#f4eeec">
+    <link
+      rel="preload"
+      href="{{ '/fonts/barlow-extrabold.woff2' | url }}"
+      as="font"
+      crossorigin=""
+      type="font/woff2"
+    />
+    <link
+      rel="preload"
+      href="{{ '/fonts/barlow-medium.woff2' | url }}"
+      as="font"
+      crossorigin=""
+      type="font/woff2"
+    />
+    <link rel="stylesheet" href="{{ '/css/main.css' | url }}" type="text/css" />
 
-        <link rel="preload" href="{{ '/fonts/barlow-extrabold.woff2' | url }}" as="font" crossorigin="" type="font/woff2">
-        <link rel="preload" href="{{ '/fonts/barlow-medium.woff2' | url }}" as="font" crossorigin="" type="font/woff2">
-        <link rel="stylesheet" href="{{ '/css/main.css' | url }}" type="text/css"/>
-        
-        <script src="{{ '/js/accessability-controls.js' | url }}"></script>
-        <script defer src="/_vercel/insights/script.js"></script>
-    </head>
+    <script src="{{ '/js/accessability-controls.js' | url }}"></script>
+    <script defer src="/_vercel/insights/script.js"></script>
+  </head>
 
-    <body>
-        {% set navPages = collections.all | eleventyNavigation %}
-        <nav class="navigation layout-wrap">
-            <ul class="navigation__list">
-                {%- for entry in navPages %}
+  <body>
+    {% set navPages = collections.all | eleventyNavigation %}
+    <nav class="navigation layout-wrap">
+      <ul class="navigation__list">
+        {%- for entry in navPages %} {% set isActive = false %} {% for child in
+        entry.children %} {% if page.url == child.url %} {% set isActive = true
+        %} {% endif %} {% endfor %} {% if entry.url == page.url %} {% set
+        isActive = true %} {% endif %}
 
-                    {% set isActive = false %}
-                    {% for child in entry.children %}
-                        {% if page.url == child.url %}
-                            {% set isActive = true %}
-                        {% endif %}
-                    {% endfor %}
-                    {% if entry.url == page.url %}
-                        {% set isActive = true %}
-                    {% endif %}
+        <li class="navigation__item">
+          <a
+            href="{{ entry.url | url }}"
+            class="navigation__link {% if isActive %}navigation__link--active{% endif %}"
+            >{{ entry.title }}</a
+          >
+        </li>
+        {%- endfor %}
+      </ul>
+      <div class="navigation__right">
+        {% include 'accessibility-controls.njk' %}
+      </div>
+    </nav>
 
-                    <li class="navigation__item">
-                        <a href="{{ entry.url | url }}" class="navigation__link {% if isActive %}navigation__link--active{% endif %}">{{ entry.title }}</a>
-                    </li>
-                {%- endfor %}
-            </ul>
-            <div class="navigation__right">
-                {% include 'accessibility-controls.njk' %}
-            </div>
-        </nav>
-
-        {% block mainContent %}
-        {% endblock %}
-
-    </body>
-
+    {% block mainContent %} {% endblock %}
+  </body>
 </html>

@@ -4,42 +4,41 @@ title: Fund name generator
 ---
 
 <h1 class="m-b-6">{{ title }}</h1>
-<button class='button m-b-3' id="js-generate-button">Generate</button>
+<button class="button m-b-3" id="js-generate-button">Generate</button>
 <p id="js-generate-output"></p>
 
 <script>
-    const apiBaseUrl = 'https://fyhinbvm47.execute-api.us-east-1.amazonaws.com';
+  const apiBaseUrl = "https://fyhinbvm47.execute-api.us-east-1.amazonaws.com";
 
-    (function () {
-        const output = document.getElementById('js-generate-output');
-        const button = document.getElementById('js-generate-button');
-        const onLoadHash = window.location.hash.substr(1);
+  (function() {
+    const output = document.getElementById("js-generate-output");
+    const button = document.getElementById("js-generate-button");
+    const onLoadHash = window.location.hash.substr(1);
 
-        if(onLoadHash !== "") {
-            fetch(`${apiBaseUrl}/fund/${onLoadHash}`)
-                .then(response => response.json())
-                .then(data => {
-                    render(data);
-                })
-        }
-
-        function render({message, seed}) {
-            window.location.hash = seed;
-            output.innerHTML = message;
-        };
-
-        function handelClick() {
-            fetch(`${apiBaseUrl}/fund`)
-                .then(response => response.json())
-                .then(data => {
-                    render(data);
-                })
-        };
-
-        button.addEventListener('click', function (event) {
-            event.preventDefault();
-            handelClick();
+    if (onLoadHash !== "") {
+      fetch(`${apiBaseUrl}/fund/${onLoadHash}`)
+        .then(response => response.json())
+        .then(data => {
+          render(data);
         });
+    }
 
-    })()
+    function render({ message, seed }) {
+      window.location.hash = seed;
+      output.innerHTML = message;
+    }
+
+    function handelClick() {
+      fetch(`${apiBaseUrl}/fund`)
+        .then(response => response.json())
+        .then(data => {
+          render(data);
+        });
+    }
+
+    button.addEventListener("click", function(event) {
+      event.preventDefault();
+      handelClick();
+    });
+  })();
 </script>
