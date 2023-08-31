@@ -7,7 +7,7 @@ eleventyNavigation:
 ---
 
 <h1 class="m-t-8 m-b-8 md--m-t-10 md--m-b-10">{{ title }}</h1>
-<h3>Social links:</h2>
+<h3>Social links:</h3>
 <ul class="m-b-4 md--m-b-8">
   <li>
     <a href="https://github.com/jimmaclean">GitHub</a>
@@ -20,16 +20,18 @@ eleventyNavigation:
       href="https://www.linkedin.com/in/jamesmacleanjqim"
       target="_blank"
       rel="noopener noreferrer"
-      >
-        LinkedIn
-      </a>
+    >
+      LinkedIn
+    </a>
   </li>
 </ul>
 
 <h3>Email address</h3>
 <div class="m-b-4 md--m-b-8">
-    <button class="button" type="button" id="js-hidden-email-button">Show hidden email address</button>
-    <p id="js-hidden-email-target"></p>
+  <button class="button" type="button" id="js-hidden-email-button">
+    Show hidden email address
+  </button>
+  <p id="js-hidden-email-target"></p>
 </div>
 
 <h3>TODO:</h3>
@@ -39,31 +41,19 @@ eleventyNavigation:
 </ol>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const emailTarget = document.getElementById('js-hidden-email-target');
-    const emailButton = document.getElementById('js-hidden-email-button');
-    const emailFragments = [
-      'qim',
-      '@g',
-      'j',
-      '87',
-      '.c',
-      'ai',
-      'l',
-      'om',
-      'm'
-    ];
+  document.addEventListener("DOMContentLoaded", function() {
+    const emailTarget = document.getElementById("js-hidden-email-target");
+    const emailButton = document.getElementById("js-hidden-email-button");
+    const emailFragments = ["qim", "@g", "j", "87", ".c", "ai", "l", "om", "m"];
     const emailFragmentKey = 203185647;
 
-    emailButton.addEventListener('click', e => {
+    emailButton.addEventListener("click", e => {
       emailTarget.innerText = emailFragmentKey
         .toString()
-        .split('')
+        .split("")
         .map(f => emailFragments[f])
-        .join('');
-      emailButton
-        .classList
-        .add('d-none');
+        .join("");
+      emailButton.classList.add("d-none");
     });
   });
 </script>

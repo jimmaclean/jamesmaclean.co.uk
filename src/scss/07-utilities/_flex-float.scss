@@ -10,3 +10,10 @@
 .flex-baseline {
     align-items: baseline;
 }
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-child-paragraph {
+    flex: 0 1 30em;
+}
