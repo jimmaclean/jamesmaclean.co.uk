@@ -1,27 +1,33 @@
 .block {
-  display: block;
+    display: block;
 }
 .d-none {
-  display: none;
+    display: none;
 }
 
 .sr-only {
-  position:absolute;
-  left:-10000px;
-  top:auto;
-  width:1px;
-  height:1px;
-  overflow:hidden;
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
 }
 
 .visible-tab-only {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-  padding: 0.2em 0.6em;
-  &:focus {
-    opacity: 1;
-    background: var(--bg-color);
-    color: var(--text-color);
-  }
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    padding: 0.2em 0.6em;
+    &:focus {
+        opacity: 1;
+        background: var(--bg-color);
+        color: var(--text-color);
+    }
+}
+
+.hide-for-print {
+    @media print {
+        display: none;
+    }
 }

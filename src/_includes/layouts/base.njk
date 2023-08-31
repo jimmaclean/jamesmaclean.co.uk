@@ -43,7 +43,7 @@
 
   <body>
     {% set navPages = collections.all | eleventyNavigation %}
-    <nav class="navigation layout-wrap">
+    <nav class="navigation layout-wrap hide-for-print">
       <ul class="navigation__list">
         {%- for entry in navPages %} {% set isActive = false %} {% for child in
         entry.children %} {% if page.url == child.url %} {% set isActive = true

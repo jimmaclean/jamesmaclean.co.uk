@@ -42,15 +42,15 @@ $type-scale-factor-larger: 1.4;
 /* prettier-ignore */
 $typography-map: (
   sm: (
-    h1:    (fs: 48px, lh: 46px, ls: -0.5px,  mb: 0.5em, fw: bold, ),
-    h2:    (fs: 32px, lh: 38px, ls: -0.25px, mb: 0.5em, fw: bold,),
-    h3:    (fs: 28px, lh: 34px, ls: -0.25px, mb: 0.5em, fw: bold,),
-    h4:    (fs: 24px, lh: 28px, ls: 0,       mb: 0.5em, fw: bold,),
-    h5:    (fs: 18px, lh: 22px, ls: 0.5px,   mb: 1em,   fw: bold,),
-    h6:    (fs: 12px, lh: 14px, ls: 1px,     mb: 0.25,  fw: normal,),
-    large: (fs: 18px, lh: 28px, ls: 0,       mb: 1em,   fw: normal,),
-    p:     (fs: 16px, lh: 26px, ls: 0,       mb: 1em,   fw: normal,),
-    small: (fs: 13px, lh: 21px, ls: 0.3px,   mb: 1em,   fw: normal,),
+    h1:    (fs: 48px, lh: 46px, ls: -0.5px,  mb: 0.5em,  fw: bold,),
+    h2:    (fs: 32px, lh: 38px, ls: -0.25px, mb: 0.5em,  fw: bold,),
+    h3:    (fs: 28px, lh: 34px, ls: -0.25px, mb: 0.5em,  fw: bold,),
+    h4:    (fs: 24px, lh: 28px, ls: 0,       mb: 0.5em,  fw: bold,),
+    h5:    (fs: 18px, lh: 22px, ls: 0.5px,   mb: 1em,    fw: bold,),
+    h6:    (fs: 12px, lh: 14px, ls: 1px,     mb: 0.25em, fw: normal,),
+    large: (fs: 18px, lh: 28px, ls: 0,       mb: 1em,    fw: normal,),
+    p:     (fs: 16px, lh: 26px, ls: 0,       mb: 1em,    fw: normal,),
+    small: (fs: 13px, lh: 21px, ls: 0.3px,   mb: 1em,    fw: normal,),
   ),
   md: (
     h1:    (fs: 96px, lh: 92px, ls: -3px,    mb: null, fw: bold,),
