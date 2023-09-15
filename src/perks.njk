@@ -1,0 +1,31 @@
+---
+layout: layouts/full.njk
+title: Perks
+---
+
+<h1>Fallout: New Vegas perks</h1>
+<hr />
+<p>
+  {% for key, val in requirements %}<span>{{key}}: {{val}}</span> {%endfor%}
+</p>
+<hr />
+{% for perk in perks %}
+<div
+  class="{% if perk.requirements != null %}{% for key, val in
+  perk.requirements %}tag-{{key | lower}} {% endfor %}{% else %}tag-none{% endif %}"
+>
+  <h3>{{perk.name}}</h3>
+  <p></p>
+  <ul>
+    <li>Level: {{perk.level}}</li>
+    <li>
+      {% if perk.requirements != null %} Requirements: {% for key, val in
+      perk.requirements %}{{key}} {{val}} {% endfor %} {% else %} No
+      requirements. {% endif %}
+    </li>
+    <li>Ranks: {{perk.ranks}}</li>
+    <li>Benefit: {{perk.benefit}}</li>
+    <li>id: {{perk.id}}</li>
+  </ul>
+</div>
+{% endfor %}
