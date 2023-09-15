@@ -2,7 +2,20 @@ document.addEventListener("DOMContentLoaded", function() {
     const rows = document.querySelectorAll("tbody tr");
     const resultEl = document.getElementById("result");
     const data = [];
-    const requirementsList = {};
+
+    const requirementsList = { special: {}, skills: {}, other: {} };
+    function addToRequirements(key) {
+        if (SPECIAL.includes(key)) {
+            requirementsList.special[key] =
+                (requirementsList.special[key] || 0) + 1;
+        } else if (SKILLS.includes(key)) {
+            requirementsList.skills[key] =
+                (requirementsList.skills[key] || 0) + 1;
+        } else {
+            requirementsList.other[key] =
+                (requirementsList.other[key] || 0) + 1;
+        }
+    }
 
     function rowToObject(row) {
         let tds = [...row.querySelectorAll("td")];
@@ -21,7 +34,11 @@ document.addEventListener("DOMContentLoaded", function() {
     // const teststr3 = "Energy Weapons 90";
     // const teststr4 = "PE 6, Sneak 30";
     function reqStringToObject(req) {
-        if (req === "") return null;
+        if (req === "") {
+            // requirementsList["None"] = (requirementsList["None"] || 0) + 1;
+            addToRequirements("None");
+            return null;
+        }
 
         let obj = {};
         let stringArr = req.split(", ");
@@ -58,8 +75,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
             key = key.join("-");
 
-            requirementsList[key] = (requirementsList[key] || 0) + 1;
-
+            // requirementsList[key] = (requirementsList[key] || 0) + 1;
+            addToRequirements(key);
             obj[key] = valuePrefix + value;
         }
 
@@ -85,3 +102,33 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // console.log("Guns 45 or Energy Weapons 45".split(", ").length);
 });
+
+function addToRequirements(str) {
+    if (SKILLS.includes(str)) {
+        requirementsList.skills[key] = (requirementsList.skills[key] || 0) + 1;
+    }
+    if (SPECIAL.includes(str)) {
+        requirementsList.special[key] =
+            (requirementsList.special[key] || 0) + 1;
+    }
+}
+
+const SPECIAL = ["PE", "ST", "AG", "IN", "CH", "LU", "EN"];
+
+const SKILLS = [
+    "Sneak",
+    "Explosives",
+    "Survival",
+    "Guns",
+    "Energy-Weapons",
+    "Repair",
+    "Science",
+    "Melee",
+    "Medicine",
+    "Barter",
+    "Melee-Weapons",
+    "Speech",
+    "Cannibal",
+    "Unarmed",
+    "Lockpick"
+];
