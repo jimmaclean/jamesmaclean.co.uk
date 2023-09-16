@@ -9,6 +9,7 @@ title: Perks
   document.addEventListener("DOMContentLoaded", function () {
     const perksContainer = document.querySelector(".js-perks-container")
     const inputs = document.querySelectorAll(".js-control input")
+
     function handleCheckBoxChange(event) {
       if (event.target.checked === true) {
         perksContainer.classList.add(event.target.name)
@@ -23,6 +24,22 @@ title: Perks
   })
 </script>
 <style>
+  input {
+    display: none;
+  }
+  label {
+    display: inline-block;
+    padding: 0.2em 0.6em;
+    border: 1px solid;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 0.4em;
+    margin-bottom: 0.4em;
+  }
+  input:checked + label {
+    background-color: white;
+    color: black;
+  }
   {% for key, val in requirements %}
     .tag-{{key | lower}} {
       display: none;
@@ -36,7 +53,7 @@ title: Perks
   {% for key, val in requirements %}
   <span class="js-control">
     <input type="checkbox" name="{{key | lower}}" id="req-c-{{key}}" checked />
-    <label for="req-c-{{key}}">{{key}}</label>
+    <label for="req-c-{{key}}">{{key}} ({{val}})</label>
   </span>
   {%endfor%}
 </p>
