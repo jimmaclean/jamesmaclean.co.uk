@@ -5,27 +5,64 @@ title: Perks
 
 <h1>Fallout: New Vegas perks</h1>
 <hr />
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const perksContainer = document.querySelector(".js-perks-container")
+    const x = document.querySelectorAll(".js-control input")
+    function handleCheckBoxChange(event) {
+      console.log(event.target)
+      if (event.target.checked === true) {
+        perksContainer.classList.add(event.target.name)
+      } else {
+        perksContainer.classList.remove(event.target.name)
+      }
+    }
+    x.forEach((controll) =>
+      controll.addEventListener("change", handleCheckBoxChange)
+    )
+  })
+</script>
+<style>
+  {% for key, val in requirements %}
+    .tag-{{key | lower}} {
+      display: none;
+    }
+    .{{key | lower}} .tag-{{key | lower}} {
+      display: block;
+    }
+  {% endfor %}
+</style>
 <p>
-  {% for key, val in requirements %}<span>{{key}}: {{val}}</span> {%endfor%}
+  {% for key, val in requirements %}
+  <span class="js-control">
+    <input type="checkbox" name="{{key | lower}}" id="req-c-{{key}}" checked />
+    <label for="req-c-{{key}}">{{key}}</label>
+  </span>
+  {%endfor%}
 </p>
 <hr />
-{% for perk in perks %}
+
 <div
-  class="{% if perk.requirements != null %}{% for key, val in
-  perk.requirements %}tag-{{key | lower}} {% endfor %}{% else %}tag-none{% endif %}"
+  class="js-perks-container {% for key, val in requirements %}{{key | lower}} {% endfor %}"
 >
-  <h3>{{perk.name}}</h3>
-  <p></p>
-  <ul>
-    <li>Level: {{perk.level}}</li>
-    <li>
-      {% if perk.requirements != null %} Requirements: {% for key, val in
-      perk.requirements %}{{key}} {{val}} {% endfor %} {% else %} No
-      requirements. {% endif %}
-    </li>
-    <li>Ranks: {{perk.ranks}}</li>
-    <li>Benefit: {{perk.benefit}}</li>
-    <li>id: {{perk.id}}</li>
-  </ul>
+  {% for perk in perks %}
+  <div
+    class="{% if perk.requirements != null %}{% for key, val in
+      perk.requirements %}tag-{{key | lower}} {% endfor %} {% else %}tag-none{% endif %}"
+  >
+    <h3>{{perk.name}}</h3>
+    <p></p>
+    <ul>
+      <li>Level: {{perk.level}}</li>
+      <li>
+        {% if perk.requirements != null %} Requirements: {% for key, val in
+        perk.requirements %}{{key}} {{val}} {% endfor %} {% else %} No
+        requirements. {% endif %}
+      </li>
+      <li>Ranks: {{perk.ranks}}</li>
+      <li>Benefit: {{perk.benefit}}</li>
+      <li>id: {{perk.id}}</li>
+    </ul>
+  </div>
+  {% endfor %}
 </div>
-{% endfor %}
