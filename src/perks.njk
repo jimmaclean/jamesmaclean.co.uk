@@ -8,16 +8,16 @@ title: Perks
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const perksContainer = document.querySelector(".js-perks-container")
-    const x = document.querySelectorAll(".js-control input")
+    const inputs = document.querySelectorAll(".js-control input")
     function handleCheckBoxChange(event) {
-      console.log(event.target)
       if (event.target.checked === true) {
         perksContainer.classList.add(event.target.name)
       } else {
         perksContainer.classList.remove(event.target.name)
       }
     }
-    x.forEach((controll) =>
+
+    inputs.forEach((controll) =>
       controll.addEventListener("change", handleCheckBoxChange)
     )
   })
