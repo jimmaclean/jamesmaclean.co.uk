@@ -5,61 +5,128 @@ eleventyNavigation:
   parent: Work
 ---
 
-
 <h1>Caplin FX Sales Trader</h1>
-<p>I worked on the sales trader product for a year and a half as part of a remote scrum team.</p>
+<p>
+  I worked on the sales trader product for a year and a half as part of a remote
+  scrum team.
+</p>
 
-<img src="/assets/01-01-fxsales.png" alt="">
+<img src="/assets/01-01-fxsales.png" alt="" />
 
 <h2>The users</h2>
-<p>The users of this app are people who sit on the trading floor at banks who sell foreign exchange to the banks clients. They are people who work intently for most the day, monitoring the market, writing reports, communicating with colleagues on the floor through chat, emails and the phone. It's a fast paced environment where mistakes are costly and time consuming to fix.</p>
+<p>
+  The users of this app are people who sit on the trading floor at banks who
+  sell foreign exchange to the banks clients. They are people who work intently
+  for most the day, monitoring the market, writing reports, communicating with
+  colleagues on the floor through chat, emails and the phone. It's a fast paced
+  environment where mistakes are costly and time consuming to fix.
+</p>
 
 <h3>Core workflow of a FX sales trade</h3>
 <ol>
-    <li>A client calls their the bank and is put through to their Relationship manager/Sales trader.</li>
-    <li>The trader will take down the details of their clients required trade.</li>
-    <li>The trader gets a price from another desk on the floor for that currency pair and amount.</li>
-    <li>The trade will mentally add a margin to the price and give the client a quote.</li>
-    <li>The client will either accept the quote or decline and either call another bank or call back later.</li>
-    <li>If the client accepts, the trader will make a note of the quoted price and hang up.</li>
+  <li>
+    A client calls their the bank and is put through to their Relationship
+    manager/Sales trader.
+  </li>
+  <li>
+    The trader will take down the details of their clients required trade.
+  </li>
+  <li>
+    The trader gets a price from another desk on the floor for that currency
+    pair and amount.
+  </li>
+  <li>
+    The trade will mentally add a margin to the price and give the client a
+    quote.
+  </li>
+  <li>
+    The client will either accept the quote or decline and either call another
+    bank or call back later.
+  </li>
+  <li>
+    If the client accepts, the trader will make a note of the quoted price and
+    hang up.
+  </li>
 </ol>
 <p>The total call time is less than 2 minutes.</p>
 <ul>
-    <li>The trader will  then (unless another client calls) execute the trade.</li>
-    <li>Once the trade is in the banks system the trader will have to find it. Then use the price actually executed and their quoted price to calculate their margin (and hope it is still positive).</li>
+  <li>The trader will then (unless another client calls) execute the trade.</li>
+  <li>
+    Once the trade is in the banks system the trader will have to find it. Then
+    use the price actually executed and their quoted price to calculate their
+    margin (and hope it is still positive).
+  </li>
 </ul>
 
 <h3>How the Sales Trader product changes the workflow</h3>
 <ol>
-    <li>A client calls their the bank and is put through to their Relationship manager/Sales trader.</li>
-    <li>The trader will enter the details of the trade into the Sales Trader UI and click a button to get a real time streaming price.</li>
-    <li>The trader can adjust the margin or use the default margin for that clients pricing tier.</li>
-    <li>The trader clicks a button to take the market price, add the margin and then lock the price against the movements of the market.</li>
-    <li>The trader quotes the locked price to the client.</li>
-    <li>If the client accepts the trade can be executed with all the details of the quoted price, market price and the margin.</li>
+  <li>
+    A client calls their the bank and is put through to their Relationship
+    manager/Sales trader.
+  </li>
+  <li>
+    The trader will enter the details of the trade into the Sales Trader UI and
+    click a button to get a real time streaming price.
+  </li>
+  <li>
+    The trader can adjust the margin or use the default margin for that clients
+    pricing tier.
+  </li>
+  <li>
+    The trader clicks a button to take the market price, add the margin and then
+    lock the price against the movements of the market.
+  </li>
+  <li>The trader quotes the locked price to the client.</li>
+  <li>
+    If the client accepts the trade can be executed with all the details of the
+    quoted price, market price and the margin.
+  </li>
 </ol>
 
-<h2 class="m-t-10 m-b-8">Explore three key areas of the product I worked on:</h2>
+<h2 class="m-t-10 m-b-8">
+  Explore three key areas of the product I worked on:
+</h2>
 <div class="m-b-8">
-    <div class="m-b-8">
-        <h4>Client Search</h4>
-        <p>A client has just called for a price, how can the trader bring up the client's profile as quickly as possible?</p>
-        <a href="/ux/caplin/client-search">Read more {% include 'icons/arrow.njk' %}</a>
-    </div>
+  <div class="m-b-8">
+    <h4>Client Search</h4>
+    <p>
+      A client has just called for a price, how can the trader bring up the
+      client's profile as quickly as possible?
+    </p>
+    <a href="/ux/caplin/client-search/"
+      >Read more {% include 'icons/arrow.njk' %}</a
+    >
+  </div>
 
-    <div class="m-b-8">
-        <h4>Sales ticket</h4>
-        <p>Other traders are more concerned with just the market price. Sales traders need the market price, the margin, and a quotable price of a currency pair. How do you show everything without overwhelming the trader?</p>
-        <a href="/ux/caplin/sales-ticket">Read more {% include 'icons/arrow.njk' %}</a>
-    </div>
+  <div class="m-b-8">
+    <h4>Sales ticket</h4>
+    <p>
+      Other traders are more concerned with just the market price. Sales traders
+      need the market price, the margin, and a quotable price of a currency
+      pair. How do you show everything without overwhelming the trader?
+    </p>
+    <a href="/ux/caplin/sales-ticket/"
+      >Read more {% include 'icons/arrow.njk' %}</a
+    >
+  </div>
 
-    <div class="m-b-8">
-        <h4>Margin indicator</h4>
-        <p>The market is always moving, the price the trader quotes to the client has to stand still. How can the trader know if the trade will still make money from moment to moment?</p>
-        <a href="/ux/caplin/margin-indicator">Read more {% include 'icons/arrow.njk' %}</a>
-    </div>
+  <div class="m-b-8">
+    <h4>Margin indicator</h4>
+    <p>
+      The market is always moving, the price the trader quotes to the client has
+      to stand still. How can the trader know if the trade will still make money
+      from moment to moment?
+    </p>
+    <a href="/ux/caplin/margin-indicator/"
+      >Read more {% include 'icons/arrow.njk' %}</a
+    >
+  </div>
 </div>
 
 <h2>A new concept</h2>
-<p>After a year and a half of working on the product I took a critical view of what I had done and went back to basics with a discovery phase before the next iteration of the design.</p>
-<a href="/ux/caplin/new-layout">Read more {% include 'icons/arrow.njk' %}</a>
+<p>
+  After a year and a half of working on the product I took a critical view of
+  what I had done and went back to basics with a discovery phase before the next
+  iteration of the design.
+</p>
+<a href="/ux/caplin/new-layout/">Read more {% include 'icons/arrow.njk' %}</a>
