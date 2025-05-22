@@ -1,9 +1,9 @@
 $breakpoints: (
-    sm: 0,
-    md: 640px,
-    lg: 1024px,
-    xl: 1200px,
-    // xxl: 1440px
+  sm: 0,
+  md: 640px,
+  lg: 1024px,
+  xl: 1200px,
+  // xxl: 1440px
 );
 $max-content-width-sm: 480px;
 $max-content-width-md: 720px;
@@ -21,18 +21,18 @@ $space-9-px: 64px;
 $space-10-px: 72px;
 
 $space: (
-    0: 0,
-    tiny: $space-tiny-px,
-    1: $space-1-px,
-    2: $space-2-px,
-    3: $space-3-px,
-    4: $space-4-px,
-    5: $space-5-px,
-    6: $space-6-px,
-    7: $space-7-px,
-    8: $space-8-px,
-    9: $space-9-px,
-    10: $space-10-px
+  0: 0,
+  tiny: $space-tiny-px,
+  1: $space-1-px,
+  2: $space-2-px,
+  3: $space-3-px,
+  4: $space-4-px,
+  5: $space-5-px,
+  6: $space-6-px,
+  7: $space-7-px,
+  8: $space-8-px,
+  9: $space-9-px,
+  10: $space-10-px
 );
 
 $rem-base: 16px;
@@ -46,7 +46,7 @@ $typography-map: (
     h2:    (fs: 32px, lh: 38px, ls: -0.25px, mb: 0.5em,  fw: bold,),
     h3:    (fs: 28px, lh: 34px, ls: -0.25px, mb: 0.5em,  fw: bold,),
     h4:    (fs: 24px, lh: 28px, ls: 0,       mb: 0.5em,  fw: bold,),
-    h5:    (fs: 18px, lh: 22px, ls: 0.5px,   mb: 1em,    fw: bold,),
+    h5:    (fs: 18px, lh: 22px, ls: 0.5px,   mb: 0.5em,  fw: bold,),
     h6:    (fs: 12px, lh: 14px, ls: 1px,     mb: 0.25em, fw: normal,),
     large: (fs: 18px, lh: 28px, ls: 0,       mb: 1em,    fw: normal,),
     p:     (fs: 16px, lh: 26px, ls: 0,       mb: 1em,    fw: normal,),

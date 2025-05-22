@@ -5,7 +5,7 @@
   font-size: 1rem * $type-scale-factor-larger;
 }
 body {
-  font-family: 'barlow', sans-serif;
+  font-family: "barlow", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -13,17 +13,17 @@ ol,
 ul {
   @include styleLike("p");
   li {
-      margin-bottom: 0.5em;
+    margin-bottom: 0.25em;
   }
 }
 
 dl {
   @include styleLike("p");
   dt {
-      font-weight: bold;
+    font-weight: bold;
   }
   dd {
-      margin-left: 0;
+    margin-left: 0;
   }
 }
 
@@ -38,7 +38,7 @@ hr {
 }
 
 a {
-  @include styleLike('p');
+  @include styleLike("p");
   margin-bottom: 0;
   color: var(--link-color);
   text-decoration: none;
@@ -58,6 +58,7 @@ a {
   }
 }
 
-h6, .h6 {
+h6,
+.h6 {
   text-transform: uppercase;
 }
