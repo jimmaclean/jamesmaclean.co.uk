@@ -45,18 +45,18 @@ eleventyNavigation:
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const emailTarget = document.getElementById("js-hidden-email-target")
-    const emailButton = document.getElementById("js-hidden-email-button")
-    const emailFragments = ["qim", "@g", "j", "87", ".c", "ai", "l", "om", "m"]
-    const emailFragmentKey = 203185647
+    const emailTarget = document.getElementById("js-hidden-email-target");
+    const emailButton = document.getElementById("js-hidden-email-button");
+    const emailFragments = ["qim", "@g", "j", "87", ".c", "ai", "l", "om", "m"];
+    const emailFragmentKey = 203185647;
 
     emailButton.addEventListener("click", (e) => {
       emailTarget.innerText = emailFragmentKey
         .toString()
         .split("")
         .map((f) => emailFragments[f])
-        .join("")
-      emailButton.classList.add("d-none")
-    })
-  })
+        .join("");
+      emailButton.classList.add("d-none");
+    });
+  });
 </script>
