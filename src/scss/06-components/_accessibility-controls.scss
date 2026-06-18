@@ -34,7 +34,7 @@
     align-items: center;
     justify-content: center;
     transition: border-color 200ms ease;
-    @include breakpointWrap('md') {
+    @include breakpointWrap("md") {
       height: space(8);
       width: space(8);
     }
@@ -48,11 +48,10 @@
 
     &-icon {
       &--text {
-        @include styleLikeAtBreakpoint('h3', 'sm');
+        @include styleLikeAtBreakpoint("h3", "sm");
         margin-top: -0.125em;
         margin-bottom: 0;
       }
-
     }
     &-label {
       display: none;
@@ -68,7 +67,7 @@
     transform: translateX(0%);
     transition: opacity 300ms, transform 400ms;
     padding: space(2);
-    @include breakpointWrap('md') {
+    @include breakpointWrap("md") {
       width: unset;
       position: absolute;
       padding: space(2) space(1);
@@ -87,20 +86,20 @@
     max-width: $max-content-width-sm;
     border-radius: px-to-rem(12px);
     background-color: var(--text-color);
-    box-shadow: 0 10px 30px -5px var(--purple-900);
+    box-shadow: 0 10px 30px -5px var(--rose-900);
     color: var(--bg-color);
     padding: space(3);
     margin: auto;
     position: relative;
-    @include breakpointWrap('md') {
+    @include breakpointWrap("md") {
       padding: space(4);
     }
-    @include colourScheme('light') {
+    @include colourScheme("light") {
       background-color: var(--text-color);
-      box-shadow: 0 10px 30px -5px var(--purple-900);
+      box-shadow: 0 10px 30px -5px var(--rose-900);
     }
-    @include colourScheme('dark') {
-      background-color: var(--purple-50);
+    @include colourScheme("dark") {
+      background-color: var(--rose-50);
       box-shadow: none;
     }
   }
@@ -123,7 +122,7 @@
     margin: 0;
   }
   &__legend {
-    @include styleLike('h5');
+    @include styleLike("h5");
   }
   &__input-row {
     display: flex;
@@ -131,7 +130,7 @@
     justify-content: center;
     margin-right: $space-2-px * -1;
     margin-bottom: $space-2-px * -1;
-    @include breakpointWrap('md') {
+    @include breakpointWrap("md") {
       flex-wrap: nowrap;
       margin-right: $space-3-px * -1;
       margin-bottom: $space-3-px * -1;
@@ -140,7 +139,7 @@
   &__input-wrap {
     margin-right: $space-2-px;
     margin-bottom: $space-2-px;
-    @include breakpointWrap('md') {
+    @include breakpointWrap("md") {
       margin-right: $space-3-px;
       margin-bottom: $space-3-px;
     }
@@ -150,7 +149,7 @@
     position: absolute;
     &:checked + label {
       .accessibility-control__fake-input {
-        border-color: var(--purple-400);
+        border-color: var(--rose-400);
         border-width: 2px;
       }
       .accessibility-control__selected-icon {
@@ -176,20 +175,20 @@
       }
     }
   }
-  
+
   $fake-input-size-small: 80px;
   $fake-input-size-medium: 96px;
   &__fake-input {
     position: relative;
     height: $fake-input-size-small;
     width: $fake-input-size-small;
-    border: 1px solid var(--purple-100);
+    border: 1px solid var(--rose-100);
     background-color: var(--bg-color);
     color: var(--text-color);
     overflow: hidden;
     border-radius: $space-1-px;
     cursor: pointer;
-    @include breakpointWrap('md') {
+    @include breakpointWrap("md") {
       height: $fake-input-size-medium;
       width: $fake-input-size-medium;
     }
@@ -198,31 +197,37 @@
     width: 12em;
     padding: $space-1-px;
     display: block;
-    @include breakpointWrap('md') {
+    @include breakpointWrap("md") {
       padding: $space-2-px;
     }
     &--smaller {
-      @include styleLikeAtBreakpoint('p', 'sm');
-      font-size: map-get(map-get(map-get($typography-map, 'sm'), 'p'), 'fs') * $type-scale-factor-smaller;
-      @include breakpointWrap('md') {
-        @include styleLikeAtBreakpoint('p', 'md');
-        font-size: map-get(map-get(map-get($typography-map, 'md'), 'p'), 'fs') * $type-scale-factor-smaller;
+      @include styleLikeAtBreakpoint("p", "sm");
+      font-size: map-get(map-get(map-get($typography-map, "sm"), "p"), "fs") *
+        $type-scale-factor-smaller;
+      @include breakpointWrap("md") {
+        @include styleLikeAtBreakpoint("p", "md");
+        font-size: map-get(map-get(map-get($typography-map, "md"), "p"), "fs") *
+          $type-scale-factor-smaller;
       }
     }
     &--auto {
-      @include styleLikeAtBreakpoint('p', 'sm');
-      font-size: map-get(map-get(map-get($typography-map, 'sm'), 'p'), 'fs') * $type-scale-factor-auto;
-      @include breakpointWrap('md') {
-        @include styleLikeAtBreakpoint('p', 'md');
-        font-size: map-get(map-get(map-get($typography-map, 'md'), 'p'), 'fs') * $type-scale-factor-auto;
+      @include styleLikeAtBreakpoint("p", "sm");
+      font-size: map-get(map-get(map-get($typography-map, "sm"), "p"), "fs") *
+        $type-scale-factor-auto;
+      @include breakpointWrap("md") {
+        @include styleLikeAtBreakpoint("p", "md");
+        font-size: map-get(map-get(map-get($typography-map, "md"), "p"), "fs") *
+          $type-scale-factor-auto;
       }
     }
     &--larger {
-      @include styleLikeAtBreakpoint('p', 'sm');
-      font-size: map-get(map-get(map-get($typography-map, 'sm'), 'p'), 'fs') * $type-scale-factor-larger;
-      @include breakpointWrap('md') {
-        @include styleLikeAtBreakpoint('p', 'md');
-        font-size: map-get(map-get(map-get($typography-map, 'md'), 'p'), 'fs') * $type-scale-factor-larger;
+      @include styleLikeAtBreakpoint("p", "sm");
+      font-size: map-get(map-get(map-get($typography-map, "sm"), "p"), "fs") *
+        $type-scale-factor-larger;
+      @include breakpointWrap("md") {
+        @include styleLikeAtBreakpoint("p", "md");
+        font-size: map-get(map-get(map-get($typography-map, "md"), "p"), "fs") *
+          $type-scale-factor-larger;
       }
     }
   }
@@ -236,7 +241,7 @@
     justify-content: center;
     &::before,
     &::after {
-      content: '';
+      content: "";
       display: block;
       height: $color-circle-size;
       width: $color-circle-size;
@@ -251,42 +256,42 @@
       background-color: var(--white);
       color: var(--white);
       &::before {
-        background-color: var(--purple-900);
+        background-color: var(--rose-900);
       }
       &::after {
-        background-color: var(--purple-500);
+        background-color: var(--rose-500);
       }
     }
     &--auto {
-      @media (prefers-color-scheme: 'light') {
+      @media (prefers-color-scheme: "light") {
         background-color: var(--white);
         color: var(--white);
         &::before {
-          background-color: var(--purple-900);
+          background-color: var(--rose-900);
         }
         &::after {
-          background-color: var(--purple-500);
+          background-color: var(--rose-500);
         }
       }
-      @media (prefers-color-scheme: 'dark') {
-        background-color: var(--purple-900);
-        color: var(--purple-900);
+      @media (prefers-color-scheme: "dark") {
+        background-color: var(--rose-900);
+        color: var(--rose-900);
         &::before {
           background-color: var(--white);
         }
         &::after {
-          background-color: var(--purple-300);
+          background-color: var(--rose-300);
         }
       }
     }
     &--dark {
-      background-color: var(--purple-900);
-      color: var(--purple-900);
+      background-color: var(--rose-900);
+      color: var(--rose-900);
       &::before {
         background-color: var(--white);
       }
       &::after {
-        background-color: var(--purple-300);
+        background-color: var(--rose-300);
       }
     }
   }
@@ -297,13 +302,13 @@
     right: 0;
     height: space(4);
     width: space(4);
-    padding: space('tiny');
-    background-color: var(--purple-400);
+    padding: space("tiny");
+    background-color: var(--rose-400);
     color: var(--white);
     border-bottom-left-radius: px-to-rem(8px);
   }
   &__fake-label {
-    @include styleLike('small');
+    @include styleLike("small");
     margin-top: space(1);
     margin-bottom: 0;
     text-align: center;
