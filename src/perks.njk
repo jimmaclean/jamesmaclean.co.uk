@@ -1,0 +1,85 @@
+---
+layout: layouts/full.njk
+title: Perks
+---
+
+<h1>Fallout: New Vegas perks</h1>
+<hr />
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const perksContainer = document.querySelector(".js-perks-container")
+    const inputs = document.querySelectorAll(".js-control input")
+
+    function handleCheckBoxChange(event) {
+      if (event.target.checked === true) {
+        perksContainer.classList.add(event.target.name)
+      } else {
+        perksContainer.classList.remove(event.target.name)
+      }
+    }
+
+    inputs.forEach((controll) =>
+      controll.addEventListener("change", handleCheckBoxChange)
+    )
+  })
+</script>
+<style>
+  input {
+    display: none;
+  }
+  label {
+    display: inline-block;
+    padding: 0.2em 0.6em;
+    border: 1px solid;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 0.4em;
+    margin-bottom: 0.4em;
+  }
+  input:checked + label {
+    background-color: white;
+    color: black;
+  }
+  {% for key, val in requirements %}
+    .tag-{{key | lower}} {
+      display: none;
+    }
+    .{{key | lower}} .tag-{{key | lower}} {
+      display: block;
+    }
+  {% endfor %}
+</style>
+<p>
+  {% for key, val in requirements %}
+  <span class="js-control">
+    <input type="checkbox" name="{{key | lower}}" id="req-c-{{key}}" checked />
+    <label for="req-c-{{key}}">{{key}} ({{val}})</label>
+  </span>
+  {%endfor%}
+</p>
+<hr />
+
+<div
+  class="js-perks-container {% for key, val in requirements %}{{key | lower}} {% endfor %}"
+>
+  {% for perk in perks %}
+  <div
+    class="{% if perk.requirements != null %}{% for key, val in
+      perk.requirements %}tag-{{key | lower}} {% endfor %} {% else %}tag-none{% endif %}"
+  >
+    <h3>{{perk.name}}</h3>
+    <p></p>
+    <ul>
+      <li>Level: {{perk.level}}</li>
+      <li>
+        {% if perk.requirements != null %} Requirements: {% for key, val in
+        perk.requirements %}{{key}} {{val}} {% endfor %} {% else %} No
+        requirements. {% endif %}
+      </li>
+      <li>Ranks: {{perk.ranks}}</li>
+      <li>Benefit: {{perk.benefit}}</li>
+      <li>id: {{perk.id}}</li>
+    </ul>
+  </div>
+  {% endfor %}
+</div>

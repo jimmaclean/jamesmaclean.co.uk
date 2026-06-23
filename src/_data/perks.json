@@ -1,0 +1,877 @@
+[
+    {
+        "name": "Black Widow",
+        "level": "2",
+        "requirements": {
+            "Female-PC": "true"
+        },
+        "ranks": "1",
+        "benefit": "+10% damage to the opposite sex and unique dialogue options with certain characters.",
+        "id": "00094EB9"
+    },
+    {
+        "name": "Lady Killer",
+        "level": "2",
+        "requirements": {
+            "Male-PC": "true"
+        },
+        "ranks": "1",
+        "benefit": "+10% damage to the opposite sex and unique dialogue options with certain characters.",
+        "id": "00094EB9"
+    },
+    {
+        "name": "Cherchez La Femme",
+        "level": "2",
+        "requirements": {
+            "Female-PC": "true"
+        },
+        "ranks": "1",
+        "benefit": "+10% damage to the same sex and unique dialogue options with certain characters.",
+        "id": "001361B3"
+    },
+    {
+        "name": "Confirmed Bachelor",
+        "level": "2",
+        "requirements": {
+            "Male-PC": "true"
+        },
+        "ranks": "1",
+        "benefit": "+10% damage to the same sex and unique dialogue options with certain characters.",
+        "id": "001361B4"
+    },
+    {
+        "name": "Friend of the Night",
+        "level": "2",
+        "requirements": {
+            "PE": "6",
+            "Sneak": "30"
+        },
+        "ranks": "1",
+        "benefit": "Your eyes adapt quickly to low-light conditions.",
+        "id": "00165118"
+    },
+    {
+        "name": "Heave, Ho!",
+        "level": "2",
+        "requirements": {
+            "ST": "5",
+            "Explosives": "30"
+        },
+        "ranks": "1",
+        "benefit": "+50% thrown weapon velocity and range.",
+        "id": "0014609C"
+    },
+    {
+        "name": "Hunter",
+        "level": "2",
+        "requirements": {
+            "Survival": "30"
+        },
+        "ranks": "1",
+        "benefit": "In combat, you do 75% more critical damage against animals and mutated animals.",
+        "id": "00135F18"
+    },
+    {
+        "name": "Intense Training",
+        "level": "2",
+        "requirements": null,
+        "ranks": "10",
+        "benefit": "You can put a single point into any of your SPECIAL attributes.",
+        "id": "00044CB1"
+    },
+    {
+        "name": "Rapid Reload",
+        "level": "2",
+        "requirements": {
+            "AG": "5",
+            "Guns": "30"
+        },
+        "ranks": "1",
+        "benefit": "All of your weapon reloads are 25% faster than normal.",
+        "id": "001377FD"
+    },
+    {
+        "name": "Retention",
+        "level": "2",
+        "requirements": {
+            "IN": "5"
+        },
+        "ranks": "1",
+        "benefit": "Skill magazines last for 3 real-time minutes.",
+        "id": "0010F09E"
+    },
+    {
+        "name": "Swift Learner",
+        "level": "2",
+        "requirements": {
+            "IN": "4"
+        },
+        "ranks": "3",
+        "benefit": "You gain an additional 10% whenever experience points are earned.",
+        "id": "00031DD3"
+    },
+    {
+        "name": "Cannibal",
+        "level": "4",
+        "requirements": null,
+        "ranks": "1",
+        "benefit": "When you're in Sneak mode, you gain the option to eat a human corpse to regain hit points, but lose Karma.",
+        "id": "00094EBC"
+    },
+    {
+        "name": "Comprehension",
+        "level": "4",
+        "requirements": {
+            "IN": "4"
+        },
+        "ranks": "1",
+        "benefit": "You gain one additional skill point for reading books and double the skill points for reading magazines.",
+        "id": "00031DE1"
+    },
+    {
+        "name": "Educated",
+        "level": "4",
+        "requirements": {
+            "IN": "4"
+        },
+        "ranks": "1",
+        "benefit": "You gain two more skill points every time you advance in level.",
+        "id": "00031DD8"
+    },
+    {
+        "name": "Entomologist",
+        "level": "4",
+        "requirements": {
+            "IN": "4",
+            "Survival": "45"
+        },
+        "ranks": "1",
+        "benefit": "You do an additional 50% damage every time you attack a mutated insect.",
+        "id": "00031DD9"
+    },
+    {
+        "name": "Rad Child",
+        "level": "4",
+        "requirements": {
+            "Survival": "70"
+        },
+        "ranks": "1",
+        "benefit": "Regenerate 2 HP per second per 200 rads accumulated.",
+        "id": "001656FD"
+    },
+    {
+        "name": "Run 'n Gun",
+        "level": "4",
+        "requirements": {
+            "oneOf": true,
+            "Guns-45": "45",
+            "Energy-Weapons": "45"
+        },
+        "ranks": "1",
+        "benefit": "Halved spread with one-handed ranged weapons while walking or running.",
+        "id": "0014609D"
+    },
+    {
+        "name": "Travel Light",
+        "level": "4",
+        "requirements": {
+            "Survival": "45"
+        },
+        "ranks": "1",
+        "benefit": "While wearing light armor or no armor, you run 10% faster.",
+        "id": "00146096"
+    },
+    {
+        "name": "Bloody Mess",
+        "level": "6",
+        "requirements": null,
+        "ranks": "1",
+        "benefit": "+5% overall damage; more violent death animations.",
+        "id": "00094EBA"
+    },
+    {
+        "name": "Demolition Expert",
+        "level": "6",
+        "requirements": {
+            "Explosives": "50"
+        },
+        "ranks": "3",
+        "benefit": "+20% damage with explosives.",
+        "id": "00031DAB"
+    },
+    {
+        "name": "Ferocious Loyalty",
+        "level": "6",
+        "requirements": {
+            "CH": "6"
+        },
+        "ranks": "1",
+        "benefit": "When you drop below 50% HP, companions gain +50 DR.",
+        "id": "00165180"
+    },
+    {
+        "name": "Fortune Finder",
+        "level": "6",
+        "requirements": {
+            "LU": "5"
+        },
+        "ranks": "1",
+        "benefit": "Considerably more bottle caps will be found in stockpiles.",
+        "id": "00031DE3"
+    },
+    {
+        "name": "Gunslinger",
+        "level": "6",
+        "requirements": null,
+        "ranks": "1",
+        "benefit": "+25% accuracy in V.A.T.S. with one-handed weapons.",
+        "id": "00094EBB"
+    },
+    {
+        "name": "Hand Loader",
+        "level": "6",
+        "requirements": {
+            "Repair": "70"
+        },
+        "ranks": "1",
+        "benefit": "When using Guns, you are twice as likely to recover cases and hulls. You also have all hand load recipes unlocked at any reloading benches.",
+        "id": "0016581B"
+    },
+    {
+        "name": "Lead Belly",
+        "level": "6",
+        "requirements": {
+            "EN": "5"
+        },
+        "ranks": "1",
+        "benefit": "-50% radiation taken from food and water sources.",
+        "id": "00044CA9"
+    },
+    {
+        "name": "Shotgun Surgeon",
+        "level": "6",
+        "requirements": {
+            "Guns": "45"
+        },
+        "ranks": "1",
+        "benefit": "When using shotguns, regardless of ammunition used, you ignore an additional 10 points of a target's Damage Threshold.",
+        "id": "0016578B"
+    },
+    {
+        "name": "The Professional",
+        "level": "6",
+        "requirements": {
+            "Sneak": "70"
+        },
+        "ranks": "1",
+        "benefit": "Your Sneak Attack Criticals with revolvers, pistols, and submachine guns (guns and energy weapons) all inflict an additional 20% damage.",
+        "id": "00165AEC"
+    },
+    {
+        "name": "Toughness",
+        "level": "6",
+        "requirements": {
+            "EN": "5"
+        },
+        "ranks": "2",
+        "benefit": "+3 DT permanently.",
+        "id": "00031DE0"
+    },
+    {
+        "name": "Vigilant Recycler",
+        "level": "6",
+        "requirements": {
+            "Science": "70"
+        },
+        "ranks": "1",
+        "benefit": "When using Energy Weapons, you are twice as likely to recover drained ammunition. You also have more efficient recycling recipes available at workbenches.",
+        "id": "00165816"
+    },
+    {
+        "name": "Commando",
+        "level": "8",
+        "requirements": null,
+        "ranks": "1",
+        "benefit": "+25% accuracy in V.A.T.S. with two-handed weapons.",
+        "id": "00099828"
+    },
+    {
+        "name": "Cowboy",
+        "level": "8",
+        "requirements": {
+            "Guns": "45",
+            "Melee": "45"
+        },
+        "ranks": "1",
+        "benefit": "+25% damage done by dynamite, hatchets, knives, revolvers, and lever-action guns.",
+        "id": "00138562"
+    },
+    {
+        "name": "Living Anatomy",
+        "level": "8",
+        "requirements": {
+            "Medicine": "70"
+        },
+        "ranks": "1",
+        "benefit": "Shows health and Damage Threshold of any target. +5% bonus to damage against humans and non-feral ghouls.",
+        "id": "00146099"
+    },
+    {
+        "name": "Pack Rat",
+        "level": "8",
+        "requirements": {
+            "IN": "5",
+            "Barter": "70"
+        },
+        "ranks": "1",
+        "benefit": "Items with a weight of two pounds or less now weigh half as much.",
+        "id": "0014609B"
+    },
+    {
+        "name": "Quick Draw",
+        "level": "8",
+        "requirements": {
+            "AG": "5"
+        },
+        "ranks": "1",
+        "benefit": "Makes weapon equipping and holstering 50% faster.",
+        "id": "001377FE"
+    },
+    {
+        "name": "Rad Resistance",
+        "level": "8",
+        "requirements": {
+            "EN": "5",
+            "Survival": "40"
+        },
+        "ranks": "1",
+        "benefit": "+25% radiation resistance permanently.",
+        "id": "00031DA9"
+    },
+    {
+        "name": "Scrounger",
+        "level": "8",
+        "requirements": {
+            "LU": "5"
+        },
+        "ranks": "1",
+        "benefit": "Considerably more ammunition in stockpiles.",
+        "id": "00031DAA"
+    },
+    {
+        "name": "Stonewall",
+        "level": "8",
+        "requirements": {
+            "ST": "6",
+            "EN": "6"
+        },
+        "ranks": "1",
+        "benefit": "+5 DT against melee and unarmed attacks and cannot be knocked down during combat.",
+        "id": "00165449"
+    },
+    {
+        "name": "Strong Back",
+        "level": "8",
+        "requirements": {
+            "ST": "5",
+            "EN": "5"
+        },
+        "ranks": "1",
+        "benefit": "+50 Carry Weight.",
+        "id": "00031DDE"
+    },
+    {
+        "name": "Super Slam!",
+        "level": "8",
+        "requirements": {
+            "ST": "6",
+            "Melee-Weapons": "45"
+        },
+        "ranks": "1",
+        "benefit": "All melee (except thrown) and unarmed attacks have a chance of knocking your target down. 15% for Unarmed or one-handed melee, 30% for two-handed melee.",
+        "id": "0014609E"
+    },
+    {
+        "name": "Terrifying Presence",
+        "level": "8",
+        "requirements": {
+            "Speech": "70"
+        },
+        "ranks": "1",
+        "benefit": "Can intimidate foes through dialogue; closing dialogue results in the foe fleeing for 5 seconds.",
+        "id": "0010C6CD"
+    },
+    {
+        "name": "Here and Now",
+        "level": "10",
+        "requirements": null,
+        "ranks": "1",
+        "benefit": "You instantly level up again.",
+        "id": "00031DAC"
+    },
+    {
+        "name": "Animal Friend",
+        "level": "10",
+        "requirements": {
+            "CH": "6",
+            "Survival": "45"
+        },
+        "ranks": "2",
+        "benefit": "With the first rank, hostile animals become neutral. With the second rank, they assist in combat, but not against other animals.",
+        "id": "00031DB5"
+    },
+    {
+        "name": "Finesse",
+        "level": "10",
+        "requirements": null,
+        "ranks": "1",
+        "benefit": "+5% Critical Chance.",
+        "id": "00094EC1"
+    },
+    {
+        "name": "Math Wrath",
+        "level": "10",
+        "requirements": {
+            "Science": "70"
+        },
+        "ranks": "1",
+        "benefit": "Reduces all AP costs by 10%.",
+        "id": "00135EC3"
+    },
+    {
+        "name": "Miss Fortune",
+        "level": "10",
+        "requirements": {
+            "LU": "6"
+        },
+        "ranks": "1",
+        "benefit": "10% chance that Miss Fortune will incapacitate a target in V.A.T.S.",
+        "id": "00137800"
+    },
+    {
+        "name": "Mister Sandman",
+        "level": "10",
+        "requirements": {
+            "Sneak": "60"
+        },
+        "ranks": "1",
+        "benefit": "Can instantly kill a sleeping non-player character and earn bonus XP when doing so.",
+        "id": "00031DAD"
+    },
+    {
+        "name": "Mysterious Stranger",
+        "level": "10",
+        "requirements": {
+            "LU": "6"
+        },
+        "ranks": "1",
+        "benefit": "10% chance that the Mysterious Stranger will finish off a target in V.A.T.S.",
+        "id": "00031DBC"
+    },
+    {
+        "name": "Nerd Rage!",
+        "level": "10",
+        "requirements": {
+            "IN": "5",
+            "Science": "50"
+        },
+        "ranks": "1",
+        "benefit": "+15 DT and Strength increased to 10 whenever health is 20% or lower.",
+        "id": "00044CA7"
+    },
+    {
+        "name": "Night Person",
+        "level": "10",
+        "requirements": null,
+        "ranks": "1",
+        "benefit": "+2 Intelligence and +2 Perception between 6:00 P.M. and 6:00 A.M.",
+        "id": "00094EBD"
+    },
+    {
+        "name": "Plasma Spaz",
+        "level": "10",
+        "requirements": {
+            "Energy-Weapons": "70"
+        },
+        "ranks": "1",
+        "benefit": "AP costs for all plasma weapons are reduced by 20%.",
+        "id": "00165AEF"
+    },
+    {
+        "name": "Fast Metabolism",
+        "level": "12",
+        "requirements": null,
+        "ranks": "1",
+        "benefit": "+20% Hit Points restored with stimpaks.",
+        "id": "00094EBF"
+    },
+    {
+        "name": "Ghastly Scavenger",
+        "level": "12",
+        "requirements": {
+            "Cannibal": "perk"
+        },
+        "ranks": "1",
+        "benefit": "When you're in Sneak mode, you gain the option to eat a super mutant or feral ghoul corpse to regain hit points, but lose Karma.",
+        "id": "00135EC9"
+    },
+    {
+        "name": "Hit the Deck",
+        "level": "12",
+        "requirements": {
+            "Explosives": "70"
+        },
+        "ranks": "1",
+        "benefit": "+25 DT against explosives.",
+        "id": "001651B6"
+    },
+    {
+        "name": "Life Giver",
+        "level": "12",
+        "requirements": {
+            "EN": "6"
+        },
+        "ranks": "1",
+        "benefit": "+30 hit points.",
+        "id": "00031DB1"
+    },
+    {
+        "name": "Long Haul",
+        "level": "12",
+        "requirements": {
+            "EN": "6",
+            "Barter": "70"
+        },
+        "ranks": "1",
+        "benefit": "Being over-encumbered no longer prevents you from using fast travel.",
+        "id": "00146098"
+    },
+    {
+        "name": "Piercing Strike",
+        "level": "12",
+        "requirements": {
+            "Unarmed": "70"
+        },
+        "ranks": "1",
+        "benefit": "All your unarmed and melee attacks negate 15 points of DT.",
+        "id": "0014609F"
+    },
+    {
+        "name": "Pyromaniac",
+        "level": "12",
+        "requirements": {
+            "Explosives": "60"
+        },
+        "ranks": "1",
+        "benefit": "+50% damage with fire-based weapons.",
+        "id": "00031DB2"
+    },
+    {
+        "name": "Robotics Expert",
+        "level": "12",
+        "requirements": {
+            "Science": "50"
+        },
+        "ranks": "1",
+        "benefit": "+25% damage to robots; can shut down robots by sneaking up on them and deactivating.",
+        "id": "00031DC2"
+    },
+    {
+        "name": "Silent Running",
+        "level": "12",
+        "requirements": {
+            "AG": "6",
+            "Sneak": "50"
+        },
+        "ranks": "1",
+        "benefit": "Running no longer factors into a successful sneak attempt.",
+        "id": "00031DB3"
+    },
+    {
+        "name": "Sniper",
+        "level": "12",
+        "requirements": {
+            "PE": "6",
+            "AG": "6"
+        },
+        "ranks": "1",
+        "benefit": "25% more likely to hit the target's head in V.A.T.S.",
+        "id": "00031DB4"
+    },
+    {
+        "name": "Splash Damage",
+        "level": "12",
+        "requirements": {
+            "Explosives": "70"
+        },
+        "ranks": "1",
+        "benefit": "Explosives have a 25% larger area of effect.",
+        "id": "00165AF0"
+    },
+    {
+        "name": "Unstoppable Force",
+        "level": "12",
+        "requirements": {
+            "ST": "7",
+            "Melee-Weapons": "90"
+        },
+        "ranks": "1",
+        "benefit": "x4 normal damage through enemy Blocks with melee and unarmed attacks.",
+        "id": "00165447"
+    },
+    {
+        "name": "Adamantium Skeleton",
+        "level": "14",
+        "requirements": null,
+        "ranks": "1",
+        "benefit": "Damage taken by limbs reduced by 50%.",
+        "id": "00094EC4"
+    },
+    {
+        "name": "Center of Mass",
+        "level": "14",
+        "requirements": {
+            "Guns": "70"
+        },
+        "ranks": "1",
+        "benefit": "In V.A.T.S., you do an additional 15% damage when targeting the torso.",
+        "id": "00165182"
+    },
+    {
+        "name": "Chemist",
+        "level": "14",
+        "requirements": {
+            "Medicine": "60"
+        },
+        "ranks": "1",
+        "benefit": "Chems and (in Hardcore) stimpaks last twice as long.",
+        "id": "0009982D"
+    },
+    {
+        "name": "Jury Rigging",
+        "level": "14",
+        "requirements": {
+            "Repair": "90"
+        },
+        "ranks": "1",
+        "benefit": "Repair any item using a roughly similar item.",
+        "id": "00165815"
+    },
+    {
+        "name": "Light Step",
+        "level": "14",
+        "requirements": {
+            "PE": "6",
+            "AG": "6"
+        },
+        "ranks": "1",
+        "benefit": "Floor traps or mines will not be set off.",
+        "id": "00031DB7"
+    },
+    {
+        "name": "Purifier",
+        "level": "14",
+        "requirements": null,
+        "ranks": "1",
+        "benefit": "You do 50% extra damage with melee and Unarmed weapons against centaurs, night stalkers, spore plants, spore carriers, deathclaws and super mutants.",
+        "id": "00135F75"
+    },
+    {
+        "name": "Action Boy/Action Girl",
+        "level": "16",
+        "requirements": {
+            "AG": "6"
+        },
+        "ranks": "2",
+        "benefit": "+15 Action Points.",
+        "id": "00031DBA\n0007B202"
+    },
+    {
+        "name": "Better Criticals",
+        "level": "16",
+        "requirements": {
+            "PE": "6",
+            "LU": "6"
+        },
+        "ranks": "1",
+        "benefit": "+50% damage with critical hits.",
+        "id": "00031DBB"
+    },
+    {
+        "name": "Chem Resistant",
+        "level": "16",
+        "requirements": {
+            "Medicine": "60"
+        },
+        "ranks": "1",
+        "benefit": "Half as likely to get addicted.",
+        "id": "00099827"
+    },
+    {
+        "name": "Meltdown",
+        "level": "16",
+        "requirements": {
+            "Energy-Weapons": "90"
+        },
+        "ranks": "1",
+        "benefit": "Foes killed by your Energy Weapons emit a corona of harmful energy.",
+        "id": "0014609A"
+    },
+    {
+        "name": "Tag!",
+        "level": "16",
+        "requirements": null,
+        "ranks": "1",
+        "benefit": "Fourth \"tag\" skill: +15 points to that skill.",
+        "id": "00031DBD"
+    },
+    {
+        "name": "Weapon Handling",
+        "level": "16",
+        "requirements": {
+            "ST": "<10"
+        },
+        "ranks": "1",
+        "benefit": "Weapon Strength requirements are now 2 points lower than normal for you.",
+        "id": "00146097"
+    },
+    {
+        "name": "Computer Whiz",
+        "level": "18",
+        "requirements": {
+            "IN": "7",
+            "Science": "70"
+        },
+        "ranks": "1",
+        "benefit": "Can make one extra attempt to hack a locked-down terminal.",
+        "id": "00031DC4"
+    },
+    {
+        "name": "Concentrated Fire",
+        "level": "18",
+        "requirements": {
+            "Energy-Weapons": "60",
+            "Guns": "60"
+        },
+        "ranks": "1",
+        "benefit": "+5% accuracy in V.A.T.S. with every subsequent attack on a given body part queued.",
+        "id": "00044CAF"
+    },
+    {
+        "name": "Infiltrator",
+        "level": "18",
+        "requirements": {
+            "PE": "7",
+            "Lockpick": "70"
+        },
+        "ranks": "1",
+        "benefit": "Can make one more attempt to pick a broken lock.",
+        "id": "00044CB0"
+    },
+    {
+        "name": "Paralyzing Palm",
+        "level": "18",
+        "requirements": {
+            "Unarmed": "70"
+        },
+        "ranks": "1",
+        "benefit": "Can paralyze an enemy for 30 seconds with a V.A.T.S. unarmed attack.",
+        "id": "00044CAA"
+    },
+    {
+        "name": "Explorer",
+        "level": "20",
+        "requirements": null,
+        "ranks": "1",
+        "benefit": "All locations are marked on your map.",
+        "id": "00031DE5"
+    },
+    {
+        "name": "Grim Reaper's Sprint",
+        "level": "20",
+        "requirements": null,
+        "ranks": "1",
+        "benefit": "A kill in V.A.T.S. restores 20 AP immediately.",
+        "id": "00099834"
+    },
+    {
+        "name": "Ninja",
+        "level": "20",
+        "requirements": {
+            "Melee-Weapons": "80",
+            "Sneak": "80"
+        },
+        "ranks": "1",
+        "benefit": "Multiplies Critical Chance by x1.15 with melee and unarmed weapons (despite the description stating it's a flat +15% bonus), and grants +25% damage with melee/unarmed sneak attack criticals.",
+        "id": "00031DCC"
+    },
+    {
+        "name": "Solar Powered",
+        "level": "20",
+        "requirements": {
+            "EN": "7"
+        },
+        "ranks": "1",
+        "benefit": "+2 Strength and +1 HP per second while outside, from 6:00 A.M. to 6:00 P.M.",
+        "id": "00031DC5"
+    },
+    {
+        "name": "Laser Commander",
+        "level": "22",
+        "requirements": {
+            "Energy-Weapons": "90"
+        },
+        "ranks": "1",
+        "benefit": "You do an extra 15% damage and have a 10% extra chance to critically hit with any laser weapon.",
+        "id": "00165789"
+    },
+    {
+        "name": "Nuka Chemist",
+        "level": "22",
+        "requirements": {
+            "Science": "90"
+        },
+        "ranks": "1",
+        "benefit": "Unlocks special Nuka-Cola recipes at the workbench.",
+        "id": "00165AE6"
+    },
+    {
+        "name": "Spray and Pray",
+        "level": "22",
+        "requirements": null,
+        "ranks": "1",
+        "benefit": "Your attacks do 75% less damage to companions.",
+        "id": "00165181"
+    },
+    {
+        "name": "Slayer",
+        "level": "24",
+        "requirements": {
+            "AG": "7",
+            "Unarmed": "90"
+        },
+        "ranks": "1",
+        "benefit": "The speed of all your melee and unarmed attacks is increased by 30%.",
+        "id": "00165446"
+    },
+    {
+        "name": "Nerves of Steel",
+        "level": "26",
+        "requirements": {
+            "AG": "7"
+        },
+        "ranks": "1",
+        "benefit": "20% faster AP regeneration.",
+        "id": "000E2C49"
+    },
+    {
+        "name": "Rad Absorption",
+        "level": "28",
+        "requirements": {
+            "EN": "7"
+        },
+        "ranks": "1",
+        "benefit": "-1 Rad every 20 seconds.",
+        "id": "000E2C4A"
+    }
+]
